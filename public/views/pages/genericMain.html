@@ -1,0 +1,17 @@
+<div class="container-fluid" ng-controller="genericMainController">
+  <h3>User Input on Generic Page</h3><br>
+
+    <div id="inputUserDiv">
+      <input type="text" id="nameIn" ng-model="nameInput" placeholder=" - Name - "><br>
+    </div>
+
+    <button ng-click="addUser()"> Add User </button>
+
+    <div ng-repeat="users in usersArray">
+      <li>
+        Name: {{users.name}}
+        <button ng-click="deleteUser($index)"> DELETE </button>
+        <button ng-click="openUpdate($index)"> UPDATE </button><br><br>
+      </li>
+    </div>
+</div>

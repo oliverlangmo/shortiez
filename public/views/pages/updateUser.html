@@ -1,0 +1,16 @@
+<div ng-controller="genericMainController">
+  <div class="modal-header">
+    <h3 class="modal-title">Update User Info</h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="updateUserDiv">
+      <input type="text" id="nameUpdate" ng-model="nameUpdate"><br>
+    </div> <!-- end updateUser div -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button class="basicBtn" id="updateBtn" ng-click="updateUser(id)"> Update User </button>
+    <button class="basicBtn" id="cancelBtn" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div> <!-- end genericMainController -->

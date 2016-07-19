@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-App="myApp">
+  <head>
+    <title>controller page for Shorties views</title>
+    <script src="vendors/angular.js"></script>
+    <script src="vendors/angular-route.min.js"></script>
+    <script src="vendors/ui-bootstrap.js"></script>
+    <script src="vendors/ui-bootstrap-tpls.js"></script>
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/genericMain.js"></script>
+    <!-- sourced in scripts html pages as needed -->
+
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- stops chrome from making multiple request for flavicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  </head>
+  <body>
+    <div ng-include=" '/views/partials/navBar.html' "></div>
+    <main ng-view></main>
+  </body>
+</html>
+
+
+<!--
+
+gMail: mondoshorties@gmail.com
+password: shorties
+
+mLab: mondoShorties
+pass: shorties1
+
+heroku: mondoshorties@gmail.com
+pass: Shorties1
+
+-->
