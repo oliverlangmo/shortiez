@@ -59,6 +59,7 @@ function($scope, $http, $uibModal, $rootScope, userData){
         data: updateInfo
       }).then(function(response){
         userData.getUsers();
+        $rootScope.cancel();
         } // end then
       ); // end http
   }; // end updateUser
