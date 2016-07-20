@@ -64,6 +64,17 @@ function($scope, $http, $uibModal, $rootScope, userData){
       ); // end http
   }; // end updateUser
 
+  $scope.findReplace = function(){
+    console.log('button clicked');
+    var text = $scope.storyInput;
+    var newText = '';
+    var oldTextWord = $scope.oldWord;
+    var newTextWord = $scope.newWord;
+    newText = text.replace(oldTextWord, newTextWord);
+    console.log('old word = ' + oldTextWord + '. Replaced with: ' + newTextWord);
+    console.log(newText);
+  };
+
 }]); // end controller 'playersController'
 
 //-----------------------------------------  modalController -----------------------------------------

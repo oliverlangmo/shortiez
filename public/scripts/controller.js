@@ -47,7 +47,7 @@ myApp.factory('userData', ['$http', '$rootScope', function($http, $rootScope){
   }; // end randomId
 
   var randomNum = function (max, min) {
-    return Math.floor(Math.random() * (max- min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
   return {
