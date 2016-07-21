@@ -65,17 +65,13 @@ function($scope, $http, $uibModal, $rootScope, userData){
   }; // end updateUser
 
   $scope.findReplace = function(){
-    console.log('button clicked');
-    var text = $scope.storyInput;
-    var newText = '';
-    var oldTextWord = $scope.oldWord;
-    var newTextWord = $scope.newWord;
-    newText = text.replace(oldTextWord, newTextWord);
-    console.log('old word = ' + oldTextWord + '. Replaced with: ' + newTextWord);
-    console.log(newText);
+    var someText = $scope.storyInput;
+    var someWord = $scope.oldWord;
+    var regExp = new RegExp(someWord, 'gi');
+    $scope.newText = someText.replace(regExp, $scope.newWord);
   };
 
-}]); // end controller 'playersController'
+}]); // end controller 'genericMainController'
 
 //-----------------------------------------  modalController -----------------------------------------
 

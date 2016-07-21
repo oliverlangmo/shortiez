@@ -3,12 +3,13 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-// var session = require('express-session');
+var session = require('express-session');
+var passport = require('../strategies/user-shorties.js');
+
 // var passport = require('passport');
-
+var index = require('./routes/index');
+var register = require('./routes/register');
 var appGenericMain = require('./routes/appGenericMain');
-
-// var passport = require('/strategies/user-shorties.js');
 
 app.listen(process.env.PORT || 9002, function(){ console.log("IT'S OVER 9000!!!"); });
 
@@ -20,19 +21,19 @@ mongoose.connect(mongodbUri);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use(session({
-//    secret: 'secret',
-//    key: 'user',
-//    resave: 'true',
-//    saveUninitialized: false,
-//    cookie: {maxage: 60000, secure: false}
-// })); // end session
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+   secret: 'secret',
+   key: 'user',
+   resave: 'true',
+   saveUninitialized: false,
+   cookie: {maxage: 60000, secure: false}
+})); // end session
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use('/', appGenericMain);
+app.use('/', index, register, appGenericMain);
 
-app.get('/*', function(req,res){
+app.get('/', function(req,res){
   console.log('You Are in L');
   var file = req.params[0] || 'views/index.html';
   res.sendFile(path.join(__dirname, '/public/', file));

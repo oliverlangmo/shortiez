@@ -1,4 +1,6 @@
 #storyInput {
-  height: 40px;
-  width: 650px;
+  height: 200px;
+  width: 700px;
+  overflow: hidden;
+  display: block;
 }
