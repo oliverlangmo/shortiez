@@ -1,0 +1,19 @@
+<h1>Add Characters and Pages to Story</h1>
+
+
+<h2>Character Input</h2>
+<input type="text" name="charName" ng-model="characterNameBinder" value="" placeholder="Character Name">
+<br>
+<input type="text" name="charTraits" ng-model="characterTraitBinder" value="" placeholder="Character Traits">
+<br>
+<input type="text" name="charPhoto" ng-model="characterPhotoBinder" value="" placeholder="Character Photo URL">
+<br>
+<button type="submit" name="submitCharButton" ng-click= "addChar()">Submit Character</button>
+
+<h2>Story Input</h2>
+<input type="text" name="pageNumber" ng-model="pageNumberBinder" value="" placeholder="Page Number">
+<br>
+<input type="text" name="pageText" ng-model="pageTextBinder" value="" placeholder="Page Text">
+<br>
+<input type="text" name="pageIllustration" ng-model="pageIllustrationBinder" value="" placeholder="Illustration">
+<button type="submit" name="submitCharButton" ng-click= "addPage()">Submit Page</button>
