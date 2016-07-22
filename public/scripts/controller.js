@@ -18,6 +18,12 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
+      .when('/adminAddStory', {
+          templateUrl: '/views/pages/adminAddStory.html',
+      })
+      .when('/adminPagesCharInput', {
+          templateUrl: '/views/pages/adminPagesCharInput.html',
+      })
       .otherwise({
       redirectTo: '/login'
       });
