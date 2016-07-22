@@ -1,0 +1,18 @@
+
+  <div ng-controller="libraryCtrl">
+
+    <h1>Your Stories</h1>
+    Story 1: image
+    <button type="button" ng-click="getAllStories()" name="button">button1</button>
+
+<div ng-repeat="story in stories">
+  <div class="storyDiv">
+
+{{story.title}}
+<button type="button" ng-click="getAllStories()" name="button">button2</button>
+  </div>
+  <button type="button" ng-click="getAllStories()" name="button">button3</button>
+
+
+</div>
+</div>

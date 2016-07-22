@@ -18,6 +18,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
+      .when('/libraryAdmin', {
+          templateUrl:'/views/pages/libraryAdmin.html',
+      })
       .otherwise({
       redirectTo: '/login'
       });
