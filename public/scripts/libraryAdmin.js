@@ -18,6 +18,10 @@ $scope.getAllStories = function(){
       $rootScope.stories = response.data;
       console.log(response.data);
     }); // end http GET
-}; // end getUsers
+}; // end getStories
+$scope.editStory= function(){
+  var path= "#adminPagesCharInput";
+  window.location.href = path;
+};
 
 }]);//end of libraryCtrl controller
