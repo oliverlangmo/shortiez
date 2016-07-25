@@ -28,6 +28,8 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/adminPagesCharInput', {
           templateUrl: '/views/pages/adminPagesCharInput.html',
 
+      }).when('/readerLandingPage', {
+          templateUrl: '/views/pages/readerLandingPage.html',
       })
       .otherwise({
       redirectTo: '/login'

@@ -1,4 +1,4 @@
-<div ng-controller="readerLandingPageController">
+<div ng-controller="readerLandingPageCtrl" ng-init="getAllStories()">
     <h1>readerLandingPage</h1>
         <div ng-repeat="story in stories">
           <h2> Story Title {{story.story_title}} Goes Here</h2>
