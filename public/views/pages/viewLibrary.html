@@ -1,10 +1,10 @@
-<div ng-controller = "libraryCtrl" ng-init ='getAllStories()' >
+<div ng-controller = "libraryCtrl" ng-init ='getAllStories()'>
   <md-content class="md-padding" flex layout-wrap layout="row">
   		<div layout="column" layout-gt-xs="row" flex layout-wrap>
 
   	      	<md-card flex="25" ng-repeat="story in stories">
               <div class="storyImages" layout-align="center center">
-              		        		<img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover'">
+              		        		<img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover">
              </div>
              <md-card-title>
 	          			<md-card-title-text>

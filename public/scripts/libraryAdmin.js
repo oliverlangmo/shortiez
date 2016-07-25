@@ -1,5 +1,5 @@
 
-angular.module('myApp').controller('libraryCtrl', ['$scope', '$http', '$rootScope','ngMaterial', function ($scope, $http, $rootScope) {
+angular.module('myApp').controller('libraryCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
 console.log("in libraryadmin.js");
 $rootScope.stories = [];
 // var storyObj = {
