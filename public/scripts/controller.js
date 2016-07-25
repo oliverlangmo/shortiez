@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
+var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial']);
 console.log('in controller page');
 
 myApp.config(['$routeProvider', function($routeProvider){
@@ -27,7 +27,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       })
       .when('/adminPagesCharInput', {
           templateUrl: '/views/pages/adminPagesCharInput.html',
-
+      })
+      .when('/viewLibrary', {
+        templateUrl: '/views/pages/viewLibrary.html'
       })
       .otherwise({
       redirectTo: '/login'
