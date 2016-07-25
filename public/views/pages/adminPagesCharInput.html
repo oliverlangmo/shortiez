@@ -1,6 +1,6 @@
 <h1>Add Characters and Pages to Story</h1>
 
-
+<div ng-controller='adminStoryInputController'>
 <h2>Character Input</h2>
 <input type="text" name="charName" ng-model="characterNameBinder" value="" placeholder="Character Name">
 <br>
@@ -17,3 +17,4 @@
 <br>
 <input type="text" name="pageIllustration" ng-model="pageIllustrationBinder" value="" placeholder="Illustration">
 <button type="submit" name="submitCharButton" ng-click= "addPage()">Submit Page</button>
+</div>
