@@ -28,22 +28,37 @@ router.post( '/addCharacter', function( req, res ){  // POST call
     character_traits: req.body.character_traits,
     character_photo: req.body.character_photo
   };
-  var charactersArray = [];
-  console.log(characterToAdd, "characterToAdd");
 
-  charactersArray.push(characterToAdd);
-
-  addStory.findOneAndUpdate({_id:"579287d62c2e099585a2503f"}, { story_characters:   charactersArray  }, function(err, issueResult){
+  addStory.findOneAndUpdate({_id:"579287d62c2e099585a2503f"}, {$push: { story_characters:  characterToAdd  }}, function(err, issueResult){
     if(err){
       console.log(err);
       res.sendStatus(500);
     }else{
     // console.log(req.body.id, " found.", req.body.pages, "available")
-    console.log("success, check DB", charactersArray, "charactersArray");
+    console.log("success, check DB");
     res.sendStatus(200);
     }
   }); //end findOneAndUpdate
 }); //end character post
+
+router.post( '/addPage', function( req, res ){  // POST call
+  var pageToAdd={  // adds record from input
+    page_number: req.body.page_number,
+    page_text: req.body.page_text,
+    page_illustration: req.body.page_illustration
+    };
+
+  addStory.findOneAndUpdate({_id:"579287d62c2e099585a2503f"}, {$push: { story_pages:  pageToAdd  }}, function(err, issueResult){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }else{
+    // console.log(req.body.id, " found.", req.body.pages, "available")
+    console.log("success, check DB");
+    res.sendStatus(200);
+    }
+  }); //end findOneAndUpdate
+}); //end page post
 
 
 

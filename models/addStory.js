@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 var addStorySchema = new Schema({  // set up new mongoose schema
   story_title: String,
   story_cover: String,
-  story_characters: [{"default" : Schema.Types.Mixed  }],
-  story_pages: [{"default" : Schema.Types.Mixed  }]
+  story_characters: [{}],
+  story_pages: [{}]
 
 });
 
