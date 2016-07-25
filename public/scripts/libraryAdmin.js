@@ -19,7 +19,7 @@ $scope.getAllStories = function(){
       console.log(response.data);
     }); // end http GET
 }; // end getStories
-$scope.editStory= function(){
+$scope.editStory= function(index){
   var path= "#adminPagesCharInput";
   window.location.href = path;
 };
