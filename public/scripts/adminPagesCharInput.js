@@ -9,6 +9,18 @@ myApp.controller('adminStoryInputController',[ '$scope', '$http', function( $sco
       character_photo: $scope.characterPhotoBinder,
     }; //end objectToSend
 
+    $http({  // sends object via POST
+          method: 'POST',
+          url: '/addCharacter',
+          data: characterObject
+        }); //end $http
+
+        console.log("New Character Sent", characterObject);
+        
+        $scope.characterNameBinder ='';  // clears input boxes
+        $scope.characterTraitBinder ='';
+        $scope.characterPhotoBinder = '';
+
   };//end addChar
 
   $scope.addPage = function(){ // adds issue on button click
@@ -18,6 +30,16 @@ myApp.controller('adminStoryInputController',[ '$scope', '$http', function( $sco
      page_text: $scope.pageTextBinder,
      page_illustration: $scope.pageIllustrationBinder,
    }; //end objectToSend
+
+   $http({  // sends object via POST
+         method: 'POST',
+         url: '/addPage',
+         data: pageObject
+       }); //end $http
+
+       $scope.pageNumberBinder ='';  // clears input boxes
+       $scope.pageTextBinder ='';
+       $scope.pageIllustrationBinder = '';
 
  };//end addPage
 
