@@ -1,0 +1,22 @@
+<div ng-controller="readerLandingPageController">
+    <h1>readerLandingPage</h1>
+        <div ng-repeat="story in stories">
+          <h2> Story Title {{story.story_title}} Goes Here</h2>
+        </div>
+
+        <!-- <div>
+            <label>select a story
+            <select ng-model="selectStory" ng-options='x.title for x in storiesArray'></select>
+            <button ng-click="getStory()">Fetch Story</button>
+            </label>
+        </div> -->
+
+          <!-- <div>
+            There are {{story_pages.length}} pages in the story.
+          </div>
+
+          <div ng-repeat="card in theCardArray">
+              <div >{{ story.story_pages }}</div>
+          </div>     -->
+
+</div>
