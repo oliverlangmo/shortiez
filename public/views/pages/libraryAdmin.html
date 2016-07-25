@@ -8,10 +8,9 @@
 <div ng-repeat="story in stories">
   <div class="storyDiv">
 
-{{story.title}}
-<button type="button" ng-click="getAllStories()" name="button">button2</button>
+{{story.story_title}}
+<img ng-src="{{story.story_cover}}" alt="{{story.story_title}}'s cover" height="50px" />
   </div>
-  <button type="button" ng-click="getAllStories()" name="button">button3</button>
 
 
 </div>

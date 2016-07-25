@@ -5,12 +5,14 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('../strategies/user-shorties.js');
+var addStory=require('../models/addStory.js');  // requiring the addStory model
 
 // var passport = require('passport');
 var index = require('./routes/index');
 var register = require('./routes/register');
 var appGenericMain = require('./routes/appGenericMain');
 var createStory=require('./routes/storyCharPages');
+var getLibrary = require('./routes/libraryAdminRoute');
 
 app.listen(process.env.PORT || 9002, function(){ console.log("IT'S OVER 9000!!!"); });
 
@@ -32,7 +34,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', index, register, appGenericMain, createStory);
+app.use('/', index, register, appGenericMain, createStory, getLibrary);
 
 app.get('/', function(req,res){
   console.log('You Are in L');
