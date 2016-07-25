@@ -21,6 +21,10 @@ $scope.getAllStories = function(){
 }; // end getStories
 $scope.editStory= function(index){
   var path= "#adminPagesCharInput";
+  var storyToEdit = {
+    id : $rootScope.stories[index]._id
+  };
+  console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
 };
 
