@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
+var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial']);
 console.log('in controller page');
 
 myApp.config(['$routeProvider', function($routeProvider){
@@ -27,7 +27,15 @@ myApp.config(['$routeProvider', function($routeProvider){
       })
       .when('/adminPagesCharInput', {
           templateUrl: '/views/pages/adminPagesCharInput.html',
+<<<<<<< HEAD
 
+      }).when('/readerLandingPage', {
+          templateUrl: '/views/pages/readerLandingPage.html',
+=======
+      })
+      .when('/viewLibrary', {
+        templateUrl: '/views/pages/viewLibrary.html'
+>>>>>>> a05aa4c947533cc22092b60b714f9abdce8e808f
       })
       .otherwise({
       redirectTo: '/login'

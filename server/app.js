@@ -13,6 +13,8 @@ var register = require('./routes/register');
 var appGenericMain = require('./routes/appGenericMain');
 var createStory=require('./routes/storyCharPages');
 var getLibrary = require('./routes/libraryAdminRoute');
+var readerLandingPage = require('./routes/readerLandingPageRoute');
+
 
 app.listen(process.env.PORT || 9002, function(){ console.log("IT'S OVER 9000!!!"); });
 
