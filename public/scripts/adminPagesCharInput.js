@@ -32,6 +32,7 @@ function($scope, $http, $rootScope, $location, userData){
      page_number: $scope.pageNumberBinder,
      page_text: $scope.pageTextBinder,
      page_illustration: $scope.pageIllustrationBinder,
+     id : $rootScope.tempIndex
    }; //end objectToSend
    $http({  // sends object via POST
      method: 'POST',
