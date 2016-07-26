@@ -3,8 +3,7 @@ var passport = require('passport');
 var router = express.Router();
 var path = require('path');
 
-console.log('in index');
-router.post('/index',
+router.post('/login',
     passport.authenticate('local', {
         successRedirect: '/#/genericMain',
         failureRedirect: '/#/loginFail'

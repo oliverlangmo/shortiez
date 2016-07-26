@@ -1,5 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial']);
-console.log('in controller page');
+var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'xeditable']);
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -18,10 +17,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
-
       .when('/libraryAdmin', {
-          templateUrl:'/views/pages/libraryAdmin.html',
-        })
+          templateUrl: '/views/pages/libraryAdmin.html',
+      })
       .when('/adminAddStory', {
           templateUrl: '/views/pages/adminAddStory.html',
       })
@@ -32,18 +30,38 @@ myApp.config(['$routeProvider', function($routeProvider){
           templateUrl: '/views/pages/readerLandingPage.html',
       })
       .when('/viewLibrary', {
-        templateUrl: '/views/pages/viewLibrary.html'
+          templateUrl: '/views/pages/viewLibrary.html'
       })
       .otherwise({
       redirectTo: '/login'
-      });
-}]); // end $routeProvider
+    }); // end $routeProvider
+
+  myApp.run(function(editableOptions) {
+    editableOptions.theme = 'bs3';
+  }); // end editableOptions
+}]); // end myApp
 
 //-----------------------------------------  userData factory-----------------------------------------
 
-myApp.factory('userData', ['$http', '$rootScope', function($http, $rootScope){
+myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
 
   $rootScope.usersArray = [];
+  $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
+  $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
+
+  var adminCheck = function(){
+    var check = $rootScope.userAdminCheck;
+    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+      $location.path('/#/login');
+    } // end if
+  }; // end userCheck
+
+  var checkAuth = function(){
+    var check = $rootScope.userAuthCheck;
+    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+      $location.path('/#/login');
+    } // end if
+  }; // end checkAuth
 
   var getUsers = function(){
     $http({
@@ -67,6 +85,8 @@ myApp.factory('userData', ['$http', '$rootScope', function($http, $rootScope){
   }; // end randomNum
 
   return {
+    adminCheck: adminCheck,
+    checkAuth: checkAuth,
     getUsers: getUsers,
     randomId: randomId,
     randomNum: randomNum
