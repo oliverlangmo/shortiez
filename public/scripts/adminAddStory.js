@@ -3,7 +3,7 @@ myApp.controller('adminAddStoryController',
 function($scope, $http, $rootScope, $location, userData){
 
   // uncomment this if you want admins to access this page
-  userData.adminCheck();
+  // userData.adminCheck();
 
 
   $scope.addStory = function(){ // adds issue on button click
