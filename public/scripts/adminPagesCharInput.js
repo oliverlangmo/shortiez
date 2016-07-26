@@ -1,12 +1,13 @@
-myApp.controller('adminStoryInputController',[ '$scope', '$http', function( $scope, $http ){
+myApp.controller('adminStoryInputController',[ '$scope', '$http',"$rootScope", function( $scope, $http, $rootScope ){
    console.log('adminStoryInputController is loaded');
 
-   $scope.addChar = function(){ // adds issue on button click
-
+   $scope.addChar = function(index){ // adds issue on button click
+console.log(index);
     var characterObject ={  // package object to send, with inputs
       character_name: $scope.characterNameBinder,
       character_traits: $scope.characterTraitBinder,
       character_photo: $scope.characterPhotoBinder,
+      id : $rootScope.stories[index]._id
     }; //end objectToSend
 
     $http({  // sends object via POST
@@ -16,7 +17,7 @@ myApp.controller('adminStoryInputController',[ '$scope', '$http', function( $sco
         }); //end $http
 
         console.log("New Character Sent", characterObject);
-        
+
         $scope.characterNameBinder ='';  // clears input boxes
         $scope.characterTraitBinder ='';
         $scope.characterPhotoBinder = '';
