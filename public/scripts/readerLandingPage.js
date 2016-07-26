@@ -1,6 +1,7 @@
+angular.module('myApp').controller('readerLandingPageCtrl',
+['$scope', '$http', '$rootScope', '$location', 'userData',
+function ($scope, $http, $rootScope, $location, userData) {
 
-angular.module('myApp').controller('readerLandingPageCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-console.log("in readerLandingPage.js");
 
 // userData.checkAuth();
 
