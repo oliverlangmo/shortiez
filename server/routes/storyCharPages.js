@@ -27,7 +27,7 @@ router.post( '/addCharacter', function( req, res ){  // POST call
     character_photo: req.body.character_photo
   };
 
-  addStory.findOneAndUpdate({_id:"579287d62c2e099585a2503f"}, {$push: { story_characters:  characterToAdd  }}, function(err, issueResult){
+  addStory.findOneAndUpdate({_id:req.body.id}, {$push: { story_characters:  characterToAdd  }}, function(err, issueResult){
     if(err){
       console.log(err);
       res.sendStatus(500);
