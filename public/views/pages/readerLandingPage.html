@@ -1,24 +1,24 @@
-<div ng-controller="readerLandingPageCtrl" ng-init="getAllStories()">
+<div ng-controller="readerLandingPageCtrl" >
 
     <h1>readerLandingPage</h1>
 
-<select ng-model="selectStory" ng-options='story.story_title for story in getAllStories'></select>
 
-        <div ng-repeat="story in stories">
-          <img ng-src="{{story.story_cover}}" />
-          <h2> Story Title:  {{story.story_title}}  </h2>
-          <h4> There are {{story.story_pages.length}} pages in the story.</h>
+        <div> {{currentStory[0].page_text}}
+          <img ng-src="{{currentStory[0].page_illustration}}" />
+          <img ng-src="{{readerIndex.story_cover}}" />
+          <h2> Story Title:  {{readerIndex.story_title}}  </h2>
+          <h4> There are {{readerIndex.story_pages.length}} pages in the story.</h4>
 
-          <p>page 1: {{story.story_pages[0].page_text}}</p>
-            <img ng-src="{{story.story_pages[0].page_illustration}}" />
-          <p>page 2: {{story.story_pages[1].page_text}}</p>
-            <img ng-src="{{story.story_pages[1].page_illustration}}" />
-          <p>page 3: {{story.story_pages[2].page_text}}</p>
-            <img ng-src="{{story.story_pages[2].page_illustration}}" />
-          <p>page 4: {{story.story_pages[3].page_text}}</p>
-            <img ng-src="{{story.story_pages[3].page_illustration}}" />
-          <p>page 5: {{story.story_pages[4].page_text}}</p>
-            <img ng-src="{{story.story_pages[4].page_illustration}}" />
+          <p>page 1: {{currentStory[0].page_text}}</p>
+            <img ng-src="{{currentStory[0].page_illustration}}" />
+          <p>page 2: {{currentStory[1].page_text}}</p>
+            <img ng-src="{{currentStory[1].page_illustration}}" />
+          <p>page 3: {{currentStory[2].page_text}}</p>
+            <img ng-src="{{currentStory[2].page_illustration}}" />
+          <p>page 4: {{currentStory[3].page_text}}</p>
+            <img ng-src="{{currentStory[3].page_illustration}}" />
+          <p>page 5: {{currentStory[4].page_text}}</p>
+            <img ng-src="{{currentStory[4].page_illustration}}" />
           <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>
           <button type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
         </div>

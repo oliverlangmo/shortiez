@@ -4,7 +4,8 @@
 
   	      	<md-card flex="25" ng-repeat="story in stories">
               <div class="storyImages" layout-align="center center">
-              		        	<a href="#readerLandingPage"><img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover"></a>
+                            <button type="button" ng-click="selectReaderStory($index)" name="button">
+              		        	<img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover"></button>
              </div>
              <md-card-title>
 	          			<md-card-title-text>

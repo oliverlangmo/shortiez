@@ -6,10 +6,12 @@ function ($scope, $http, $rootScope, $location, userData) {
 // userData.checkAuth();
 
 $rootScope.stories = [];
+// $scope.currentStory = [];
 
-$scope.index = 0;
+$scope.pageIndex = 0;
+$scope.currentStory = $rootScope.readerIndex.story_pages;
 // $scope.myStory = $scope.story[$scope.index];
-
+console.log(' 2 index', $rootScope.readerIndex);
 event.preventDefault();
 console.log("show story in readerLandingPage");
 $scope.getAllStories = function(){
@@ -23,23 +25,25 @@ $scope.getAllStories = function(){
     }); // end http GET
 }; // end getUsers
 
+
+
 $scope.nextPage = function(){
           console.log(" next clicked");
-          $scope.index++;
-          console.log('$scope.index++;', $scope.index);
-          if( $scope.index == $scope.story.length ){
-            $scope.index = 0;
+          $scope.pageIndex++;
+          console.log('$scope.pageIndex++;', $scope.pageIndex);
+          if( $scope.pageIndex == $rootScope.stories[index].story_pages.length ){
+            $scope.pageIndex = 0;
           }
-          console.log( "in nextPage() $scope.index ", $scope.index  );
+          console.log( "in nextPage() $scope.pageIndex ", $scope.pageIndex  );
           $scope.getAllStories();//refresh page on the next 'click'
           event.preventDefault();
 
         };
         $scope.prevPage = function(){
         console.log(" prev clicked");
-          $scope.index--;
-          if( $scope.index === -1 ){
-            $scope.index = $scope.story.length - 1;
+          $scope.pageIndex--;
+          if( $scope.pageIndex === -1 ){
+            $scope.pageIndex = $rootScope.stories[index].story_pages.length - 1;
           }
           $scope.getAllStories();//refresh page on the previous 'click'
           event.preventDefault();

@@ -32,4 +32,11 @@ $rootScope.tempIndex = $rootScope.stories[index]._id;
   window.location.href = path;
 };
 
+$scope.selectReaderStory = function(index) {
+  console.log('index', index);
+  $rootScope.readerIndex = $rootScope.stories[index];
+  var path = "#readerLandingPage";
+  window.location.href=path;
+};
+
 }]);//end of libraryCtrl controller
