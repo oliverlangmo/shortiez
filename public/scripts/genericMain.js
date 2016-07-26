@@ -1,9 +1,15 @@
-angular.module('myApp')
-.controller('genericMainController',['$scope', '$http', '$uibModal', '$rootScope', 'userData',
-function($scope, $http, $uibModal, $rootScope, userData){
+angular.module('myApp').controller('genericMainController',
+['$scope', '$http', '$uibModal', '$rootScope', '$location', 'userData',
+function($scope, $http, $uibModal, $rootScope, $location, userData){
+
+  // uncomment this if you want only authorized users access this page
+  // userData.checkAuth();
+
+  $scope.user = {
+    name: 'awesome user'
+  };
 
   userData.getUsers();
-
   $scope.nameInput = '';
 
   $scope.addUser = function(){

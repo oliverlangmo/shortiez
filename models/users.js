@@ -4,8 +4,21 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 var UserSchema = new Schema({
-    username: {type: String, required: true, index: {unique: true}},
-    password: {type: String, required: true}
+    username: {
+      type: String,
+      required: true,
+      min: 3,
+      max: 18,
+      index: {unique: true}
+    },
+    password: {
+      type: String,
+      min: 3,
+      max: 18,
+      required: true
+    },
+    auth: false,
+    admin: false
 }); // end UserSchema
 
 // Called before adding a new user to the DB. Encrypts password.

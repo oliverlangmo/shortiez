@@ -9,8 +9,6 @@ var mongoose = require('mongoose');  // require mongoose for mongo db
 
 var router = express.Router();
 
-console.log("hit route");
-
 router.post( '/addStory', function( req, res ){  // POST call
   var storyToAdd={  // adds record from input
     story_title: req.body.story_title,
