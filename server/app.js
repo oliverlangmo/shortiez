@@ -7,16 +7,16 @@ var session = require('express-session');
 var passport = require('../strategies/user-shorties.js');
 var addStory=require('../models/addStory.js');  // requiring the addStory model
 
-// var passport = require('passport');
-var index = require('./routes/index');
+// routes redirects
+var login = require('./routes/login');
+var logout = require('./routes/logout');
 var register = require('./routes/register');
 var appGenericMain = require('./routes/appGenericMain');
 var createStory=require('./routes/storyCharPages');
 var getLibrary = require('./routes/libraryAdminRoute');
 var readerLandingPage = require('./routes/readerLandingPageRoute');
 
-
-app.listen(process.env.PORT || 9002, function(){ console.log("IT'S OVER 9000!!!"); });
+app.listen(process.env.PORT || 9002, function(){ console.log("Running on local port 9002..."); });
 
 app.use(express.static('public'));
 
@@ -36,10 +36,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', index, register, appGenericMain, createStory, getLibrary);
+app.use('/', login, logout, register, appGenericMain, createStory, getLibrary, readerLandingPage);
 
 app.get('/', function(req,res){
-  console.log('You Are in L');
+  console.log('URL hit');
   var file = req.params[0] || 'views/index.html';
   res.sendFile(path.join(__dirname, '/public/', file));
 }); // end app.get base URL

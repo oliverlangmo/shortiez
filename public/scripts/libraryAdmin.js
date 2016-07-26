@@ -1,6 +1,11 @@
+angular.module('myApp').controller('libraryCtrl',
+['$scope', '$http', '$rootScope', '$location', 'userData',
+function ($scope, $http, $rootScope, $location, userData) {
 
-angular.module('myApp').controller('libraryCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-console.log("in libraryadmin.js");
+// uncomment this if you want only authorized users access this page
+userData.checkAuth();
+
+
 $rootScope.stories = [];
 // var storyObj = {
 //   title: $scope.story_title,

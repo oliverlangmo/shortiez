@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-  </head>
-  <body>
-    <h3>Login</h3>
-    <form action="/index" method="post">
-      <div>
-        <label for="username">Username</label>
-      <input type="text" name="username" id="username"placeholder="Login">
+<div ng-controller="loginController">
+  <h3>Login</h3>
+  <div id="loginBox">
+    <form action="/login" method="post">
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" ng-model="userNameInfo" id="username" placeholder="Login">
     </div>
     <div>
       <label for="password">Password</label>
-    <input type="text" name="password" id="password"placeholder="Password">
+      <input type="text" name="password" id="password" placeholder="Password">
     </div>
     <div>
-      <a href="/register">Register</a>
-      <input type="submit" name="name" value="Log In">
+      <p>New user? Click register!</p>
+      <a href="/#/register">Register</a>
+      <input ng-click="setPrivileges()" type="submit" name="name" value="Log In">
     </div>
     </form>
-  </body>
-</html>
+  </div> <!-- end loginBox -->
+</div>

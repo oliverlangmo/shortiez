@@ -7,8 +7,6 @@ var addStory=require('../../models/addStory.js');  // requiring the addStory mod
 
 var router = express.Router();
 
-console.log("hit library admin route");
-
 router.get('/getStories', function (req, res) {
   console.log('in /getStories');
   addStory.find().then(function(data){

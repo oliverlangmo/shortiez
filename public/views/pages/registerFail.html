@@ -1,1 +1,22 @@
-<h3>register failed</h3>
+<div ng-controller="loginController">
+  <h3>Register fail</h3>
+  <div id="registerBox">
+
+    <p id="registerFailPara">User name already taken, please try again.</p>
+
+    <form action="/register" method="post">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <p>Already a user? Please login!</p>
+      <a href="/login">Login</a>
+      <input ng-click="setPrivileges()" type="submit" value="Register">
+    </div>
+  </div> <!-- end register -->
+</div>

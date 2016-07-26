@@ -4,16 +4,33 @@ var path = require('path');
 var router = express.Router();
 
 var TempUser = require('../../models/tempUser');
+var User = require('../../models/users');
+
+router.get('/checkUser', function(req, res){
+  User.find().then(function(data){
+  res.send(data);
+  }); // end User.find
+}); //end checkUser
+
+router.post('/getUserCheck', function(req, res){
+  var findUser= req.body.username;
+  User.findOne({username: findUser}, function(err, data) {
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.send(data);
+    } // end else
+  }); // User.findOne
+}); // end getUserCheck
 
 router.get('/getUsers', function(req, res){
-  console.log('in /getUsers');
   TempUser.find().then(function(data){
   res.send(data);
   }); // end TempUser.find
 }); //end getTempUser
 
 router.post('/addTempUser', function(req, res) {
-  console.log('in /addTempUser');
   var newTempUser = new TempUser({
     name: req.body.name
   }); // end newTempUser object
@@ -29,7 +46,6 @@ router.post('/addTempUser', function(req, res) {
 });//end addTempUser
 
 router.post('/removeTempUser', function(req, res){
-  console.log('in /removeTempUser');
   var tempUserId = req.body.id;
   TempUser.findOne({_id: tempUserId}, function(err, TempUser) {
     if(err){
@@ -44,7 +60,6 @@ router.post('/removeTempUser', function(req, res){
 });// end addTempUser
 
 router.post('/updateTempUser', function(req, res){
-  console.log('in /updateTempUser');
   var tempUserId = req.body.id;
   TempUser.findOne({_id: tempUserId}, function(err, TempUser) {
     if(err){
