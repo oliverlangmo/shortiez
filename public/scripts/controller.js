@@ -48,7 +48,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-
+  $rootScope.tempIndex = "";
   var adminCheck = function(){
     var check = $rootScope.userAdminCheck;
     if(check === false || check === 'false' || check === undefined || check === null || check === ''){

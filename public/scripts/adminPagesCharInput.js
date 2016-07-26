@@ -11,7 +11,7 @@ function($scope, $http, $rootScope, $location, userData){
       character_name: $scope.characterNameBinder,
       character_traits: $scope.characterTraitBinder,
       character_photo: $scope.characterPhotoBinder,
-      id : $rootScope.stories[index]._id
+      id : $rootScope.tempIndex
     }; //end objectToSend
     $http({  // sends object via POST
           method: 'POST',
