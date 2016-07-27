@@ -77,6 +77,7 @@ function($scope, $http, $uibModal, $rootScope, $location, userData){
     $scope.newText = someText.replace(regExp, $scope.newWord);
   };
 
+
 }]); // end controller 'genericMainController'
 
 //-----------------------------------------  modalController -----------------------------------------
