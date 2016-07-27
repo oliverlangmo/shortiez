@@ -40,7 +40,6 @@ console.log(req.body);
     }
   }); //end findOneAndUpdate
 }); //end character post
-  event.preventDefault();
 router.post( '/addPage', function( req, res ){  // POST call
   var pageToAdd={  // adds record from input
     page_number: req.body.page_number,
@@ -59,7 +58,6 @@ router.post( '/addPage', function( req, res ){  // POST call
     }
   }); //end findOneAndUpdate
 }); //end page post
-  event.preventDefault();
 
 
 module.exports = router;

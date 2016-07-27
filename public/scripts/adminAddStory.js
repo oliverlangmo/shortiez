@@ -21,6 +21,6 @@ function($scope, $http, $rootScope, $location, userData){
       $scope.storyTitleBinder ='';  // clears input boxes
       $scope.storyCoverBinder ='';
   };//end addStory
-  event.preventDefault();
+
 
 }]);
