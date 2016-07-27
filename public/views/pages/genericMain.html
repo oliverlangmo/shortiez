@@ -21,8 +21,9 @@
       <input type="text" id="oldWord" ng-model="oldWord" placeholder=" Word to Replace ">
       <input type="text" id="newWord" ng-model="newWord" placeholder=" New Word ">
       <button ng-click="findReplace()"> Find and Replace </button><br><br>
-
-      <a href="#" editable-text="user.name">{{ user.name || 'empty' }}</a><br><br>
+<input type="text" id='tester'name="name" value="" placeholder="swear here">
+<button type="button" ng-click='addUser()' name="button">Check</button>
+      <a href="#"  editable-text="user.name">{{ user.name || 'empty' }}</a><br><br>
 
       <p> {{ newText }} </p><br>
       <p>
