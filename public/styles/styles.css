@@ -8,3 +8,44 @@
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
 }
+body{
+  background-color: #f7f3ee;
+  background-image: url('../views/images/concrete_seamless.png')
+}
+.navbar-default{
+  background-color: #134d10;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+#login{
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.mainLink{
+  color: white;
+}
+.libraryAdmin{
+  color: white;
+}
+.adminAdd{
+  color: white;
+}
+.libraryUser {
+  color: white;
+}
+.logout {
+  float: right;
+  padding-right: 20px;
+  color: white;
+}
+.main{
+  text-align: center;
+}
+.loginCont {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

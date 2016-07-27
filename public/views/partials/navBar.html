@@ -1,8 +1,10 @@
 <div ng-controller="loginController">
-  <a href="#login">Login |</a>
-  <a href="#genericMain">Main |</a>
-  <a href="#libraryAdmin">Admin Library |</a>
-  <a href="#adminAddStory">Admin AddStory |</a>
-  <a href="#viewLibrary">Reader Library |</a>
-  <button id="logoutBtn" ng-click="openLogout()">Logout</button>
+  <div class="navbar navbar-default">
+  <tab><a id="login" class="login" href="#login">Login |</a></tab>
+  <tab><a class="mainLink" href="#genericMain">Main |</a></tab>
+  <a class="libraryAdmin" href="#libraryAdmin">Admin Library |</a>
+  <a class="adminAdd" href="#adminAddStory">Admin AddStory |</a>
+  <a class="libraryUser" href="#viewLibrary">Reader Library |</a>
+  <tab class="logout" id="logoutBtn" ng-click="openLogout()">Logout</tab>
+</div>
 </div>
