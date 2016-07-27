@@ -9,7 +9,8 @@ function($scope, $http, $rootScope, $location, userData){
    $scope.addChar = function(){ // adds issue on button click
     var characterObject ={  // package object to send, with inputs
       character_name: $scope.characterNameBinder,
-      character_traits: $scope.characterTraitBinder,
+      character_traits: [ $scope.characterTraitBinderOne, $scope.characterTraitBinderTwo, $scope.characterTraitBinderThree],
+      character_bio: $scope.characterBioBinder,
       character_photo: $scope.characterPhotoBinder,
       id : $rootScope.tempIndex
     }; //end objectToSend
@@ -22,7 +23,10 @@ function($scope, $http, $rootScope, $location, userData){
 
 
         $scope.characterNameBinder ='';  // clears input boxes
-        $scope.characterTraitBinder ='';
+        $scope.characterTraitBinderOne ='';
+        $scope.characterTraitBinderTwo ='';
+        $scope.characterTraitBinderThree ='';
+        $scope.characterBioBinder =''; 
         $scope.characterPhotoBinder = '';
   };//end addChar
 

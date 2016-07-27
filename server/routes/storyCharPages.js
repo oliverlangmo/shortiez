@@ -24,6 +24,7 @@ router.post( '/addCharacter', function( req, res ){  // POST call
   var characterToAdd={  // adds record from input
     character_name: req.body.character_name,
     character_traits: req.body.character_traits,
+    character_bio: req.body.character_bio,
     character_photo: req.body.character_photo,
     id : req.body.id
   };
@@ -39,7 +40,7 @@ console.log(req.body);
     }
   }); //end findOneAndUpdate
 }); //end character post
-
+  event.preventDefault();
 router.post( '/addPage', function( req, res ){  // POST call
   var pageToAdd={  // adds record from input
     page_number: req.body.page_number,
@@ -58,7 +59,7 @@ router.post( '/addPage', function( req, res ){  // POST call
     }
   }); //end findOneAndUpdate
 }); //end page post
-
+  event.preventDefault();
 
 
 module.exports = router;

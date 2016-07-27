@@ -4,3 +4,7 @@
   overflow: hidden;
   display: block;
 }
+@font-face {
+    font-family: 'blowbrush';
+    src: url(blowbrush.ttf);
+}
