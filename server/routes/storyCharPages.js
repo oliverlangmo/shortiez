@@ -12,6 +12,7 @@ var router = express.Router();
 router.post( '/addStory', function( req, res ){  // POST call
   var storyToAdd={  // adds record from input
     story_title: req.body.story_title,
+    story_description: req.body.story_description,
     story_cover: req.body.story_cover
   };
   console.log(storyToAdd, "storyToAdd");
