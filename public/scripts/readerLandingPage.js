@@ -1,53 +1,37 @@
-angular.module('myApp').controller('readerLandingPageCtrl',
-['$scope', '$http', '$rootScope', '$location', 'userData',
+angular.module('myApp').controller('readerLandingPageCtrl', ['$scope', '$http', '$rootScope', '$location', 'userData',
 function ($scope, $http, $rootScope, $location, userData) {
-
 
 // userData.checkAuth();
 
 $rootScope.stories = [];
-// $scope.currentStory = [];
-
+$scope.myStory = [];
 $scope.pageIndex = 0;
-$scope.currentStory = $rootScope.readerIndex.story_pages;
-// $scope.myStory = $scope.story[$scope.index];
-console.log(' 2 index', $rootScope.readerIndex);
-event.preventDefault();
-console.log("show story in readerLandingPage");
-$scope.getAllStories = function(){
-  console.log("button clicked");
-  $http({
-    method: 'GET',
-    url: '/getStories',
-    }).then(function(response){
-      $rootScope.stories = response.data;
-      console.log('looking for stories ',response.data);
-    }); // end http GET
-}; // end getUsers
 
+$scope.myStoryLoad = function (){
+  $scope.currentStory = $rootScope.readerIndex.story_pages;
+  $scope.myStory = $scope.currentStory[$scope.pageIndex];
+};//end myStoryLoad()
 
-
-$scope.nextPage = function(){
+    $scope.nextPage = function(){
           console.log(" next clicked");
           $scope.pageIndex++;
           console.log('$scope.pageIndex++;', $scope.pageIndex);
-          if( $scope.pageIndex == $rootScope.stories[index].story_pages.length ){
+          if( $scope.pageIndex == $scope.currentStory.length ){
             $scope.pageIndex = 0;
-          }
+          }//end if
           console.log( "in nextPage() $scope.pageIndex ", $scope.pageIndex  );
-          $scope.getAllStories();//refresh page on the next 'click'
+          $scope.myStoryLoad();
           event.preventDefault();
+        };//end nextPage()
 
-        };
         $scope.prevPage = function(){
         console.log(" prev clicked");
           $scope.pageIndex--;
           if( $scope.pageIndex === -1 ){
-            $scope.pageIndex = $rootScope.stories[index].story_pages.length - 1;
-          }
-          $scope.getAllStories();//refresh page on the previous 'click'
+            $scope.pageIndex = $scope.currentStory.length - 1;
+          }//end if
+          $scope.myStoryLoad();
           event.preventDefault();
-        };
-
+        };//end prevPage()
 
 }]);//end of libraryCtrl controller
