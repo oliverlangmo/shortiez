@@ -1,11 +1,17 @@
-angular.module('myApp').controller('readerLandingPageCtrl', ['$scope', '$http', '$rootScope', '$location', 'userData',
-function ($scope, $http, $rootScope, $location, userData) {
+angular.module('myApp').controller('readerLandingPageCtrl', ['$scope', '$http', '$rootScope', '$location', 'userData', '$mdSidenav',
+function ($scope, $http, $rootScope, $location, userData, $mdSidenav) {
 
 // userData.checkAuth();
 
 $rootScope.stories = [];
 $scope.myStory = [];
+$scope.characters=[];
 $scope.pageIndex = 0;
+
+
+// $scope.openLeftMenu = function() {
+//     $mdSidenav('left').toggle();
+//   };//end sidenav
 
 $scope.myStoryLoad = function (){
   $scope.currentStory = $rootScope.readerIndex.story_pages;

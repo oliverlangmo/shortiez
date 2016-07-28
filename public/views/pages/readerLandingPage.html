@@ -1,5 +1,26 @@
 <div ng-controller="readerLandingPageCtrl" ng-init="myStoryLoad()">
+  <div id="wrapper">
 
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Characters
+                    </a>
+                </li>
+                <li>
+                    <div class="charIcon">
+                      {{myStory.story_characters.character_name}}
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+
+            </ul>
+        </div>
+         <div id="page-content-wrapper">
     <h1>My Story</h1>
 
       <h2> Story Title:  {{readerIndex.story_title}}  </h2>
@@ -13,5 +34,5 @@
           <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>
             <div> page {{myStory.page_number}} </div>
           <button type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
-
+        </div>
 </div>
