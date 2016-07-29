@@ -169,11 +169,9 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
     $rootScope.cancel();
   };
 
-<<<<<<< HEAD
+
 //------------------------------------------------------------------------------------------------------------
 
-=======
->>>>>>> 6e187e9d03f85271f2e947d037455b255ac06fcb
 
 }]); // end controller 'genericMainController'
 

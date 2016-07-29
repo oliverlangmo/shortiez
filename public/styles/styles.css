@@ -4,10 +4,6 @@
   overflow: hidden;
   display: block;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> f9c24221cf1ab209a448d35c0da89ecd098ce968
 
 #adminTestBox {
   height: 100px;
@@ -34,9 +30,9 @@
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
 }
-body{
+body, html{
   background-color: #f7f3ee;
-  background-image: url('../views/images/concrete_seamless.png')
+  background-image: url('../views/images/concrete_seamless.png');
 }
 .navbar-default{
   background-color: #134d10;
