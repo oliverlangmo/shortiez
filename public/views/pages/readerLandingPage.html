@@ -21,18 +21,23 @@
             </ul>
         </div>
          <div id="page-content-wrapper">
+
+           <div class="container">
+             <div class="row">
+                 <div class="col-xs-8">
     <h1>My Story</h1>
 
       <h2> Story Title:  {{readerIndex.story_title}}  </h2>
         <img ng-src="{{readerIndex.story_cover}}" height='100px'/>
+        <div> page {{myStory.page_number}} </div>
+        <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>
+        <button type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
         <h4> There are {{readerIndex.story_pages.length}} pages in the story.</h4>
 
             <div> {{myStory.page_text}} </div>
               <img ng-src="{{myStory.page_illustration}}" height='100px'/>
             <br>
 
-          <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>
-            <div> page {{myStory.page_number}} </div>
-          <button type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
+        </div>
         </div>
 </div>

@@ -93,7 +93,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-  $scope.getAllStories = function(){
+   var getAllStories = function(){
     console.log("button clicked");
     $http({
       method: 'GET',
