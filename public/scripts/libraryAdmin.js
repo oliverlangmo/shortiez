@@ -6,6 +6,8 @@ function ($scope, $http, $rootScope, $location, userData) {
 // uncomment this if you want only authorized users access this page
 // userData.checkAuth();
 
+userData.getAllStories();
+
 $scope.addStory = function(){ // adds issue on button click
   console.log("addStory hit");
   var storyToCreate ={  // package object to send, with inputs
@@ -34,17 +36,9 @@ $rootScope.stories = [];
 
 event.preventDefault();
 console.log("getting stories");
-//example GET for appending stories into library
-$scope.getAllStories = function(){
-  console.log("button clicked");
-  $http({
-    method: 'GET',
-    url: '/getStories',
-    }).then(function(response){
-      $rootScope.stories = response.data;
-      console.log(response.data);
-    }); // end http GET
-}; // end getStories
+
+
+
 $scope.editStory= function(index){
   var path= "#adminPagesCharInput";
 $rootScope.tempIndex = $rootScope.stories[index]._id;

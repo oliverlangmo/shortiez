@@ -93,12 +93,24 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
+  $scope.getAllStories = function(){
+    console.log("button clicked");
+    $http({
+      method: 'GET',
+      url: '/getStories',
+      }).then(function(response){
+        $rootScope.stories = response.data;
+        console.log(response.data);
+      }); // end http GET
+  }; // end getStories
+
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
     getUsers: getUsers,
     randomId: randomId,
-    randomNum: randomNum
+    randomNum: randomNum,
+    getAllStories: getAllStories
   }; // end return
 
 }]);
