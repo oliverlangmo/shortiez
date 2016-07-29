@@ -26,7 +26,8 @@
 
 .wordBtn:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
-=======
+}
+
 @font-face {
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
