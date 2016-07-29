@@ -17,6 +17,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
+      .when('/adminTest', {
+        templateUrl: '/views/pages/adminTest.html',
+      })
       .when('/libraryAdmin', {
           templateUrl: '/views/pages/libraryAdmin.html',
       })
@@ -31,6 +34,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       })
       .when('/viewLibrary', {
           templateUrl: '/views/pages/viewLibrary.html'
+      })
+      .when('/textPopup', {
+          templateUrl: '/views/pages/textPopup.html'
       })
       .otherwise({
       redirectTo: '/login'
@@ -48,6 +54,8 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
+  $rootScope.newTextArray = [];
+  $rootScope.wordByElementId = '';
 
   var adminCheck = function(){
     var check = $rootScope.userAdminCheck;
