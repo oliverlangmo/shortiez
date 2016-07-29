@@ -56,23 +56,23 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.newTextArray = [];
   $rootScope.wordByElementId = '';
-  $rootScope.tempIndex = "";
+  $rootScope.tempIndex = '';
 
-  var adminCheck = function(){
+  var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
     if(check === false || check === 'false' || check === undefined || check === null || check === ''){
       $location.path('/#/login');
     } // end if
   }; // end userCheck
 
-  var checkAuth = function(){
+  var checkAuth = function() {
     var check = $rootScope.userAuthCheck;
     if(check === false || check === 'false' || check === undefined || check === null || check === ''){
       $location.path('/#/login');
     } // end if
   }; // end checkAuth
 
-  var getUsers = function(){
+  var getUsers = function() {
     $http({
       method: 'GET',
       url: '/getUsers', }).then(function(response){
@@ -80,7 +80,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       }); // end http GET
   }; // end getUsers
 
-  var randomId = function(){
+  var randomId = function() {
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var idLength = 9;

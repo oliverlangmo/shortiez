@@ -3,7 +3,7 @@ angular.module('myApp').controller('libraryCtrl',
 function ($scope, $http, $rootScope, $location, userData) {
 
 // uncomment this if you want only authorized users access this page
-// userData.checkAuth();
+userData.checkAuth();
 
 
 $rootScope.stories = [];
