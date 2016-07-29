@@ -50,6 +50,9 @@ padding-bottom: 30px;
   color: white;
   padding-left: 5px;
   padding-right: 5px;
+  font-family: 'Comic Sans MS';
+  /*font-family: 'blowbrush';*/
+  font-size: 30px;
 }
 
 #storyInput{
@@ -60,20 +63,30 @@ padding-bottom: 30px;
 }
 .mainLink{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .libraryAdmin{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .adminAdd{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .libraryUser {
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .logout {
   float: right;
   padding-right: 20px;
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .main{
   text-align: center;
@@ -112,4 +125,9 @@ textarea
 .charIcon{
   position: fixed;
   text-align: center;
+}
+
+.title{
+  font-family: 'blowbrush';
+font-size: 100px;
 }
