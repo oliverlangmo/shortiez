@@ -6,18 +6,19 @@ function($scope, $http, $rootScope, $location, userData){
   //  userData.adminCheck();
   userData.getAllStories();
 console.log($rootScope.tempIndex, "tempIndex");
-  $rootScope.stories = [];
+  // $rootScope.stories = [];
   // $scope.myStory = [];
   $scope.characters=[];
-  $scope.pageIndex = 0;
+  $scope.pages = [];
 
   $scope.adminStoryLoad = function (){
-    $scope.currentStory = $rootScope.storyIndex.story_pages;
-    // $scope.myStory = $scope.currentStory[$scope.pageIndex];
+    // $scope.currentStory = $rootScope.storyIndex.story_pages;
     $scope.characters = $rootScope.storyIndex.story_characters;
-    console.log("adminStoryLoad hit");
+    $scope.pages = $rootScope.storyIndex.story_pages;
+    // console.log("adminStoryLoad hit");
     console.log($rootScope.storyIndex, "storyIndex");
-    console.log($scope.characters);
+    console.log($scope.characters, "characters");
+    console.log($scope.pages, "pages");
   };//end adminStoryLoad()
 
    $scope.addChar = function(){ // adds issue on button click
