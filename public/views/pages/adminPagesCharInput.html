@@ -19,7 +19,10 @@
 <h2>Story Input</h2>
 <input type="text" name="pageNumber" ng-model="pageNumberBinder" value="" placeholder="Page Number">
 <br>
-<input type="text" name="pageText" ng-model="pageTextBinder" value="" placeholder="Page Text">
+<!-- <input type="text" name="pageText" ng-model="pageTextBinder" value="" placeholder="Page Text"> -->
+
+<textarea id="textareaEdit" ng-model="pageTextBinder" placeholder="Page Text"></textarea>
+<!-- <span class="valueItems">  {{textareaValue}}</span> -->
 <br>
 <input type="text" name="pageIllustration" ng-model="pageIllustrationBinder" value="" placeholder="Illustration">
 <button type="submit" name="submitCharButton" ng-click= "addPage()">Submit Page</button>

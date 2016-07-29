@@ -53,3 +53,9 @@ padding-bottom: 30px;
   float: left;
   color: blue;
 }
+textarea
+    {
+      width: 800px;
+      height: 300px;
+      vertical-align: middle;
+    }
