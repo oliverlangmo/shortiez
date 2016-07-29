@@ -16,6 +16,7 @@ $scope.pageIndex = 0;
 $scope.myStoryLoad = function (){
   $scope.currentStory = $rootScope.readerIndex.story_pages;
   $scope.myStory = $scope.currentStory[$scope.pageIndex];
+  $scope.characters = $rootScope.readerIndex.story_characters;
 };//end myStoryLoad()
 
     $scope.nextPage = function(){
