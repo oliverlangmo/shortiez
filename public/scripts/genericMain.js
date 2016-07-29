@@ -5,7 +5,6 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   // uncomment this if you want only authorized users access this page
   // userData.checkAuth();
 
-  userData.getUsers();
   $scope.nameInput = '';
 
   $scope.addUser = function(){
@@ -68,29 +67,25 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
 //---------------------------------------------------  TEST  -------------------------------------------------
 
-  $scope.tempTextArray = [];
-  $scope.checkedArray = [];
-  $scope.checkShow = false;
+  $scope.tempTextArray = [];  //   == array that holds all words as checked boxes
+  $scope.checkedArray = [];  //   == array that only holds words that have been checked
 
   $scope.captureStoryInput = function() {
     $scope.tempTextArray = [];
-    $scope.storyShow = true;
-    var currentSentence = $scope.testAreaText;
-    if (currentSentence === ''){
-      window.alert('Text field can not be left empty.\ Please enter a story.'); // <--  DOESNT WORK.... GAH!!!!  >:(
+    $rootScope.saveStoryArray = [];
+    $scope.tempTextArray = $scope.testAreaText;
+    if ($scope.tempTextArray === ''){
+      window.alert('Text field can not be left empty.\n Please enter a story.'); // <--  DOESNT WORK.... GAH!!!!  >:(
     } else {
-      $scope.stringLength = currentSentence.split(/[^\s]+/).length - 1;
-      currentSentence = currentSentence.split(' ');
+      $scope.stringLength = $scope.tempTextArray.split(/[^\s]+/).length - 1;
+      $scope.tempTextArray = $scope.tempTextArray.split(' ');
       for (var i = 0; i < $scope.stringLength; i++) { // for loop 1
-        var taggedWord = '<input type="checkbox" onclick="setWordTrue('+ i +')" id="wordNum'+ i +'">' + currentSentence[i] + ' ';
-        $scope.tempTextArray.push(taggedWord);
-        currentSentence.splice(i, 0);
+        var taggedWord = '<input type="checkbox" onclick="setWordTrue('+ i +')" id="wordNum'+ i +'">' + $scope.tempTextArray[i] + ' ';
+        $scope.tempTextArray.splice(i, 1, taggedWord);
       } // end for loop 1
     } // end else
     var textDiv = angular.element(document.querySelector('#adminStory'));
-    var userDiv = angular.element(document.querySelector('#userStory'));
     textDiv.empty();
-    userDiv.empty();
     var textArrayDisplay = $scope.tempTextArray.join('');
     textDiv.append(textArrayDisplay);
   }; // end captureStoryInput
@@ -108,7 +103,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
     } // end else/if
   }; // end setWordTrue
 
-  $scope.showParsedStory = function() {
+  $scope.saveStory = function() {
     var arrayLength = $scope.tempTextArray.length;
     for (var i = 0; i < arrayLength; i++) { // for loop 1
       var num = i;
@@ -122,12 +117,17 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       var parsedWord = $scope.tempTextArray[num].replace('<input type="checkbox" onclick="setWordTrue('+ num +')" id="wordNum'+ num +'">', '').trim();
       $rootScope.newTextArray.push(parsedWord);
     } // end for loop 1
+    $rootScope.saveStoryArray = $rootScope.newTextArray;
+    var textDiv = angular.element(document.querySelector('#adminStory'));
     var parsedText = angular.element(document.querySelector('#userStory'));
-    var parsedTextArrayDisplay = $rootScope.newTextArray.join(' ');
+    textDiv.empty();
+    var parsedTextArrayDisplay = $rootScope.saveStoryArray.join(' ');
     parsedText.append(parsedTextArrayDisplay);
-    $rootScope.newTextArray = [];   // <--- DO NOT TOUCH!!!
-    $scope.tempTextArray = [];     // <--- DO NOT TOUCH!!!
-    $scope.checkedArray = [];   // <--- DO NOT TOUCH!!!
+    $rootScope.newTextArray = [];
+    $scope.tempTextArray = [];
+    $scope.checkedArray = [];
+    $scope.testAreaText = '';
+    $scope.stringLength = '';
   }; // end showParsedStory
 
   openTextPopup = function(num) {
@@ -145,10 +145,10 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   $scope.submitChange = function (){
     var num = $rootScope.tempIdNum;
     var newTaggedWord = '<button class="wordBtn" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
-    $rootScope.newTextArray.splice((num), 1, newTaggedWord);
+    $rootScope.saveStoryArray.splice((num), 1, newTaggedWord);
     var parsedText = angular.element(document.querySelector('#userStory'));
     parsedText.empty();
-    var parsedTextArrayDisplay = $rootScope.newTextArray.join(' ');
+    var parsedTextArrayDisplay = $rootScope.saveStoryArray.join(' ');
     parsedText.append(parsedTextArrayDisplay);
     $rootScope.cancel();
   };

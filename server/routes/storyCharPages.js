@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');  // require bodyparser for POST calls
-var addStory=require('../../models/addStory.js');  // requiring the addStory model
+var addStory = require('../../models/addStory.js');  // requiring the addStory model
 var mongoose = require('mongoose');  // require mongoose for mongo db
 
 // var appGenericMain = require('../../models/appGenericMain');
