@@ -11,11 +11,17 @@
                 </li>
                 <li>
                     <div class="charIcon">
-                      {{characters.story_characters.character_name}}
+                      <div ng-repeat="character in characters">
+                      <img ng-src="{{character.character_photo}}" height='100px' />
+                      <br>
+                      {{character.character_name}}
+                      <p>
+                      Traits:
+                      {{character.character_traits}}
+                    </p>
+
                     </div>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
+                    </div>
                 </li>
 
             </ul>
@@ -28,8 +34,12 @@
         <h4> There are {{readerIndex.story_pages.length}} pages in the story.</h4>
 
             <div> {{myStory.page_text}} </div>
+
               <img ng-src="{{myStory.page_illustration}}" height='100px'/>
-              <div>{{myStory.story_characters.character_name}}</div>
+              <!-- <div ng-repeat="character in characters">{{character.character_name}}
+              <img ng-src="{{character.character_photo}}" height='100px' />
+            </div> -->
+
             <br>
 
           <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>

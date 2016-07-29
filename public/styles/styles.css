@@ -30,10 +30,14 @@
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
 }
-body{
+body, html{
   background-color: #f7f3ee;
-  background-image: url('../views/images/concrete_seamless.png');
+  /*background-image: url('../views/images/concrete_seamless.png');*/
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100%;
 }
+
 .navbar-default{
   background-color: #134d10;
 padding-top: 30px;
@@ -101,3 +105,8 @@ textarea
       height: 300px;
       vertical-align: middle;
     }
+
+.charIcon{
+  position: fixed;
+  text-align: center;
+}
