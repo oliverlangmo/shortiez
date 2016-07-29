@@ -4,6 +4,29 @@
   overflow: hidden;
   display: block;
 }
+<<<<<<< HEAD
+
+#adminTestBox {
+  height: 100px;
+  width: 700px;
+  overflow: auto;
+}
+
+.wordBtn {
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+
+.wordBtn:hover {
+  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
+=======
 @font-face {
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
@@ -48,4 +71,9 @@ padding-bottom: 30px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.sideNav {
+  float: left;
+  color: blue;
+>>>>>>> 6e187e9d03f85271f2e947d037455b255ac06fcb
 }

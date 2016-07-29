@@ -1,0 +1,19 @@
+<div ng-controller="genericMainController">
+  <div class="modal-header">
+    <h3 class="modal-title">Change Text</h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="changeTextBox">
+      <div>
+        <input type="text" name="name" ng-model="newWord">
+        <br><p>{{wordByElementId}}</p>
+      </div>
+    </div> <!-- end changeTextBox -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button class="btn-primary" ng-click="submitChange()">Submit</button>
+    <button class="btn-warning" ng-click="cancel()">Cancel</button>
+  </div> <!-- end modal-footer -->
+</div> <!-- end genericMainController -->
