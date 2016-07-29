@@ -1,6 +1,7 @@
 <h1>Add Characters and Pages to Story</h1>
 
 <div ng-controller='adminStoryInputController'>
+  Title: {{storyIndex.story_title}}
   <h2>Character Input</h2>
   <input type="text" name="charName" ng-model="characterNameBinder" value="" placeholder="Character Name">
   <br>
@@ -16,20 +17,23 @@
   <br>
   <button type="submit" name="submitCharButton" ng-click= "addChar($index)">Submit Character</button>
 
-  <div class='md-padding' layout="row" layout-wrap >
-        <md-card style="width: 400px;" ng-repeat="story in stories">
-          <md-card-content>
-          <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
+Current Characters:
+  <div ng-init= "adminStoryLoad()">
+    <div class='md-padding' layout="row" layout-wrap >
+          <md-card style="width: 400px;" ng-repeat="character in characters">
+            <md-card-content>
+            <img ng-src="{{character.character_photo}}" class="md-card-image" alt="{{character.character_name}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
 
-            <h2>{{story.story_title}}</h2>
-            <p>{{story.story_description}}</p>
+              <h2>{{character.character_name}}</h2>
+              <p>{{character.character_bio}}</p>
 
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button ng-click="editCharacter($index)">Edit Character</md-button>
-          </div>
-          </md-card-content>
-        </md-card>
-    </div>
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button ng-click="editCharacter($index)">Edit Character</md-button>
+            </div>
+            </md-card-content>
+          </md-card>
+      </div>
+  </div>
 
 
   <h2>Story Input</h2>
