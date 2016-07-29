@@ -5,10 +5,6 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   // uncomment this if you want only authorized users access this page
   // userData.checkAuth();
 
-  $scope.user = {
-    name: 'awesome user'
-  };
-
   userData.getUsers();
   $scope.nameInput = '';
 
@@ -70,23 +66,11 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       ); // end http
   }; // end updateUser
 
-  // $scope.findReplace = function(){
-  //   var someText = $scope.storyInput;
-  //   var someWord = $scope.oldWord;
-  //   var regExp = new RegExp(someWord, 'gi');
-  //   $scope.newText = someText.replace(regExp, $scope.newWord);
-  // };
-
 //---------------------------------------------------  TEST  -------------------------------------------------
 
   $scope.tempTextArray = [];
   $scope.checkedArray = [];
   $scope.checkShow = false;
-  // $rootScope.wordToChange = '';
-
-  RegExp.escape = function(word) {
-    return word.replace(/[-[\]{}()*+!<=:?.\/\\^$|#\s,]/g, '\\$&');
-  }; // end RegExp.escape
 
   $scope.captureStoryInput = function() {
     $scope.tempTextArray = [];
@@ -96,24 +80,23 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       window.alert('Text field can not be left empty.\ Please enter a story.'); // <--  DOESNT WORK.... GAH!!!!  >:(
     } else {
       $scope.stringLength = currentSentence.split(/[^\s]+/).length - 1;
-      for (var i = 0; i < $scope.stringLength ; i++) { // for loop 1
-        $scope.tempTextSpotOne = currentSentence.split(' ').slice(0,1).join('').trim();
-        $scope.tempTextSpotOne = RegExp.escape($scope.tempTextSpotOne);
-        var regExp = new RegExp($scope.tempTextSpotOne, 'i');
-        $scope.newString = currentSentence.replace(regExp, '').trim();
-        currentSentence = $scope.newString;
-        var taggedWord = '<input type="checkbox" onclick="setWordTrue('+ i +')" id="wordNum'+ i +'">' + $scope.tempTextSpotOne + ' ';
+      currentSentence = currentSentence.split(' ');
+      for (var i = 0; i < $scope.stringLength; i++) { // for loop 1
+        var taggedWord = '<input type="checkbox" onclick="setWordTrue('+ i +')" id="wordNum'+ i +'">' + currentSentence[i] + ' ';
         $scope.tempTextArray.push(taggedWord);
+        currentSentence.splice(i, 0);
       } // end for loop 1
     } // end else
     var textDiv = angular.element(document.querySelector('#adminStory'));
+    var userDiv = angular.element(document.querySelector('#userStory'));
     textDiv.empty();
+    userDiv.empty();
     var textArrayDisplay = $scope.tempTextArray.join('');
     textDiv.append(textArrayDisplay);
   }; // end captureStoryInput
 
   setWordTrue = function(num) {
-    $scope.checkedWord = $scope.tempTextArray[num ];   // -1
+    $scope.checkedWord = $scope.tempTextArray[num];
     if(document.getElementById('wordNum' + num).checked) {
       $scope.checkedArray.push($scope.checkedWord);
     } else if (!document.getElementById('wordNum' + num).checked) {
@@ -126,7 +109,6 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   }; // end setWordTrue
 
   $scope.showParsedStory = function() {
-    $rootScope.newTextArray = [];
     var arrayLength = $scope.tempTextArray.length;
     for (var i = 0; i < arrayLength; i++) { // for loop 1
       var num = i;
@@ -141,16 +123,18 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       $rootScope.newTextArray.push(parsedWord);
     } // end for loop 1
     var parsedText = angular.element(document.querySelector('#userStory'));
-    parsedText.empty();
-    $scope.parsedTextArrayDisplay = $rootScope.newTextArray.join(' ');
-    parsedText.append($scope.parsedTextArrayDisplay);
+    var parsedTextArrayDisplay = $rootScope.newTextArray.join(' ');
+    parsedText.append(parsedTextArrayDisplay);
+    $rootScope.newTextArray = [];   // <--- DO NOT TOUCH!!!
+    $scope.tempTextArray = [];     // <--- DO NOT TOUCH!!!
+    $scope.checkedArray = [];   // <--- DO NOT TOUCH!!!
   }; // end showParsedStory
 
   openTextPopup = function(num) {
     $rootScope.tempIdNum = num;
     var uncleanWord = document.getElementById('wordMadlib' + num).innerHTML;
-    // var cleanWord = uncleanWord.replace(/[^a-zA-Z]/g,'');
-    $rootScope.wordByElementId = uncleanWord; // <--cleanedWord
+    var cleanWord = uncleanWord.replace(/[^a-zA-Z]/g,'');
+    $rootScope.wordByElementId = cleanWord;
     $uibModal.open({
       templateUrl: 'views/pages/textPopup.html',
       controller: 'textPopupController',
@@ -169,11 +153,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
     $rootScope.cancel();
   };
 
-<<<<<<< HEAD
 //------------------------------------------------------------------------------------------------------------
-
-=======
->>>>>>> 6e187e9d03f85271f2e947d037455b255ac06fcb
 
 }]); // end controller 'genericMainController'
 
@@ -199,43 +179,3 @@ function ($scope, $uibModalInstance, $rootScope, userId) {
     $uibModalInstance.close();
   }; // end cancel
 }); // end modalController
-
-// $rootScope.stringifiedWord = wordByElement.outerHTML;
-// var frontStrippedWord = $rootScope.wordByElement.replace('<button class="wordBtn" id="wordMadlib'+ someNum +'" onclick="openTextPopup('+ someNum +')">', '');
-// var cleanedWord = frontStrippedWord.replace('</button>', '');
-// $rootScope.wordToChange = cleanedWord;
-
-
-// for (var i = 0; i < $scope.tempTextArray.length; i++) {
-//   console.log('INSIDE array', $scope.tempTextArray[0]);
-//   if($scope.tempTextArray[i] === wordToEdit){
-//     console.log('INSIDE array', $scope.tempTextArray[i]);
-//     frontStripped = $scope.tempTextArray[i].replace('<button  id="wordMadlib'+ someNum +'" onclick="openTextPopup('+ someNum +')" ">', '').trim();
-//     cleanedWord = frontStripped.replace('</button> ', '').trim();
-//     $rootScope.tempWord = cleanedWord;
-//   }
-// }
-
-
-
-// frontStripped = $scope.tempTextArray[i].replace('<button  id="wordMadlib'+ someNum +'" onclick="openTextPopup('+ someNum +')" ">', '').trim();
-// cleanedWord = frontStripped.replace('</button> ', '').trim();
-// $rootScope.tempWord = cleanedWord;
-
-
-
-// console.log('wordToEdit', $scope.wordToEdit);
-// frontStripped = $scope.wordToEdit.replace('<button  id="wordMadlib'+ someNum +'" onclick="openTextPopup('+ someNum +')" ">', '').trim();
-// cleanedWord = $scope.wordToEdit.replace('</button> ', '').trim();
-// $rootScope.tempWord = cleanedWord;
-
-
-
-// for (var i = 0; i < $rootScope.newTextArray.length; i++) {
-//   var numId = i + 1;
-//   if ($rootScope.newTextArray[i] === $rootScope.wordByElement) {
-//     var newTaggedWord = '<button class="wordBtn" id="wordMadlib'+ numId +'" onclick="openTextPopup('+ numId +')">' + $scope.newWord + '</button> ';
-//     $rootScope.newTextArray.splice(i, 1, newTaggedWord);
-//    } // end if
-//  } // end for loop
-//
