@@ -26,9 +26,11 @@ function($scope, $http, $rootScope, $location, userData){
         $scope.characterTraitBinderOne ='';
         $scope.characterTraitBinderTwo ='';
         $scope.characterTraitBinderThree ='';
-        $scope.characterBioBinder =''; 
+        $scope.characterBioBinder ='';
         $scope.characterPhotoBinder = '';
+        
   };//end addChar
+
 
 
   $scope.addPage = function(){ // adds issue on button click
