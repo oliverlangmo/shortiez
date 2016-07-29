@@ -4,6 +4,10 @@
   overflow: hidden;
   display: block;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f9c24221cf1ab209a448d35c0da89ecd098ce968
 
 #adminTestBox {
   height: 100px;
@@ -86,3 +90,11 @@ padding-bottom: 30px;
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
+
+
+textarea
+    {
+      width: 800px;
+      height: 300px;
+      vertical-align: middle;
+    }
