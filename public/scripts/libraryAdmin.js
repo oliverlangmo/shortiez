@@ -31,10 +31,7 @@ $scope.toggle = function() {
     };
 
 $rootScope.stories = [];
-// var storyObj = {
-//   title: $scope.story_title,
-//   image: $scope.story_cover
-// };
+
 event.preventDefault();
 console.log("getting stories");
 //example GET for appending stories into library
