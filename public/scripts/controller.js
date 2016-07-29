@@ -55,6 +55,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.newTextArray = [];
+  $rootScope.saveStoryArray = [];
   $rootScope.wordByElementId = '';
   $rootScope.tempIndex = '';
 
@@ -72,13 +73,13 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     } // end if
   }; // end checkAuth
 
-  var getUsers = function() {
-    $http({
-      method: 'GET',
-      url: '/getUsers', }).then(function(response){
-        $rootScope.usersArray = response.data;
-      }); // end http GET
-  }; // end getUsers
+  // var getUsers = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: '/getUsers', }).then(function(response){
+  //       $rootScope.usersArray = response.data;
+  //     }); // end http GET
+  // }; // end getUsers
 
   var randomId = function() {
     var text = [];
@@ -93,7 +94,14 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-  $scope.getAllStories = function(){
+
+
+
+
+
+
+  var getAllStories = function(){
+
     console.log("button clicked");
     $http({
       method: 'GET',
@@ -107,7 +115,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
-    getUsers: getUsers,
+    // getUsers: getUsers,
     randomId: randomId,
     randomNum: randomNum,
     getAllStories: getAllStories

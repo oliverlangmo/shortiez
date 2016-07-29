@@ -33,9 +33,9 @@
     src: url(blowbrush.ttf);
 }
 
+
 body, html{
   background-color: #f7f3ee;
-  /*background-image: url('../views/images/concrete_seamless.png');*/
   background-repeat: repeat;
   background-size: cover;
   height: 100%;
