@@ -41,8 +41,8 @@ console.log("getting stories");
 
 $scope.editStory= function(index){
   var path= "#adminPagesCharInput";
-$rootScope.tempIndex = $rootScope.stories[index]._id;
-
+  $rootScope.tempIndex = $rootScope.stories[index]._id;
+  $rootScope.storyIndex = $rootScope.stories[index];
   console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
 };
