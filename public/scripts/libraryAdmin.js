@@ -4,7 +4,7 @@ angular.module('myApp').controller('libraryCtrl',
 function ($scope, $http, $rootScope, $location, userData) {
 
 // uncomment this if you want only authorized users access this page
-userData.checkAuth();
+// userData.checkAuth();
 
 userData.getAllStories();
 
@@ -41,8 +41,8 @@ console.log("getting stories");
 
 $scope.editStory= function(index){
   var path= "#adminPagesCharInput";
-$rootScope.tempIndex = $rootScope.stories[index]._id;
-
+  $rootScope.tempIndex = $rootScope.stories[index]._id;
+  $rootScope.storyIndex = $rootScope.stories[index];
   console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
 };
