@@ -1,10 +1,7 @@
-
-  <div ng-controller="libraryCtrl">
-
-    <h1>Your Stories</h1>
-    Story 1: image
-    <button type="button" ng-click="getAllStories()" name="button">button1</button>
-
+<!-- <div ng-controller="adminAddStoryController"> -->
+<div ng-controller="libraryCtrl" ng-init= "getAllStories()" id="admin">
+<h1>Admin Library</h1>
+<h2>Click a story to edit.</h2>
 <div ng-repeat="story in stories">
   <div class="storyDiv">
 
@@ -14,4 +11,26 @@
 
 
 </div>
+
+
+<button type="button" name="addStoryButton" ng-click="toggle()">Add a Story to the Library</button>
+<div id="storyInput" ng-show= "addStoryToggle">
+<h1>Add Story</h1>
+
+<h2>Story Input</h2>
+<input type="text" name="storyTitle" ng-model="storyTitleBinder" value="" placeholder="Story Title">
+<br>
+<input type="text" name="storyCoverImg" ng-model="storyDescrpitionBinder" value="" placeholder="Story Description">
+<br>
+<input type="text" name="storyCoverImg" ng-model="storyCoverBinder" value="" placeholder="Story Cover URL">
+<button type="submit" name="submitCharButton" ng-click= "addStory()">Submit Story</button>
+<div id="storyPreview">
+<h4> Title:
+{{storyTitleBinder}}</h4>
+<img ng-src="{{storyCoverBinder}}" height="50px"/>
+<h5>Description:
+{{storyDescrpitionBinder}}</h5>
+ </div>
+</div>
+
 </div>
