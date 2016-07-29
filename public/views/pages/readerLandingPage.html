@@ -11,7 +11,7 @@
                 </li>
                 <li>
                     <div class="charIcon">
-                      {{myStory.story_characters.character_name}}
+                      {{characters.story_characters.character_name}}
                     </div>
                 </li>
                 <li>
@@ -29,6 +29,7 @@
 
             <div> {{myStory.page_text}} </div>
               <img ng-src="{{myStory.page_illustration}}" height='100px'/>
+              <div>{{myStory.story_characters.character_name}}</div>
             <br>
 
           <button type="button" name="Prevbutton" ng-click= "prevPage()">Previous</button>
