@@ -26,7 +26,7 @@
 
 .wordBtn:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
-=======
+}
 @font-face {
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
@@ -75,5 +75,15 @@ padding-bottom: 30px;
 .sideNav {
   float: left;
   color: blue;
->>>>>>> 6e187e9d03f85271f2e947d037455b255ac06fcb
+}
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+}
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms;
 }

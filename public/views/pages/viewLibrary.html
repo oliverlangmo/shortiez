@@ -1,42 +1,21 @@
-mo<div ng-controller = "libraryCtrl" ng-init ='getAllStories()' ng-cloak>
+<div ng-controller = "libraryCtrl" ng-init ='getAllStories()' ng-cloak  class="gridListdemoBasicUsage">
   <div id="welcomeDiv">
     <h1> Welcome to your library, {{username.name}}! </h1>
     <h2> Click on a story cover to start. </h2>
   </div>
-  <!-- <md-content class="md-padding" layout-xs='column' layout="row">
-  		<div flex-xs flex-gt-xs='50'layout="column" layout-gt-md="row" layout-wrap >
 
-  	      	<md-card ng-repeat="story in stories" class="storyImages" md-card-style="width: 300px;">
-                  <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover" width="80px">
-             <md-card-title>
-	          			<md-card-title-text>
-	            			<span layout-align="center center">{{story.story_title}}</span>
-                    <md-button type="button" ng-click="selectReaderStory($index)" name="button">read me</md-button>
-	          			</md-card-title-text>
-	        		</md-card-title>
-              <md-card-content>
-               <a>{{story.story_description}}</a>
-              </md-card-content>
-              <md-card-actions>
-              <md-button type="button" ng-click="selectReaderStory($index)" name="button">read me</md-button>
-            </md-card-actions> -->
-            <md-content class="md-padding" layout-xs="column" layout="row">
-            <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="story in stories">
-              <md-card class = 'cards'>
-                <md-card-title>
-                  <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover" width="180px">
-                  <md-card-title-text>
-                    <figcaption class="md-headline">{{story.story_title}} {{story.story_description}}</figcaption>
-                    <span class="md-subhead">Large</span>
-                  </md-card-title-text>
-                  <md-card-title-media>
-                    <div class="md-media-lg card-media"></div>
-                  </md-card-title-media>
-                </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                  <md-button>Action 1</md-button>
-                  <md-button>Action 2</md-button>
-                </md-card-actions>
-              </md-card>
- </div>
-</div>
+  <div class='md-padding' layout="row" layout-wrap >
+        <md-card style="width: 400px;" ng-repeat="story in stories">
+          <md-card-content>
+          <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
+
+            <h2>{{story.story_title}}</h2>
+            <p>{{story.story_description}}</p>
+
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button ng-click="selectReaderStory($index)">View</md-button>
+          </div>
+          </md-card-content>
+        </md-card>
+    </div>
+  </div>
