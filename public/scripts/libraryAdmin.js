@@ -3,7 +3,7 @@ angular.module('myApp').controller('libraryCtrl',
 function ($scope, $http, $rootScope, $location, userData) {
 
 // uncomment this if you want only authorized users access this page
-userData.checkAuth();
+// userData.checkAuth();
 
 
 $rootScope.stories = [];
@@ -26,11 +26,17 @@ $scope.getAllStories = function(){
 }; // end getStories
 $scope.editStory= function(index){
   var path= "#adminPagesCharInput";
-  var storyToEdit = {
-    id : $rootScope.stories[index]._id
-  };
+$rootScope.tempIndex = $rootScope.stories[index]._id;
+
   console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
+};
+
+$scope.selectReaderStory = function(index) {
+  console.log('index', index);
+  $rootScope.readerIndex = $rootScope.stories[index];
+  var path = "#readerLandingPage";
+  window.location.href=path;
 };
 
 }]);//end of libraryCtrl controller

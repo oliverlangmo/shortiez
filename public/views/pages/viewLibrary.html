@@ -1,14 +1,19 @@
 <div ng-controller = "libraryCtrl" ng-init ='getAllStories()'>
+  <div id="welcomeDiv">
+    <h1> Welcome to your library, {{username.name}}! </h1>
+    <h2> Click on a story cover to start. </h2>
+  </div>
   <md-content class="md-padding" flex layout-wrap layout="row">
   		<div layout="column" layout-gt-xs="row" flex layout-wrap>
-
   	      	<md-card flex="25" ng-repeat="story in stories">
               <div class="storyImages" layout-align="center center">
-              		        		<img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover">
+                  <button type="button" ng-click="selectReaderStory($index)" name="button">
+    		        	<img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s cover" width="80px"></button>
              </div>
              <md-card-title>
 	          			<md-card-title-text>
 	            			<h3 layout="row" layout-align="center center">{{story.story_title}}</h3>
+                    <h4 layout="row" layout-align="center center">{{story.story_description}}</h4>
 	          			</md-card-title-text>
 	        		</md-card-title>
             </md-card>

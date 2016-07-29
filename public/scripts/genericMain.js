@@ -5,6 +5,10 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   // uncomment this if you want only authorized users access this page
   // userData.checkAuth();
 
+  $scope.user = {
+    name: 'awesome user'
+  };
+
   userData.getUsers();
   $scope.nameInput = '';
 
@@ -165,8 +169,11 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
     $rootScope.cancel();
   };
 
+<<<<<<< HEAD
 //------------------------------------------------------------------------------------------------------------
 
+=======
+>>>>>>> 6e187e9d03f85271f2e947d037455b255ac06fcb
 
 }]); // end controller 'genericMainController'
 

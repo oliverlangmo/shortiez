@@ -56,6 +56,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.newTextArray = [];
   $rootScope.wordByElementId = '';
+  $rootScope.tempIndex = "";
 
   var adminCheck = function(){
     var check = $rootScope.userAdminCheck;

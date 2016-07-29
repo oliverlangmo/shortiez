@@ -1,6 +1,9 @@
 var express = require('express');
 var path = require('path');
-
+///BadWord Filter. Use filter.clean() to activate.
+var Filter = require('bad-words'),
+  filter = new Filter();
+///
 var router = express.Router();
 
 var TempUser = require('../../models/tempUser');
@@ -31,6 +34,7 @@ router.get('/getUsers', function(req, res){
 }); //end getTempUser
 
 router.post('/addTempUser', function(req, res) {
+console.log(filter.clean("Don't be an ash0le"));
   var newTempUser = new TempUser({
     name: req.body.name
   }); // end newTempUser object

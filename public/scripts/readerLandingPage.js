@@ -1,28 +1,43 @@
-angular.module('myApp').controller('readerLandingPageCtrl',
-['$scope', '$http', '$rootScope', '$location', 'userData',
-function ($scope, $http, $rootScope, $location, userData) {
+angular.module('myApp').controller('readerLandingPageCtrl', ['$scope', '$http', '$rootScope', '$location', 'userData', '$mdSidenav',
+function ($scope, $http, $rootScope, $location, userData, $mdSidenav) {
 
-  // uncomment this if you want only authorized users access this page
-  userData.checkAuth();
+// userData.checkAuth();
+
+$rootScope.stories = [];
+$scope.myStory = [];
+$scope.characters=[];
+$scope.pageIndex = 0;
 
 
-  $rootScope.stories = [];
-  // var storyObj = {
-  //   title: $scope.story_title,
-  //   image: $scope.story_cover
-  // };
-  event.preventDefault();
-  console.log("show story in readerLandingPage");
-  //example GET for appending stories into library
-  $scope.getAllStories = function(){
-    console.log("button clicked");
-    $http({
-      method: 'GET',
-      url: '/getStories',
-      }).then(function(response){
-        $rootScope.stories = response.data;
-        console.log(response.data);
-      }); // end http GET
-  }; // end getUsers
+// $scope.openLeftMenu = function() {
+//     $mdSidenav('left').toggle();
+//   };//end sidenav
 
-  }]);//end of libraryCtrl controller
+$scope.myStoryLoad = function (){
+  $scope.currentStory = $rootScope.readerIndex.story_pages;
+  $scope.myStory = $scope.currentStory[$scope.pageIndex];
+};//end myStoryLoad()
+
+    $scope.nextPage = function(){
+          console.log(" next clicked");
+          $scope.pageIndex++;
+          console.log('$scope.pageIndex++;', $scope.pageIndex);
+          if( $scope.pageIndex == $scope.currentStory.length ){
+            $scope.pageIndex = 0;
+          }//end if
+          console.log( "in nextPage() $scope.pageIndex ", $scope.pageIndex  );
+          $scope.myStoryLoad();
+          event.preventDefault();
+        };//end nextPage()
+
+        $scope.prevPage = function(){
+        console.log(" prev clicked");
+          $scope.pageIndex--;
+          if( $scope.pageIndex === -1 ){
+            $scope.pageIndex = $scope.currentStory.length - 1;
+          }//end if
+          $scope.myStoryLoad();
+          event.preventDefault();
+        };//end prevPage()
+
+}]);//end of libraryCtrl controller

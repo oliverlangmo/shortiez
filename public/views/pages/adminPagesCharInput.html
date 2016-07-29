@@ -4,11 +4,17 @@
 <h2>Character Input</h2>
 <input type="text" name="charName" ng-model="characterNameBinder" value="" placeholder="Character Name">
 <br>
-<input type="text" name="charTraits" ng-model="characterTraitBinder" value="" placeholder="Character Traits">
+<input type="text" name="charTraits" ng-model="characterTraitBinderOne" value="" placeholder="Character Trait 1">
+<br>
+<input type="text" name="charTraits" ng-model="characterTraitBinderTwo" value="" placeholder="Character Trait 2">
+<br>
+<input type="text" name="charTraits" ng-model="characterTraitBinderThree" value="" placeholder="Character Trait 3">
+<br>
+<input type="text" name="charBio" ng-model="characterBioBinder" value="" placeholder="Character Bio">
 <br>
 <input type="text" name="charPhoto" ng-model="characterPhotoBinder" value="" placeholder="Character Photo URL">
 <br>
-<button type="submit" name="submitCharButton" ng-click= "addChar()">Submit Character</button>
+<button type="submit" name="submitCharButton" ng-click= "addChar($index)">Submit Character</button>
 
 <h2>Story Input</h2>
 <input type="text" name="pageNumber" ng-model="pageNumberBinder" value="" placeholder="Page Number">
