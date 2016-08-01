@@ -1,12 +1,11 @@
-<div class="container-fluid" ng-controller="genericMainController">
+<div class="container-fluid" ng-controller="adminController">
 
   <br><p>one two three four five six seven eight nine ten</p><br>
 
   <textarea id="adminTestBox" my-text="" ng-model="testAreaText" placeholder="Place story to edit here"></textarea>
-  <div>Word count: {{stringLength}} </div><br>
+  <div id="wordCount">Word count: {{stringLength}} </div><br>
   <button ng-click="captureStoryInput()">Submit Text</button><br><br>
   <div id="adminStory"></div><br>
   <button ng-click="saveStory()">Save Story</button><br><br>
-  <div id="userStory"></div>
 
-</div>
+</div> <!-- end adminContorller -->

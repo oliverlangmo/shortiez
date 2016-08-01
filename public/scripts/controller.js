@@ -2,9 +2,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'x
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
-      .when('/genericMain', {
-          templateUrl: '/views/pages/genericMain.html',
-      })
       .when('/login', {
           templateUrl: '/views/pages/login.html',
       })
@@ -38,13 +35,17 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
       })
+      .when('/userTestPage', {
+          templateUrl: '/views/pages/userTestPage.html'
+      })
       .otherwise({
       redirectTo: '/login'
     }); // end $routeProvider
 
-  myApp.run(function(editableOptions) {
+  myApp.run(function(editableOptions) {  // <-- for xeditibles
     editableOptions.theme = 'bs3';
   }); // end editableOptions
+
 }]); // end myApp
 
 //-----------------------------------------  userData factory-----------------------------------------
@@ -54,10 +55,12 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.newTextArray = [];
-  $rootScope.saveStoryArray = [];
   $rootScope.wordByElementId = '';
   $rootScope.tempIndex = '';
+  $rootScope.saveStoryArray = [];
+  $rootScope.tempIdNum = 0;
+
+  $rootScope.page = [];
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
@@ -94,14 +97,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-
-
-
-
-
-
   var getAllStories = function(){
-
     console.log("button clicked");
     $http({
       method: 'GET',

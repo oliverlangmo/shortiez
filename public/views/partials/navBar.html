@@ -1,21 +1,13 @@
 <div ng-controller="loginController">
-
-  <a href="#login"> Login </a>
-  <a href="#genericMain"> genericMain </a>
-  <a href="#adminTest"> adminTest </a>
-  <a href="#libraryAdmin"> Your Stories </a>
-  <a href="#adminPagesCharInput"> adminPagesCharInput </a>
-  <a href="#adminAddStory"> adminAddStory </a>
-  <a href="#readerLandingPage"> readerLandingPage </a>
-  <a href="#viewLibrary"> userLibrary </a>
-  <button id="logoutBtn" ng-click="openLogout()">Logout</button>
-
   <div class="navbar navbar-default">
-  <tab><a id="login" class="login" href="#login">Login |</a></tab>
-  <tab><a class="mainLink" href="#genericMain">Main |</a></tab>
-  <a class="libraryAdmin" href="#libraryAdmin">Admin Library |</a>
-  <a class="libraryUser" href="#viewLibrary">Reader Library |</a>
-  <tab class="logout" id="logoutBtn" ng-click="openLogout()">Logout</tab>
-</div>
-
+    <tab><a class="headerBtn" href="#login"> Login |</a></tab>
+    <tab><a class="headerBtn" href="#genericMain"> Main |</a></tab>
+    <a class="headerBtn" href="#readerLandingPage"> User Page |</a>
+    <a class="headerBtn" href="#viewLibrary">Reader Library |</a>
+    <a class="headerBtn" href="#userTestPage"> Test Page |</a>
+    <a class="headerBtn" href="#adminAddStory"> Admin Story |</a>
+    <a class="headerBtn" href="#libraryAdmin">Admin Library |</a>
+    <a class="headerBtn" href="#adminPagesCharInput"> Admin Char |</a>
+    <tab class="headerBtn" id="logoutBtn" ng-click="openLogout()">Logout</tab>
+  </div>
 </div>
