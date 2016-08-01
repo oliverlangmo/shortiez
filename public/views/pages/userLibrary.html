@@ -1,3 +1,4 @@
+
 <div ng-controller="userStoryController" ng-init="myStoryLoad()">
   <div id="wrapper">
     <!-- Sidebar -->
@@ -5,23 +6,25 @@
       <ul class="sidebar-nav sideNav">
         <li class="sidebar-brand">
           <li>
-            <div>
+            <div class="storyTitle">
+
               <p> {{readerIndex.story_title}} </p>
               <img ng-src="{{readerIndex.story_cover}}" height='100px'/>
             </div>
           </li>
-          <div> Characters </div>
+          <li>
+          <div class="character"> Characters </div>
         </li>
-        <li>
-          <div class="charIcon">
-            <div ng-repeat="character in characters">
+        <li id="charIcon">
+            <div class="charIcon" ng-repeat="character in characters">
               <img ng-src="{{character.character_photo}}" height='100px' /><br>
               {{character.character_name}}
               <p> Traits: {{character.character_traits}} </p>
-            </div>
           </div>
         </li>
-        </li>
+
+      </li>
+
       </ul>
     </div>
   <!-- body -->

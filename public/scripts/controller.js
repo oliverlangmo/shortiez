@@ -29,6 +29,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
       })
+      .when('/userStats', {
+          templateUrl: '/views/pages/userStats.html'
+      })
       .otherwise({
       redirectTo: '/login'
     }); // end $routeProvider
@@ -47,9 +50,10 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.wordByElementId = '';
   $rootScope.tempIndex = '';
+  $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
   $rootScope.tempIdNum = 0;
-
+  $rootScope.usersArray = [];
   $rootScope.page = [];
 
   var adminCheck = function() {

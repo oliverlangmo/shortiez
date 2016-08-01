@@ -8,8 +8,9 @@
  }
 
  body, html{
-   background-color: #f7f3ee;
-   background-repeat: repeat;
+   /*background-color: #f7f3ee;*/
+   background: url(../views/images/urbanwatercolor.jpg);
+   /*background-repeat: repeat;*/
    background-size: cover;
    height: 100%;
    font-size: 1em;
@@ -19,6 +20,7 @@
    height: 300px;
    vertical-align: middle;;
  }
+
  footer {
    position: fixed;
    bottom: 0;
@@ -70,6 +72,7 @@
     font-size: 16px;
     cursor: pointer;
     float: right;
+    opacity: 50%;
 }
 .nextButton:hover {
     background-color: #3e8e41;
@@ -91,9 +94,10 @@
 }
 
 .navbar-default{
-  background-color: #134d10;
+  background-color: #118cc3;
+  /*background-color: #2b43b0;*/
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px; /*helps move the text in the sidenav up*/
 }
 
 .headerBtn{
@@ -112,14 +116,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.sidebar-wrapper{
-  position: fixed;
+#sidebar-wrapper{
+  position: relative;
+  /*overflow-y: auto;*/
 }
 .sideNav {
   float: left;
-  color: blue;
-  overflow-y: scroll;
-  position: relative;
+  color: white;
+  /*overflow-y: scroll;*/
+  position: fixed;
 }
 
 .gridListdemoBasicUsage md-grid-list {
@@ -134,15 +139,25 @@
   transition: all 400ms ease-out 50ms;
 }
 
-.charIcon{
-  position: fixed;
+.charIcon, .storyTitle, .character{
   text-align: center;
 }
-
+.storyTitle{
+  font-size: 20px;
+}
 .title{
   font-family: 'blowbrush';
   font-size: 100px;
 }
+
+.nextGliph{
+  color: black;
+}
+
+.btn-primary{
+  background-color: #5f3cb0;
+}
+
 #storyInput {
   height: 200px;
   width: 700px;
@@ -163,7 +178,10 @@
   /*font-family: 'blowbrush';*/
   font-size: 30px;
 }
-
+#login:hover{
+  color: #118cc3;
+  background-color: white;
+}
 #storyInput{
   overflow: auto;
   padding-bottom: 100px;
