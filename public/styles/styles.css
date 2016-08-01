@@ -131,19 +131,10 @@ body, html{
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
-<<<<<<< HEAD
-
 textarea {
   width: 800px;
   height: 300px;
   vertical-align: middle;
-=======
-textarea {
-      width: 800px;
-      height: 300px;
-      vertical-align: middle;
->>>>>>> 721ad24d8f7f9683617d5c49d5ca34fbcee4ab15
-}
 
 .charIcon{
   position: fixed;
