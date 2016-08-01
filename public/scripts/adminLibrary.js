@@ -1,11 +1,13 @@
-angular.module('myApp').controller('libraryCtrl',
+angular.module('myApp').controller('libraryAdminController',
 ['$scope', '$http', '$rootScope', '$location', 'userData',
 function ($scope, $http, $rootScope, $location, userData) {
 
-// uncomment this if you want only authorized users access this page
-// userData.checkAuth();
+// userData.adminCheck();
 
 userData.getAllStories();
+event.preventDefault();
+
+$rootScope.stories = [];
 
 $scope.addStory = function(){ // adds issue on button click
   var storyToCreate = {  // package object to send, with inputs
@@ -22,32 +24,19 @@ $scope.addStory = function(){ // adds issue on button click
     $scope.storyTitleBinder ='';
     $scope.storyCoverBinder ='';
     $scope.storyDescrpitionBinder = '';
-    $location.path('/#/libraryAdmin');
-
+    // $location.path('/#/adminEdit')
 }; //end addStory
 
 $scope.toggle = function() {
-        $scope.addStoryToggle = !$scope.addStoryToggle;
-    };
-
-$rootScope.stories = [];
-
-event.preventDefault();
-
+  $scope.addStoryToggle = !$scope.addStoryToggle;
+}; // end toggle
 
 $scope.editStory= function(index){
-  var path= "#adminPagesCharInput";
+  var path= "#adminEdit";
   $rootScope.tempIndex = $rootScope.stories[index]._id;
   $rootScope.storyIndex = $rootScope.stories[index];
   console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
-};
-
-$scope.selectReaderStory = function(index) {
-  console.log('index', index);
-  $rootScope.readerIndex = $rootScope.stories[index];
-  var path = "#readerLandingPage";
-  window.location.href = path;
-};
+}; // end editStory
 
 }]);//end of libraryCtrl controller

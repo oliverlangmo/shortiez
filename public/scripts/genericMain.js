@@ -6,6 +6,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   // userData.checkAuth();
 
   $scope.nameInput = '';
+  $rootScope.usersArray = [];
 
   $scope.addUser = function(){
     console.log('in addTempUser');
@@ -64,6 +65,14 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
         } // end then
       ); // end http
   }; // end updateUser
+
+  $scope.getUsers = function() {
+    $http({
+      method: 'GET',
+      url: '/getUsers', }).then(function(response){
+        $rootScope.usersArray = response.data;
+      }); // end http GET
+  }; // end getUsers
 
 //---------------------------------------------------  TEST  -------------------------------------------------
 
