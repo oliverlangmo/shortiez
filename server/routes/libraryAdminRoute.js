@@ -9,6 +9,8 @@ var Page = require('../../models/addTestPage.js');
 var router = express.Router();
 
 router.get('/getStories', function (req, res) {
+
+  // console.log('in /getStories');
   addStory.find().then(function(data){
   res.send(data);
   });

@@ -14,29 +14,20 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
-      .when('/adminTest', {
-        templateUrl: '/views/pages/adminTest.html',
-      })
-      .when('/libraryAdmin', {
-          templateUrl: '/views/pages/libraryAdmin.html',
-      })
-      .when('/adminAddStory', {
-          templateUrl: '/views/pages/adminAddStory.html',
-      })
-      .when('/adminPagesCharInput', {
-          templateUrl: '/views/pages/adminPagesCharInput.html',
-      })
-      .when('/readerLandingPage', {
-          templateUrl: '/views/pages/readerLandingPage.html',
+      .when('/userLibrary', {
+          templateUrl: '/views/pages/userLibrary.html',
       })
       .when('/viewLibrary', {
-          templateUrl: '/views/pages/viewLibrary.html'
+          templateUrl: '/views/pages/viewLibrary.html',
+      })
+      .when('/adminEdit', {
+          templateUrl: '/views/pages/adminEdit.html',
+      })
+      .when('/adminLibrary', {
+          templateUrl: '/views/pages/adminLibrary.html'
       })
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
-      })
-      .when('/userTestPage', {
-          templateUrl: '/views/pages/userTestPage.html'
       })
       .otherwise({
       redirectTo: '/login'
@@ -52,7 +43,6 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
 
-  $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.wordByElementId = '';
@@ -75,14 +65,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       $location.path('/#/login');
     } // end if
   }; // end checkAuth
-
-  // var getUsers = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: '/getUsers', }).then(function(response){
-  //       $rootScope.usersArray = response.data;
-  //     }); // end http GET
-  // }; // end getUsers
 
   var randomId = function() {
     var text = [];
@@ -111,7 +93,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
-    // getUsers: getUsers,
     randomId: randomId,
     randomNum: randomNum,
     getAllStories: getAllStories
