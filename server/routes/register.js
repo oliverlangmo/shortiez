@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 router.post('/register', function(req, res, next) {
   var userObject = {
     username: req.body.username,
+    birthday: req.body.birthday,
     name: req.body.name,
     grade: req.body.grade,
     email: req.body.email,
