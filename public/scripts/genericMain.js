@@ -6,6 +6,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
   // userData.checkAuth();
 
   $scope.nameInput = '';
+  $rootScope.usersArray = [];
 
   $scope.addUser = function(){
     console.log('in addTempUser');
@@ -65,18 +66,25 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       ); // end http
   }; // end updateUser
 
+  $scope.getUsers = function() {
+    $http({
+      method: 'GET',
+      url: '/getUsers', }).then(function(response){
+        $rootScope.usersArray = response.data;
+      }); // end http GET
+  }; // end getUsers
+
 //---------------------------------------------------  TEST  -------------------------------------------------
 
   $scope.tempTextArray = [];  //   == array that holds all words as checked boxes
   $scope.checkedArray = [];  //   == array that only holds words that have been checked
+  $scope.newTextArray = [];
 
   $scope.captureStoryInput = function() {
-    $scope.tempTextArray = [];
-    $rootScope.saveStoryArray = [];
-    $scope.tempTextArray = $scope.testAreaText;
-    if ($scope.tempTextArray === ''){
-      window.alert('Text field can not be left empty.\n Please enter a story.'); // <--  DOESNT WORK.... GAH!!!!  >:(
+    if ($scope.testAreaText === '' || $scope.testAreaText === undefined || $scope.testAreaText === null){
+      window.alert('Text field can not be left empty.\nPlease enter a story.');
     } else {
+      $scope.tempTextArray = $scope.testAreaText;
       $scope.stringLength = $scope.tempTextArray.split(/[^\s]+/).length - 1;
       $scope.tempTextArray = $scope.tempTextArray.split(' ');
       for (var i = 0; i < $scope.stringLength; i++) { // for loop 1
@@ -115,20 +123,22 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
         } // end if
       } // for loop 2
       var parsedWord = $scope.tempTextArray[num].replace('<input type="checkbox" onclick="setWordTrue('+ num +')" id="wordNum'+ num +'">', '').trim();
-      $rootScope.newTextArray.push(parsedWord);
+      $scope.newTextArray.push(parsedWord);
     } // end for loop 1
-    $rootScope.saveStoryArray = $rootScope.newTextArray;
+    $rootScope.saveStoryArray = $scope.newTextArray;
     var textDiv = angular.element(document.querySelector('#adminStory'));
     var parsedText = angular.element(document.querySelector('#userStory'));
     textDiv.empty();
     var parsedTextArrayDisplay = $rootScope.saveStoryArray.join(' ');
     parsedText.append(parsedTextArrayDisplay);
-    $rootScope.newTextArray = [];
+    $scope.newTextArray = [];
     $scope.tempTextArray = [];
     $scope.checkedArray = [];
     $scope.testAreaText = '';
     $scope.stringLength = '';
   }; // end showParsedStory
+
+//=------------------------------------------  USER  --------------------------------------------
 
   openTextPopup = function(num) {
     $rootScope.tempIdNum = num;
@@ -150,15 +160,9 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
     parsedText.empty();
     var parsedTextArrayDisplay = $rootScope.saveStoryArray.join(' ');
     parsedText.append(parsedTextArrayDisplay);
+    $scope.checkedArray = [];
     $rootScope.cancel();
   };
-
-
-
-//------------------------------------------------------------------------------------------------------------
-
-
-//------------------------------------------------------------------------------------------------------------
 
 
 }]); // end controller 'genericMainController'

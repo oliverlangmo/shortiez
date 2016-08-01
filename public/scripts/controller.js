@@ -2,9 +2,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'x
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
-      .when('/genericMain', {
-          templateUrl: '/views/pages/genericMain.html',
-      })
       .when('/login', {
           templateUrl: '/views/pages/login.html',
       })
@@ -17,23 +14,17 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
-      .when('/adminTest', {
-        templateUrl: '/views/pages/adminTest.html',
-      })
-      .when('/libraryAdmin', {
-          templateUrl: '/views/pages/libraryAdmin.html',
-      })
-      .when('/adminAddStory', {
-          templateUrl: '/views/pages/adminAddStory.html',
-      })
-      .when('/adminPagesCharInput', {
-          templateUrl: '/views/pages/adminPagesCharInput.html',
-      })
-      .when('/readerLandingPage', {
-          templateUrl: '/views/pages/readerLandingPage.html',
+      .when('/userLibrary', {
+          templateUrl: '/views/pages/userLibrary.html',
       })
       .when('/viewLibrary', {
-          templateUrl: '/views/pages/viewLibrary.html'
+          templateUrl: '/views/pages/viewLibrary.html',
+      })
+      .when('/adminEdit', {
+          templateUrl: '/views/pages/adminEdit.html',
+      })
+      .when('/adminLibrary', {
+          templateUrl: '/views/pages/adminLibrary.html'
       })
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
@@ -42,22 +33,24 @@ myApp.config(['$routeProvider', function($routeProvider){
       redirectTo: '/login'
     }); // end $routeProvider
 
-  myApp.run(function(editableOptions) {
+  myApp.run(function(editableOptions) {  // <-- for xeditibles
     editableOptions.theme = 'bs3';
   }); // end editableOptions
+
 }]); // end myApp
 
 //-----------------------------------------  userData factory-----------------------------------------
 
 myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
 
-  $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.newTextArray = [];
-  $rootScope.saveStoryArray = [];
   $rootScope.wordByElementId = '';
   $rootScope.tempIndex = '';
+  $rootScope.saveStoryArray = [];
+  $rootScope.tempIdNum = 0;
+
+  $rootScope.page = [];
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
@@ -73,14 +66,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     } // end if
   }; // end checkAuth
 
-  // var getUsers = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: '/getUsers', }).then(function(response){
-  //       $rootScope.usersArray = response.data;
-  //     }); // end http GET
-  // }; // end getUsers
-
   var randomId = function() {
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -94,14 +79,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-
-
-
-
-
-
   var getAllStories = function(){
-
     console.log("button clicked");
     $http({
       method: 'GET',
@@ -115,7 +93,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
-    // getUsers: getUsers,
     randomId: randomId,
     randomNum: randomNum,
     getAllStories: getAllStories

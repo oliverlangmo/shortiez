@@ -1,4 +1,4 @@
-<div ng-controller = "libraryCtrl" ng-init ='getAllStories()' ng-cloak  class="gridListdemoBasicUsage">
+<div ng-controller = "userStoryController" ng-init ='getAllStories()' ng-cloak  class="gridListdemoBasicUsage">
 
   <div class="welcomeDiv">
     <h1> Welcome to your library, {{username.name}}! </h1>
@@ -6,17 +6,17 @@
   </div>
 
   <div class='md-padding' layout="row" layout-wrap >
-        <md-card style="width: 400px;" ng-repeat="story in stories">
-          <md-card-content>
-          <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
+    <md-card style="width: 400px;" ng-repeat="story in stories">
+      <md-card-content>
+      <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
 
-            <h2>{{story.story_title}}</h2>
-            <p>{{story.story_description}}</p>
+        <h2>{{ story.story_title }}</h2>
+        <p>{{ story.story_description }}</p>
 
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button ng-click="selectReaderStory($index)">View</md-button>
-          </div>
-          </md-card-content>
-        </md-card>
-    </div>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button ng-click="selectReaderStory($index)"> View </md-button>
+      </div>
+      </md-card-content>
+    </md-card>
   </div>
+</div>
