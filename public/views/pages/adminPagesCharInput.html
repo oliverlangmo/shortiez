@@ -1,7 +1,7 @@
-<h1>Add Characters and Pages to Story</h1>
-
 <div ng-controller='adminStoryInputController'>
+<h1>Add Characters and Pages to Story</h1>
   <h2>Title: {{storyIndex.story_title}}</h2>
+  <div id="character">
   <button type="button" name="addCharButton" ng-click="charToggle()">Add a Character to the Story</button>
   <div id="charInputToggle" ng-show= "addCharToggle">
   <h3>Character Input</h3>
@@ -31,6 +31,7 @@
       <img ng-src="{{characterPhotoBinder}}" width='200px;'height = "200px;">
     </div>
   </div>
+</div>
 
   <div ng-init= "adminStoryLoad()" id="currentChars">
     <h3>Current Characters:</h3>
@@ -50,19 +51,21 @@
       </div>
   </div>
 
+<div id="page">
   <button type="button" name="addPageButton" ng-click="pageToggle()">Add a Page to the Story</button>
   <div id="pageInputToggle" ng-show= "addPageToggle">
-  <h2>Page Input</h2>
-  <input type="text" name="pageNumber" ng-model="pageNumberBinder" value="" placeholder="Page Number">
-  <br>
-  <!-- <input type="text" name="pageText" ng-model="pageTextBinder" value="" placeholder="Page Text"> -->
+    <h2>Page Input</h2>
+    <input type="text" name="pageNumber" ng-model="pageNumberBinder" value="" placeholder="Page Number">
+    <br>
+    <textarea id="textareaEdit" ng-model="pageTextBinder" placeholder="Page Text"></textarea>
+    <br>
+    <input type="text" name="pageIllustration" ng-model="pageIllustrationBinder" value="" placeholder="Illustration">
+    <button type="submit" name="submitCharButton" ng-click= "addPage()">Submit Page</button>
+  </div>
 
-  <textarea id="textareaEdit" ng-model="pageTextBinder" placeholder="Page Text"></textarea>
-  <!-- <span class="valueItems">  {{textareaValue}}</span> -->
-  <br>
-  <input type="text" name="pageIllustration" ng-model="pageIllustrationBinder" value="" placeholder="Illustration">
-  <button type="submit" name="submitCharButton" ng-click= "addPage()">Submit Page</button>
-</div>
+<!-- <input type="text" name="pageText" ng-model="pageTextBinder" value="" placeholder="Page Text">
+<span class="valueItems">  {{textareaValue}}</span> -->
+
 
 <h3>Current Pages:</h3>
   <div ng-init= "adminStoryLoad()">
@@ -79,4 +82,5 @@
           </md-card>
       </div>
   </div>
+</div>
 </div>
