@@ -1,0 +1,37 @@
+<div class="container-fluid" ng-controller="genericMainController">
+  <h3>User Input on Generic Page</h3><br>
+
+    <div id="inputUserDiv">
+      <input type="text" id="nameIn" ng-model="nameInput" placeholder=" - Name - "><br>
+    </div>
+
+    <button ng-click="addUser()"> Add User </button>
+
+    <div ng-repeat="users in usersArray">
+      <li>
+        Name: {{users.name}}
+        <button ng-click="deleteUser($index)"> DELETE </button>
+        <button ng-click="openUpdate($index)"> UPDATE </button><br><br>
+      </li>
+    </div>
+
+    <div>
+      <p>one test test test one test test test test one test test test One test test test one test test test</p>
+      <input type="text" id="storyInput" ng-model="storyInput"><br>
+      <input type="text" id="oldWord" ng-model="oldWord" placeholder=" Word to Replace ">
+      <input type="text" id="newWord" ng-model="newWord" placeholder=" New Word ">
+      <button ng-click="findReplace()"> Find and Replace </button><br><br>
+
+
+      <a href="#" editable-text="someText">{{ someText || 'empty' }}</a>  <br><br>
+
+<input type="text" id='tester'name="name" value="" placeholder="swear here">
+<button type="button" ng-click='addUser()' name="button">Check</button>
+      <a href="#"  editable-text="user.name">{{ user.name || 'empty' }}</a><br><br>
+
+      <p> {{ newText }} </p><br>
+      <p>
+        {{blah}}
+      </p>
+    </div>
+</div>
