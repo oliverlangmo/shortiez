@@ -55,32 +55,33 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.newTextArray = [];
+  $rootScope.saveStoryArray = [];
   $rootScope.wordByElementId = '';
-  $rootScope.tempIndex = "";
+  $rootScope.tempIndex = '';
 
-  var adminCheck = function(){
+  var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
     if(check === false || check === 'false' || check === undefined || check === null || check === ''){
       $location.path('/#/login');
     } // end if
   }; // end userCheck
 
-  var checkAuth = function(){
+  var checkAuth = function() {
     var check = $rootScope.userAuthCheck;
     if(check === false || check === 'false' || check === undefined || check === null || check === ''){
       $location.path('/#/login');
     } // end if
   }; // end checkAuth
 
-  var getUsers = function(){
-    $http({
-      method: 'GET',
-      url: '/getUsers', }).then(function(response){
-        $rootScope.usersArray = response.data;
-      }); // end http GET
-  }; // end getUsers
+  // var getUsers = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: '/getUsers', }).then(function(response){
+  //       $rootScope.usersArray = response.data;
+  //     }); // end http GET
+  // }; // end getUsers
 
-  var randomId = function(){
+  var randomId = function() {
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var idLength = 9;
@@ -93,12 +94,31 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
+
+
+
+
+
+
+  var getAllStories = function(){
+
+    console.log("button clicked");
+    $http({
+      method: 'GET',
+      url: '/getStories',
+      }).then(function(response){
+        $rootScope.stories = response.data;
+        console.log(response.data);
+      }); // end http GET
+  }; // end getStories
+
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
-    getUsers: getUsers,
+    // getUsers: getUsers,
     randomId: randomId,
-    randomNum: randomNum
+    randomNum: randomNum,
+    getAllStories: getAllStories
   }; // end return
 
 }]);

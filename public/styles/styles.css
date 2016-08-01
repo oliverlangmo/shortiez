@@ -5,7 +5,6 @@
   display: block;
 }
 
-
 #adminTestBox {
   height: 100px;
   width: 700px;
@@ -26,15 +25,22 @@
 
 .wordBtn:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
+
 }
+
 @font-face {
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
 }
-body{
+
+
+body, html{
   background-color: #f7f3ee;
-  background-image: url('../views/images/concrete_seamless.png')
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100%;
 }
+
 .navbar-default{
   background-color: #134d10;
 padding-top: 30px;
@@ -44,23 +50,43 @@ padding-bottom: 30px;
   color: white;
   padding-left: 5px;
   padding-right: 5px;
+  font-family: 'Comic Sans MS';
+  /*font-family: 'blowbrush';*/
+  font-size: 30px;
+}
+
+#storyInput{
+  overflow: auto;
+  padding-bottom: 100px;
+  margin: auto;
+
 }
 .mainLink{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .libraryAdmin{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .adminAdd{
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .libraryUser {
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .logout {
   float: right;
   padding-right: 20px;
   color: white;
+  font-family: 'Comic Sans MS';
+  font-size: 30px;
 }
 .main{
   text-align: center;
@@ -95,3 +121,13 @@ textarea
       height: 300px;
       vertical-align: middle;
     }
+
+.charIcon{
+  position: fixed;
+  text-align: center;
+}
+
+.title{
+  font-family: 'blowbrush';
+font-size: 100px;
+}
