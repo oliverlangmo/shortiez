@@ -15,7 +15,7 @@ router.get('/checkUser', function(req, res){
 }); //end checkUser
 
 router.post('/getUserCheck', function(req, res){
-  var findUser= req.body.username;
+  var findUser = req.body.username;
   User.findOne({username: findUser}, function(err, data) {
     if(err){
       console.log(err);

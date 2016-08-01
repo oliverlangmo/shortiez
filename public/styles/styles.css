@@ -1,10 +1,3 @@
-#storyInput {
-  height: 200px;
-  width: 700px;
-  overflow: hidden;
-  display: block;
-}
-
 #adminTestBox {
   height: 100px;
   width: 700px;
@@ -25,14 +18,12 @@
 
 .wordBtn:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
-
 }
 
 @font-face {
     font-family: 'blowbrush';
     src: url(blowbrush.ttf);
 }
-
 
 body, html{
   background-color: #f7f3ee;
@@ -43,9 +34,10 @@ body, html{
 
 .navbar-default{
   background-color: #134d10;
-padding-top: 30px;
-padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
+
 #login{
   color: white;
   padding-left: 5px;
@@ -59,35 +51,14 @@ padding-bottom: 30px;
   overflow: auto;
   padding-bottom: 100px;
   margin: auto;
+}
 
-}
-.mainLink{
+.headerBtn{
   color: white;
   font-family: 'Comic Sans MS';
-  font-size: 30px;
+  font-size: 24px;
 }
-.libraryAdmin{
-  color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 30px;
-}
-.adminAdd{
-  color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 30px;
-}
-.libraryUser {
-  color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 30px;
-}
-.logout {
-  float: right;
-  padding-right: 20px;
-  color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 30px;
-}
+
 .main{
   text-align: center;
 }
@@ -114,13 +85,11 @@ padding-bottom: 30px;
   transition: all 400ms ease-out 50ms;
 }
 
-
-textarea
-    {
-      width: 800px;
-      height: 300px;
-      vertical-align: middle;
-    }
+textarea {
+  width: 800px;
+  height: 300px;
+  vertical-align: middle;
+}
 
 .charIcon{
   position: fixed;
@@ -129,5 +98,5 @@ textarea
 
 .title{
   font-family: 'blowbrush';
-font-size: 100px;
+  font-size: 100px;
 }
