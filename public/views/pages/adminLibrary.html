@@ -1,0 +1,34 @@
+<div ng-controller="libraryAdminController" id="admin" ng-cloak  class="gridListdemoBasicUsage">
+  <h1> Admin Library </h1>
+  <h2> Click a story to edit. </h2>
+  <button type="button" name="addStoryButton" ng-click="toggle()"> Add a Story to the Library </button>
+
+  <div id="storyInput" ng-show= "addStoryToggle">
+  <h1>Add Story</h1>
+  <h2> Story Input </h2>
+  <input type="text" name="storyTitle" ng-model="storyTitleBinder" value="" placeholder="Story Title"><br>
+  <input type="text" name="storyCoverImg" ng-model="storyDescrpitionBinder" value="" placeholder="Story Description"><br>
+  <input type="text" name="storyCoverImg" ng-model="storyCoverBinder" value="" placeholder="Story Cover URL">
+  <button type="submit" name="submitCharButton" ng-click= "addStory()"> Submit Story </button>
+    <div id="storyPreview">
+      <h4> Title: {{storyTitleBinder}}</h4>
+      <img ng-src="{{storyCoverBinder}}" height="50px"/>
+      <h5> Description: {{storyDescrpitionBinder}} </h5>
+    </div>
+  </div>
+
+  <div class='md-padding' layout="row" layout-wrap >
+    <md-card style="width: 400px;" ng-repeat="story in stories">
+      <md-card-content>
+      <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
+
+        <h2> {{story.story_title}} </h2>
+        <p> {{story.story_description}} </p>
+
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button ng-click="editStory($index)">Edit</md-button>
+      </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

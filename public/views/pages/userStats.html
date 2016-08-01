@@ -1,0 +1,22 @@
+<div class = 'welcomeDiv'>
+  <h1> User Stats for {{user.username}}</h1>
+</div>
+
+<div class='md-padding' layout="row" layout-wrap >
+      <md-card style="width: 400px;" ng-repeat="user in users">
+        <md-card-content>
+
+          <h2>User Stats for {{user.username}}</h2>
+          <ul>
+            <li>{{user.name}}</li>
+            <li>{{user.birthday}}</li>
+            <li>{{user.grade}}</li>
+            <li>{{user.email}}</li>
+            <li>{{user.admin}}</li>
+          </ul>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button ng-click="selectReaderStory($index)">View</md-button>
+        </div>
+        </md-card-content>
+      </md-card>
+  </div>

@@ -6,6 +6,7 @@
      font-family: 'blowbrush';
      src: url(blowbrush.ttf);
  }
+
  body, html{
    background-color: #f7f3ee;
    background-repeat: repeat;
@@ -25,6 +26,7 @@
    height: 300px;
    vertical-align: middle;
  }
+
  .readerFontSize {
    font-size: 1.5em;
    font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
@@ -101,11 +103,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.sidebar-wrapper{
+  position: fixed;
+}
 .sideNav {
   float: left;
   color: blue;
   overflow-y: scroll;
+  position: relative;
 }
+
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px;
 }
