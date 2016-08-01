@@ -1,3 +1,16 @@
+@font-face {
+   font-family: OpenDyslexic;
+ }
+ /*@font-face {
+     font-family: 'blowbrush';
+     src: url(blowbrush.ttf);
+ }*/
+ .readerFontSize {
+   font-size: 1.5em;
+   font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
+   letter-spacing: 2px;
+   line-height: 225%
+ }
 #storyInput {
   height: 200px;
   width: 700px;
@@ -27,11 +40,38 @@
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
 
 }
-
-@font-face {
-    font-family: 'blowbrush';
-    src: url(blowbrush.ttf);
+.nextButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
 }
+.nextButton:hover {
+    background-color: #3e8e41;
+}
+.previousButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+.previousButton:hover {
+    background-color: #3e8e41;
+}
+
+
 
 body, html{
   background-color: #f7f3ee;
@@ -39,7 +79,9 @@ body, html{
   background-repeat: repeat;
   background-size: cover;
   height: 100%;
+  font-size: 1em;
 }
+
 
 .navbar-default{
   background-color: #134d10;
@@ -100,14 +142,11 @@ padding-bottom: 30px;
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
-
-
-textarea
-    {
+textarea {
       width: 800px;
       height: 300px;
       vertical-align: middle;
-    }
+}
 
 .charIcon{
   position: fixed;
