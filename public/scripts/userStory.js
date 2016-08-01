@@ -47,6 +47,7 @@ $scope.myStoryLoad = function (){
   $scope.currentStory = $rootScope.readerIndex.story_pages;
   $scope.myStory = $scope.currentStory[$scope.pageIndex];
   $scope.characters = $rootScope.readerIndex.story_characters;
+  window.scrollTo(0,0);
 }; // end myStoryLoad()
 
 $scope.nextPage = function(){

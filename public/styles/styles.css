@@ -1,6 +1,6 @@
 @font-face {
    font-family: OpenDyslexic;
-   src: url(OpenDyslexic-Regular copy.otf);
+   src: url(OpenDyslexic-Regular.otf);
  }
  @font-face {
      font-family: 'blowbrush';
@@ -14,6 +14,11 @@
    height: 100%;
    font-size: 1em;
  }
+ textarea {
+   width: 900px;
+   height: 300px;
+   vertical-align: middle;;
+ }
  footer {
    position: fixed;
    bottom: 0;
@@ -21,17 +26,23 @@
    left: 0;
    height: 150;
  }
- textarea {
-   width: 800px;
-   height: 300px;
-   vertical-align: middle;
- }
 
+
+/*.pageination {
+  position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  padding-left: 375px;
+}*/
  .readerFontSize {
    font-size: 1.5em;
    font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
    letter-spacing: 2px;
    line-height: 225%
+
  }
 .wordBtn {
   border-radius: 8px;
@@ -73,7 +84,7 @@
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    float: left;
+    margin-left: 250px;
 }
 .previousButton:hover {
     background-color: #3e8e41;
@@ -84,8 +95,6 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
-
 
 .headerBtn{
   color: white;
@@ -159,4 +168,30 @@
   overflow: auto;
   padding-bottom: 100px;
   margin: auto;
+}
+#grey_box {
+ width: 800px;
+ height: 900px;
+ border: solid 1px #ccc;
+ background: #ddd;
+ position: relative;
+ z-index: 9999;
+}
+/*#blue_box {
+  width: 200px;
+  height: 200px;
+  border: solid 1px #4a7497;
+  background: #8daac3;
+  position: relative;
+  z-index: 500;
+}*/
+
+
+#gold_box {
+ width: 200px;
+ height: 200px;
+ border: solid 1px #8b6125;
+ background: #ba945d;
+ position: relative;
+ z-index: 1;
 }
