@@ -46,7 +46,12 @@ console.log($rootScope.tempIndex, "tempIndex");
 
   };//end addChar
 
-
+  $scope.charToggle = function() {
+          $scope.addCharToggle = !$scope.addCharToggle;
+      };
+  $scope.pageToggle = function() {
+          $scope.addPageToggle = !$scope.addPageToggle;
+      };
 
   $scope.addPage = function(){ // adds issue on button click
    var pageObject ={  // package object to send, with inputs

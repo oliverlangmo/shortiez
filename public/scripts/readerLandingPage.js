@@ -3,6 +3,7 @@ function ($scope, $http, $rootScope, $location, userData, $mdSidenav) {
 
 // userData.checkAuth();
 
+
 $rootScope.stories = [];
 $scope.myStory = [];
 $scope.characters=[];

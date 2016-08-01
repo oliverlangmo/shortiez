@@ -10,7 +10,13 @@
   width: 700px;
   overflow: auto;
 }
-
+#charInput{
+}
+#charPreview{
+}
+#pageCard{
+  font-size: 4px;
+}
 .wordBtn {
   border-radius: 8px;
   border: none;
@@ -113,9 +119,39 @@ padding-bottom: 30px;
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
+#charInput{
+  width:auto;
+  height:auto;
+  padding: 5px 0px 5px 10px;
+  float:left;
+  margin-left: 150px;
+}
+#charPreview{
+  width:auto;
+  height:auto;
+  padding: 5px 10px 5px 0px;
+  float:right;
+  border-style: solid;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  margin-right: 150px;
+}
+#currentChars{
+  clear: both;
+  width: inherit;
+  height: auto;
+  position: static;
+  padding: 0px 10px 5px 10px;
+}
+#charBioInput{
+  width: 800px;
+  height: 100px;
+  vertical-align: middle;
 
+}
 
-textarea
+#textareaEdit
     {
       width: 800px;
       height: 300px;

@@ -23,9 +23,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/libraryAdmin', {
           templateUrl: '/views/pages/libraryAdmin.html',
       })
-      .when('/adminAddStory', {
-          templateUrl: '/views/pages/adminAddStory.html',
-      })
+      // .when('/adminAddStory', {
+      //     templateUrl: '/views/pages/adminAddStory.html',
+      // })
       .when('/adminPagesCharInput', {
           templateUrl: '/views/pages/adminPagesCharInput.html',
       })
@@ -93,12 +93,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   var randomNum = function (max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
-
-
-
-
-
-
 
   var getAllStories = function(){
 
