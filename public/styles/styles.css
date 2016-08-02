@@ -1,11 +1,6 @@
 @font-face {
-<<<<<<< HEAD
    font-family: 'OpenDyslexic';
    src: url(OpenDyslexic.otf);
-=======
-   font-family: OpenDyslexic;
-   src: url(OpenDyslexic-Regular.otf);
->>>>>>> be77b4d87d7b29e4a590123044f737fdfd696bf5
  }
  @font-face {
      font-family: 'blowbrush';
@@ -26,14 +21,13 @@
    vertical-align: middle;;
  }
 
- footer {
+ /*footer {
    position: fixed;
    bottom: 0;
    right: 0;
    left: 0;
    height: 150;
- }
-<<<<<<< HEAD
+ }*/
  textarea {
    width: 800px;
    height: 300px;
@@ -58,44 +52,29 @@
     font-family: "OpenDyslexic";
   }
  .smallClass{
-=======
-
-
-/*.pageination {
-  position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-  padding-left: 375px;
-}*/
- .readerFontSize {
->>>>>>> be77b4d87d7b29e4a590123044f737fdfd696bf5
    font-size: 1.5em;
    letter-spacing: 2px;
    line-height: 225%
-
  }
- .smallButton{
-   font-size: 1.0em;
- }
- .mediumClass{
-   font-size: 1.75em;
-   letter-spacing: 2.5px;
-   line-height: 225%
- }
- .mediumButton{
-   font-size: 1.25em;
- }
- .largeClass{
-   font-size: 2.0em;
-   letter-spacing: 3px;
-   line-height: 225%
- }
- .largeButton{
-   font-size: 1.5em;
- }
+   .smallButton{
+     font-size: 1.0em;
+   }
+   .mediumClass{
+     font-size: 1.75em;
+     letter-spacing: 2.5px;
+     line-height: 225%
+   }
+   .mediumButton{
+     font-size: 1.25em;
+   }
+   .largeClass{
+     font-size: 2.0em;
+     letter-spacing: 3px;
+     line-height: 225%
+   }
+   .largeButton{
+     font-size: 1.5em;
+   }
  /*.readerFontSize {
    font-size: 1.5em;
    font-family: 'OpenDyslexic', 'Comic Sans MS', blowbrush;
@@ -251,16 +230,7 @@
  position: relative;
  z-index: 9999;
 }
-/*#blue_box {
-  width: 200px;
-  height: 200px;
-  border: solid 1px #4a7497;
-  background: #8daac3;
-  position: relative;
-  z-index: 500;
-}*/
-
-
+/*
 #gold_box {
  width: 200px;
  height: 200px;
@@ -268,4 +238,4 @@
  background: #ba945d;
  position: relative;
  z-index: 1;
-}
+}*/
