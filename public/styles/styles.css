@@ -257,33 +257,25 @@
   padding-bottom: 100px;
   margin: auto;
 }
-/*#grey_box {
+#storyPage {
  width: 800px;
  height: 900px;
  border: solid 1px #ccc;
  background: #ddd;
  position: relative;
  z-index: 9999;
-}*/
-
-/*.pageination   {
-          border-radius: 2px;
-          text-indent: 20px;
-          width: auto;
-          padding: 0px 4px 0px 0px;
-          text-align: center;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: bold;
-          font-size: 11px;
-          line-height: 20px;
-          color: rgb(255, 255, 255);
-          position: absolute;
-          opacity: 1;
-          z-index: 8675309;
-          display: none;
-          cursor: pointer;
-          border: none;
-          webkit-font-smoothing: antialiased;
-          background: url("data:image/svg+xml;and on and on==") 3px 50% / 14px 14px no-repeat rgb(189, 8,28);/Save</span>
-}*/
+}
+#userStory {
+  border-radius: 2px;
+  float: left;
+   height: 900px;
+   width: 900px;
+   border-width: thick;
+   border-style: outset;
+   border-color: #0088dd;
+   padding: 10px;
+   margin: 50px 50px 50px 0px;
+   text-align: center;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+   background-color: yellow;
+}
