@@ -7,11 +7,11 @@
      src: url(blowbrush.ttf);
  }
 
- body{
+ body, html{
    /*background-color: #f7f3ee;*/
-   /*background: url(../views/images/urbanwatercolor.jpg);
-   -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-   background-size: cover;*/
+   background: url(../views/images/urbanwatercoloredit2.jpg);
+   background-attachment: fixed;
+   background-size: cover;
    height: 100%;
    font-size: 1em;
  }
