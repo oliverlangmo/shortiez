@@ -20,19 +20,14 @@
    height: 300px;
    vertical-align: middle;;
  }
-
- /*footer {
-   position: fixed;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   height: 150;
- }*/
- textarea {
-   width: 800px;
-   height: 300px;
-   vertical-align: middle;
- }
+ footer {
+  position: fixed;
+  background-color: #ba945d;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+}
  .arialClass{
    font-family: 'Arial', sans-serif;
  }
@@ -151,10 +146,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#sidebar-wrapper{
-  position: relative;
-  /*overflow-y: auto;*/
-}
 .sideNav {
   float: left;
   color: white;
@@ -192,7 +183,10 @@
 .btn-primary{
   background-color: #5f3cb0;
 }
-
+#sidebar-wrapper{
+  position: relative;
+  /*overflow-y: auto;*/
+}
 #storyInput {
   height: 200px;
   width: 700px;
