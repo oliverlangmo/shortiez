@@ -78,12 +78,25 @@ router.post('/updateTempUser', function(req, res){
     } // end else
   }); // TempUser.findOne
 }); // end updateTempUser
-router.post('/userUpdate', function(req,res){
+router.put('/userUpdate', function(req,res){
+  console.log(req.body);
   console.log('in update route');
-  var query = req.body.id;
-  User.findOneAndUpdate(query,{name:req.body.name, username: req.body.username, email: req.body.email, grade: req.body.grade, admin: req.body.admin }, function(err){
-
-  });
-
+  var query = {_id: req.body.id};
+  User.findOneAndUpdate(query,{name:req.body.name, username: req.body.username, email: req.body.email, grade: req.body.grade, admin: req.body.admin, birthday: req.body.birthday }, function(err){
 });
+});
+router.delete('/deleteUserInfo', function(req, res){
+  console.log('delete route with', req.body);
+  var query = {_id: req.body.id};
+  User.findOne({_id: req.body.id}, function(err, userResult) {
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }else{
+        User.remove({_id: userResult._id}, function(err) {});
+        res.sendStatus(200);
+      }
+    });
+});
+
 module.exports = router;
