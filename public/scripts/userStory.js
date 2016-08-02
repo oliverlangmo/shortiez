@@ -94,7 +94,6 @@ $scope.submitChange = function() {
   var text = angular.element(document.querySelector('#userStory'));
   text.empty();
   text.append(pageArray.join(' '));
-  $scope.checkedArray = [];
   $rootScope.cancel();
 }; // end submitChange
 
