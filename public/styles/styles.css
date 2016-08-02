@@ -15,75 +15,111 @@
    height: 100%;
    font-size: 1em;
  }
-
+/*readerStory*/
  textarea {
    width: 900px;
    height: 300px;
    vertical-align: middle;;
  }
-
+/*readerStory Nav*/
  footer {
   position: fixed;
   background-color: #ba945d;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 80px;
+  height: 120px;
+}
+.pageination{
+  margin: auto;
+}
+.previousButton{
+  float: left;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+.nextButton{
+  margin-top: 20px;
+  float: right;
+  margin-right: 15px;
+}
+#fontBtns{
+  margin-left: 60px;
+  /*padding-left: 80px;*/
+}
+.arialClass{
+ font-family: 'Arial', sans-serif;
+}
+.arialButton{
+ font-family: 'Arial', sans-serif;
+ font-size: 1.5em;
+ background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+}
+.comicClass{
+ font-family: 'Comic Sans MS';
+}
+.comicButton{
+ font-family: 'Comic Sans MS';
+ font-size: 1.5em;
+ background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+}
+.openDyslexicClass{
+ font-family: "OpenDyslexic";
+}
+.openDyslexicButton{
+  font-family: "OpenDyslexic";
+  font-size: 1.5em;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
 }
 
- .arialClass{
-   font-family: 'Arial', sans-serif;
- }
- .arialButton{
-   font-family: 'Arial', sans-serif;
- }
- .comicClass{
-   font-family: 'Comic Sans MS';
- }
- .comicButton{
-   font-family: 'Comic Sans MS';
- }
- .openDyslexicClass{
-   font-family: "OpenDyslexic";
- }
- .openDyslexicButton{
-    font-family: "OpenDyslexic";
+.smallClass{
+ font-size: 1.5em;
+ letter-spacing: 2px;
+ line-height: 225%;*/
+ width: 90%;
 }
-
- .smallClass{
-   font-size: 1.5em;
-
-   letter-spacing: 2px;
-   line-height: 225%;*/
-   width: 90%;
- }
 
 .smallButton{
-     font-size: 1.0em;
-   }
-   .mediumClass{
-     font-size: 1.75em;
-     letter-spacing: 2.5px;
-     line-height: 225%
-   }
-   .mediumButton{
-     font-size: 1.25em;
-   }
-   .largeClass{
-     font-size: 2.0em;
-     letter-spacing: 3px;
-     line-height: 225%
-   }
-   .largeButton{
-     font-size: 1.5em;
-   }
-
+   font-size: 1.0em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+}
+.mediumClass{
+   font-size: 1.75em;
+   letter-spacing: 2.5px;
+   line-height: 225%
+ }
+.mediumButton{
+   font-size: 1.25em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+ }
+.largeClass{
+   font-size: 2.0em;
+   letter-spacing: 3px;
+   line-height: 225%
+ }
+.largeButton{
+   font-size: 1.5em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+ }
+/*end readerStory Nav*/
 .wordBtn {
   border-radius: 8px;
   border: none;
   text-align: center;
   display: inline-block;
-  font-size: 12px;
+  /*font-size: 12px;*/
   margin: 2px 1px;
   cursor: pointer;
   -webkit-transition-duration: 0.3s; /* Safari */
@@ -95,35 +131,35 @@
 }
 
 .nextButton {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    float: right;
-    opacity: 50%;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+  opacity: 50%;
 }
 .nextButton:hover {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 .previousButton {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 250px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 250px;
 }
 .previousButton:hover {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 .navbar-default{
@@ -149,7 +185,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .sideNav {
   float: left;
   color: white;
