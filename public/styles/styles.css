@@ -149,10 +149,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 .sideNav {
   float: left;
   color: white;
@@ -190,18 +187,12 @@
 .btn-primary{
   background-color: #5f3cb0;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 #sidebar-wrapper{
   position: relative;
   /*overflow-y: auto;*/
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 #storyInput {
   height: 200px;
   width: 700px;
@@ -231,11 +222,33 @@
   padding-bottom: 100px;
   margin: auto;
 }
-#grey_box {
+/*#grey_box {
  width: 800px;
  height: 900px;
  border: solid 1px #ccc;
  background: #ddd;
  position: relative;
  z-index: 9999;
-}
+}*/
+
+/*.pageination   {
+          border-radius: 2px;
+          text-indent: 20px;
+          width: auto;
+          padding: 0px 4px 0px 0px;
+          text-align: center;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: bold;
+          font-size: 11px;
+          line-height: 20px;
+          color: rgb(255, 255, 255);
+          position: absolute;
+          opacity: 1;
+          z-index: 8675309;
+          display: none;
+          cursor: pointer;
+          border: none;
+          webkit-font-smoothing: antialiased;
+          background: url("data:image/svg+xml;and on and on==") 3px 50% / 14px 14px no-repeat rgb(189, 8,28);/Save</span>
+}*/
