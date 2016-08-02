@@ -18,10 +18,6 @@ $scope.adminStoryLoad = function() {
   // $scope.currentStory = $rootScope.storyIndex.story_pages;
   $scope.characters = $rootScope.storyIndex.story_characters;
   $scope.pages = $rootScope.storyIndex.story_pages;
-  // console.log("adminStoryLoad hit");
-  // console.log($rootScope.storyIndex, "storyIndex");
-  // console.log($scope.characters, "characters");
-  // console.log($scope.pages, "pages");
 }; // end adminStoryLoad()
 
 $scope.addChar = function() { // adds issue on button click

@@ -8,13 +8,11 @@ userData.getAllStories();
 
 $rootScope.stories = [];
 $scope.myStory = [];
-$scope.characters = [];
 $scope.newName = '';
 
 $scope.myStoryLoad = function() {
   $scope.currentStory = $rootScope.readerIndex.story_pages;
   $scope.myStory = $scope.currentStory[$rootScope.pageIndex];
-  $scope.characters = $rootScope.readerIndex.story_characters;
   var parsedText = angular.element(document.querySelector('#userStory'));
   parsedText.empty();
   parsedText.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
@@ -25,35 +23,34 @@ $scope.chooseNamePopup = function() {
   $scope.myStoryLoad();
   $uibModal.open({
     templateUrl: 'views/pages/chooseName.html',
-    controller: 'textPopupController',
-    size: 'sm'
+    controller: 'textPopupController'
   }); // end $modal.open
 }; // end openTextPopup
 
 $scope.selectReaderStory = function(index) {
+  $rootScope.characters = [];
   $rootScope.readerIndex = $rootScope.stories[index];
+  for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
+    $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
+  }
   var path = "#userLibrary";
   window.location.href = path;
 }; // end selectReaderStory
 
-$scope.nameReplace = function() {
+$scope.nameReplace = function(newName, oldName) {
   for (var i = 0; i < $rootScope.readerIndex.story_pages.length; i++) { // for loop 1
-    for (var x = 0; x < $rootScope.readerIndex.story_pages[i].page_text_btn.length; x++) { // for loop 2
-      if ($rootScope.readerIndex.story_pages[i].page_text_btn[x] === $rootScope.readerIndex.story_mainCharacterName) {
-        $rootScope.readerIndex.story_pages[i].page_text_btn.splice(x, 1, $scope.newName);
-      } // end if
-    } // end for loop 2
+    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.join(' ');
+    var regExp = new RegExp(oldName, 'gi');
+    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.replace(regExp, newName).trim();
+    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.split(' ');
   } // end for loop 1
-  $rootScope.cancel();
   $scope.myStoryLoad();
 }; // end nameReplace
 
 $scope.nextPage = function(){
-  console.log( "next clicked" );
-  $scope.pageIndex++;
-  console.log('$scope.pageIndex++;', $scope.pageIndex);
-  if( $scope.pageIndex == $scope.currentStory.length ){
-    $scope.pageIndex = 0;
+  $rootScope.pageIndex++;
+  if ($rootScope.pageIndex == $scope.currentStory.length ) {
+    $rootScope.pageIndex = 0;
   } // end if
   var text = angular.element(document.querySelector('#userStory'));
   text.empty();

@@ -5,16 +5,16 @@
 
   <div class="modal-body">
     <div id="nameChangeBox">
-      <div>
-        <label for="nameChange">Enter your name: </label>
-        <input type="text" name="nameChange" id="nameChange" ng-model="newName"><br>
-        <p> Name to replace: {{$rootScope.readerIndex.story_mainCharacterName}} </p>
-      </div>
+      <div id="charactersListDiv" ng-repeat="names in characters">
+        Old name: {{names}} New name:
+        <input type="text" name="name" ng-model="name">
+        <button ng-click="nameReplace(name, names)"> Submit </button>
+      </div> <!-- end ng-repeat -->
     </div> <!-- end nameChangeBox -->
   </div> <!-- end modal-body -->
 
   <div class="modal-footer">
-    <button class="btn-primary" ng-click="nameReplace()"> Submit </button>
+    <button class="btn-primary" ng-click="cancel()"> Done </button>
     <button class="btn-warning" ng-click="cancel()"> Cancel </button>
   </div> <!-- end modal-footer -->
 </div> <!-- end userStoryController -->
