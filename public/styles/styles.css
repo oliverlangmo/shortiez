@@ -48,18 +48,24 @@
   }
  .smallClass{
    font-size: 1.5em;
+   letter-spacing: 2px;
+   line-height: 225%
  }
  .smallButton{
    font-size: 1.0em;
  }
  .mediumClass{
    font-size: 1.75em;
+   letter-spacing: 2.5px;
+   line-height: 225%
  }
  .mediumButton{
    font-size: 1.25em;
  }
  .largeClass{
    font-size: 2.0em;
+   letter-spacing: 3px;
+   line-height: 225%
  }
  .largeButton{
    font-size: 1.5em;
