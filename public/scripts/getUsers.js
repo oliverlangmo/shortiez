@@ -43,6 +43,7 @@ $http({
 }).then(function(response){
   $scope.getUsers();
 });
+$rootScope.cancel();
 };
 
 $scope.deleteUser = function(id) {

@@ -14,6 +14,9 @@
     <script src="vendors/jquery.js"></script>
     <script src="vendors/bootstrap.js"></script>
     <script src="vendors/bootstrap.min.js"></script>
+    <script src="vendors/VeRvKX/css/style.css"></script>
+    <script src="vendors/VeRvKX/css/normalize.css"></script>
+    <script src="vendors/VeRvKX/scss/style.scss"></script>
 
     <script src="scripts/controller.js"></script>
     <script src="scripts/genericMain.js"></script>
@@ -32,10 +35,14 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
   </head>
   <body>
+    <div class="imgBack">
+
+
     <div ng-include=" '/views/partials/navBar.html' "></div>
-    
+
     <main ng-view></main>
   </body>
+</div>
 </html>
 
 <!--

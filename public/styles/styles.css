@@ -9,8 +9,8 @@
 
  body, html{
    /*background-color: #f7f3ee;*/
-   background: url(../views/images/urbanwatercolor.jpg);
-   /*background-repeat: repeat;*/
+   background: url(../views/images/urbanwatercoloredit2.jpg);
+   background-attachment: fixed;
    background-size: cover;
    height: 100%;
    font-size: 1em;
