@@ -31,18 +31,33 @@ $scope.updateUser = function(id){
     name: $scope.nameUpdate,
     email: $scope.emailUpdate,
     username: $scope.username,
-    grade: $scope.grade,
-    birthday: $scope.birthday,
-    admin: $scope.admin
+    grade: $scope.gradeUpdate,
+    birthday: $scope.bdayUpdate,
+    admin: $scope.adminUpdate
   };
 console.log(updateInfo);
 $http({
-  method: 'POST',
+  method: 'PUT',
   url: '/userUpdate',
   data: updateInfo
 }).then(function(response){
   $scope.getUsers();
 });
+$rootScope.cancel();
+};
+
+$scope.deleteUser = function(id) {
+  console.log('button clicked');
+  var userToDelete ={
+    id: $rootScope.usersArray[id]._id
+  };
+  console.log(userToDelete);
+  $http({
+    method: 'DELETE',
+    url: '/deleteUserInfo',
+    data: userToDelete,
+    headers: {'Content-Type': 'application/json;charset=utf-8'}
+  });
 };
 
 }]);
@@ -52,9 +67,9 @@ $rootScope.id = userId;
 $scope.nameUpdate = $rootScope.usersArray[userId].name;
 $scope.emailUpdate = $rootScope.usersArray[userId].email;
 $scope.username = $rootScope.usersArray[userId].username;
-$scope.grade = $rootScope.usersArray[userId].grade;
-$scope.birthday = $rootScope.usersArray[userId].birthday;
-$scope.admin = $rootScope.usersArray[userId].admin;
+$scope.gradeUpdate = $rootScope.usersArray[userId].grade;
+$scope.bdayUpdate = $rootScope.usersArray[userId].birthday;
+$scope.adminUpdate = $rootScope.usersArray[userId].admin;
 
 $rootScope.cancel = function(){
   $uibModalInstance.close();
