@@ -12,9 +12,9 @@ var login = require('./routes/login');
 var logout = require('./routes/logout');
 var register = require('./routes/register');
 var appGenericMain = require('./routes/appGenericMain');
-var createStory=require('./routes/storyCharPages');
+var createStory = require('./routes/storyCharPages');
 var getLibrary = require('./routes/libraryAdminRoute');
-var readerLandingPage = require('./routes/readerLandingPageRoute');
+var userStory = require('./routes/userStory');
 
 app.listen(process.env.PORT || 9002, function(){ console.log("Running on local port 9002..."); });
 
@@ -36,7 +36,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', login, logout, register, appGenericMain, createStory, getLibrary, readerLandingPage);
+app.use('/', login, logout, register, appGenericMain, createStory, getLibrary, userStory);
 
 app.get('/', function(req,res){
   console.log('URL hit');

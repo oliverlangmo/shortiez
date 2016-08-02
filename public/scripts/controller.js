@@ -29,6 +29,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
       })
+      .when('/chooseName', {
+          templateUrl: '/views/pages/chooseName.html'
+      })
       .otherwise({
       redirectTo: '/login'
     }); // end $routeProvider
@@ -41,27 +44,27 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 //-----------------------------------------  userData factory-----------------------------------------
 
-myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
+myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location) {
 
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.wordByElementId = '';
   $rootScope.tempIndex = '';
   $rootScope.saveStoryArray = [];
-  $rootScope.tempIdNum = 0;
+  $rootScope.wordByElementId = ''; // needed for modal textPopup
+  $rootScope.tempIdNum = 0; // needed for modal textPopup
+  $rootScope.pageIndex = 0; // needed for modal textPopup
 
-  $rootScope.page = [];
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
-    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
       $location.path('/#/login');
     } // end if
-  }; // end userCheck
+  }; // end adminCheck
 
   var checkAuth = function() {
     var check = $rootScope.userAuthCheck;
-    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
       $location.path('/#/login');
     } // end if
   }; // end checkAuth
@@ -79,14 +82,12 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-  var getAllStories = function(){
-    console.log("button clicked");
+  var getAllStories = function() {
     $http({
       method: 'GET',
       url: '/getStories',
-      }).then(function(response){
+      }).then(function(response) {
         $rootScope.stories = response.data;
-        console.log(response.data);
       }); // end http GET
   }; // end getStories
 

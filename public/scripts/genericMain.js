@@ -2,7 +2,6 @@ angular.module('myApp').controller('genericMainController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
-  // uncomment this if you want only authorized users access this page
   // userData.checkAuth();
 
   $scope.nameInput = '';
@@ -62,8 +61,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
       }).then(function(response){
         userData.getUsers();
         $rootScope.cancel();
-        } // end then
-      ); // end http
+        }); // end http
   }; // end updateUser
 
   $scope.getUsers = function() {

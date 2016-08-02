@@ -9,56 +9,54 @@ var mongoose = require('mongoose');  // require mongoose for mongo db
 
 var router = express.Router();
 
-router.post( '/addStory', function( req, res ){  // POST call
-  var storyToAdd={  // adds record from input
+router.post('/addStory', function(req, res){
+  var storyToAdd = {
     story_title: req.body.story_title,
     story_description: req.body.story_description,
     story_cover: req.body.story_cover
   };
-  console.log(storyToAdd, "storyToAdd");
-
-  var newStory=addStory( storyToAdd );  // saves record to database
+  var newStory = addStory(storyToAdd);
   newStory.save();
-}); //end addStory post
+}); // end addStory post
 
-router.post( '/addCharacter', function( req, res ){  // POST call
-  var characterToAdd={  // adds record from input
+router.post('/addCharacter', function(req, res) {
+  var characterToAdd = {
     character_name: req.body.character_name,
     character_traits: req.body.character_traits,
     character_bio: req.body.character_bio,
     character_photo: req.body.character_photo,
-    id : req.body.id
+    id: req.body.id
   };
-console.log(req.body);
-  addStory.findOneAndUpdate({_id:req.body.id}, {$push: { story_characters:  characterToAdd  }}, function(err, issueResult){
+  addStory.findOneAndUpdate({_id:req.body.id}, {$push: {story_characters:  characterToAdd}}, function(err, issueResult){
     if(err){
       console.log(err);
       res.sendStatus(500);
-    }else{
-    // console.log(req.body.id, " found.", req.body.pages, "available")
-    console.log("success character, check DB" + req.body.id);
+    } else {
+    console.log('character saved successfully');
     res.sendStatus(200);
-    }
-  }); //end findOneAndUpdate
-}); //end character post
-router.post( '/addPage', function( req, res ){  // POST call
-  var pageToAdd={  // adds record from input
-    page_number: req.body.page_number,
-    page_text: req.body.page_text,
-    page_illustration: req.body.page_illustration
-    };
+    } // end else
+  }); // end findOneAndUpdate
+}); // end character post
 
-  addStory.findOneAndUpdate({_id:req.body.id}, {$push: { story_pages:  pageToAdd  }}, function(err, issueResult){
-    if(err){
+router.post('/addPage', function(req, res) {
+  var pageToAdd = {
+    page_number: req.body.page_number,
+    page_text_plain: req.body.page_text_plain,
+    page_text_btn: req.body.page_text_btn,
+    page_illustration: req.body.page_illustration,
+    id: req.body.id
+  }; // end pageToAdd
+  console.log(req.body.id);
+  addStory.findOneAndUpdate({_id:req.body.id}, {$push: { story_pages:  pageToAdd }}, function(err, issueResult){
+    if (err) {
       console.log(err);
       res.sendStatus(500);
-    }else{
-    // console.log(req.body.id, " found.", req.body.pages, "available")
-    console.log("success page, check DB" + req.body.id);
+    } else {
+    console.log('page saved successfully');
     res.sendStatus(200);
-    }
-  }); //end findOneAndUpdate
-}); //end page post
+  } // end else
+  }); // end findOneAndUpdate
+}); // end /addPage post
 
 
 module.exports = router;

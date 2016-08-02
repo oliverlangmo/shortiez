@@ -6,23 +6,12 @@
      src: url(blowbrush.ttf);
  }*/
  .readerFontSize {
-   font-size: 1.5em;
-   font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
+   font-size: 15px;
+   /*font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
    letter-spacing: 2px;
-   line-height: 225%
+   line-height: 225%;*/
+   width: 90%;
  }
-#storyInput {
-  height: 200px;
-  width: 700px;
-  overflow: hidden;
-  display: block;
-}
-
-#adminTestBox {
-  height: 100px;
-  width: 700px;
-  overflow: auto;
-}
 
 .wordBtn {
   border-radius: 8px;
@@ -78,7 +67,6 @@ body, html{
   font-size: 1em;
 }
 
-
 .navbar-default{
   background-color: #134d10;
   padding-top: 30px;
@@ -131,18 +119,11 @@ body, html{
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
-<<<<<<< HEAD
 
 textarea {
   width: 800px;
   height: 300px;
   vertical-align: middle;
-=======
-textarea {
-      width: 800px;
-      height: 300px;
-      vertical-align: middle;
->>>>>>> 721ad24d8f7f9683617d5c49d5ca34fbcee4ab15
 }
 
 .charIcon{
