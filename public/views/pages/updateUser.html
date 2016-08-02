@@ -5,8 +5,8 @@
 
   <div class="modal-body">
     <div id="updateUserDiv">
-      <input type="text" id="nameUpdate" ng-model="nameUpdate"><br>
-      <input type="date" id="bdayUpdate" ng-model="bdayUpdate" value="Birthday"><br>
+      <input type="text" id="nameUpdate" ng-model="nameUpdate" placeholder="Name"><br>
+      <input type="date" id="bdayUpdate" ng-model="bdayUpdate" placeholder="{{user.birthday}}"><br>
       <input type="text" id="gradeUpdate" ng-model="gradeUpdate" value="Grade"><br>
       <input type="email" id="emailUpdate" ng-model="emailUpdate" value="Email"><br>
       <label for ='adminUpdate'>Admin?</label><input type="checkbox" id="adminUpdate" ng-model="adminUpdate">
@@ -14,7 +14,7 @@
   </div> <!-- end modal-body -->
 
   <div class="modal-footer">
-    <button class="basicBtn" id="updateBtn" ng-click="updateUser(id)"> Update {{user.username}} </button>
+    <button class="basicBtn" id="updateBtn" ng-click="updateUser(id)"> Update</button>
     <button class="basicBtn" id="cancelBtn" ng-click="cancel()"> Cancel </button>
   </div> <!-- end modal-footer -->
 </div> <!-- end genericMainController -->
