@@ -72,6 +72,22 @@ $scope.prevPage = function(){
   $scope.myStoryLoad();
   event.preventDefault();
 }; // end prevPage()
-
-
+$scope.arialFont = function(){
+  $scope.storyClass = "arialClass";
+};
+$scope.comicFont = function(){
+  $scope.storyClass = "comicClass";
+};
+$scope.openDyslexicFont = function(){
+  $scope.storyClass = "openDyslexicClass";
+};
+$scope.smallFont = function(){
+  $scope.sizeClass = "smallClass";
+};
+$scope.mediumFont = function(){
+  $scope.sizeClass = "mediumClass";
+};
+$scope.largeFont = function(){
+  $scope.sizeClass = "largeClass";
+};
 }]);//end of libraryCtrl controller

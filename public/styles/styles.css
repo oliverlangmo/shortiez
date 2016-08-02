@@ -1,6 +1,6 @@
 @font-face {
-   font-family: OpenDyslexic;
-   src: url(OpenDyslexic-Regular copy.otf);
+   font-family: 'OpenDyslexic';
+   src: url(OpenDyslexic.otf);
  }
  @font-face {
      font-family: 'blowbrush';
@@ -28,13 +28,48 @@
    height: 300px;
    vertical-align: middle;
  }
-
- .readerFontSize {
+ .arialClass{
+   font-family: 'Arial', sans-serif;
+ }
+ .arialButton{
+   font-family: 'Arial', sans-serif;
+ }
+ .comicClass{
+   font-family: 'Comic Sans MS';
+ }
+ .comicButton{
+   font-family: 'Comic Sans MS';
+ }
+ .openDyslexicClass{
+   font-family: "OpenDyslexic";
+ }
+ .openDyslexicButton{
+    font-family: "OpenDyslexic";
+  }
+ .smallClass{
    font-size: 1.5em;
-   font-family: OpenDyslexic, 'Comic Sans MS', blowbrush;
+ }
+ .smallButton{
+   font-size: 1.0em;
+ }
+ .mediumClass{
+   font-size: 1.75em;
+ }
+ .mediumButton{
+   font-size: 1.25em;
+ }
+ .largeClass{
+   font-size: 2.0em;
+ }
+ .largeButton{
+   font-size: 1.5em;
+ }
+ /*.readerFontSize {
+   font-size: 1.5em;
+   font-family: 'OpenDyslexic', 'Comic Sans MS', blowbrush;
    letter-spacing: 2px;
    line-height: 225%
- }
+ }*/
 .wordBtn {
   border-radius: 8px;
   border: none;
