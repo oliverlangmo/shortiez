@@ -59,6 +59,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.wordByElementId = ''; // needed for modal textPopup
   $rootScope.tempIdNum = 0; // needed for modal textPopup
   $rootScope.pageIndex = 0; // needed for modal textPopup
+  $rootScope.characters = []; // needed for modal textPopup
   $rootScope.page = [];
 
 

@@ -83,7 +83,7 @@
   border: none;
   text-align: center;
   display: inline-block;
-  font-size: 12px;
+  /*font-size: 12px;*/
   margin: 2px 1px;
   cursor: pointer;
   -webkit-transition-duration: 0.3s; /* Safari */
@@ -149,10 +149,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 .sideNav {
   float: left;
   color: white;
@@ -190,18 +187,12 @@
 .btn-primary{
   background-color: #5f3cb0;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 #sidebar-wrapper{
   position: relative;
   /*overflow-y: auto;*/
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> footer
 #storyInput {
   height: 200px;
   width: 700px;
