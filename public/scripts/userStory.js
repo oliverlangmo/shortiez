@@ -65,7 +65,7 @@ $scope.nextPage = function(){
 $scope.prevPage = function() {
   $rootScope.pageIndex--;
   if ($rootScope.pageIndex === - 1) {
-    $rootScope.pageIndexx = $scope.currentStory.length - 1;
+    $rootScope.pageIndex = $scope.currentStory.length - 1;
   } // end if
   var text = angular.element(document.querySelector('#userStory'));
   text.empty();
