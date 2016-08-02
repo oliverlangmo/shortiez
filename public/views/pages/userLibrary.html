@@ -37,13 +37,13 @@
               <div class="{{sizeClass}}">
                 <h1>{{readerIndex.story_title}}</h1>
                 <img ng-src="{{myStory.page_illustration}}" height='100px'/>
-                <div class="readerFontSize"> {{myStory.page_text}} </div><br>
+                <div id="userStory"></div>
               </div>
             </div>
           </div>
             <footer>
               <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
-              <button  class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">Back</button>
+              <button class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">Back</button>
               <button class="nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
               <button class= "arialButton" type= "button" name="arialButton" ng-click= "arialFont()">Font 1</button>
               <button class= "comicButton" type= "button" name="comicButton" ng-click= "comicFont()">Font 2</button>
