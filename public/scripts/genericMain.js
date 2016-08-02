@@ -64,13 +64,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
         }); // end http
   }; // end updateUser
 
-  $scope.getUsers = function() {
-    $http({
-      method: 'GET',
-      url: '/getUsers', }).then(function(response){
-        $rootScope.usersArray = response.data;
-      }); // end http GET
-  }; // end getUsers
+  
 
 //---------------------------------------------------  TEST  -------------------------------------------------
 

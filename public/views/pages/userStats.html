@@ -1,0 +1,24 @@
+<div class = 'welcomeDiv' ng-controller = "getUserInfo" ng-init='getUsers()'>
+  <h1> User Stats</h1>
+
+
+<div class='md-padding' layout="row" layout-wrap >
+      <md-card style="width: 400px;" ng-repeat="user in usersArray">
+        <md-card-content>
+
+          <h2>User Stats for {{user.username}}</h2>
+          <ul>
+            <li>Name: {{user.name}}</li>
+            <li>Birthday: {{user.birthday}}</li>
+            <li>Grade:{{user.grade}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Admin? {{user.admin}}</li>
+          </ul>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button ng-click="editUser($index)">Edit</md-button>
+          <md-button ng-click="selectReaderStory($index)">Delete</md-button>
+        </div>
+        </md-card-content>
+      </md-card>
+  </div>
+</div>

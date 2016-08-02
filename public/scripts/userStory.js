@@ -18,6 +18,7 @@ $scope.myStoryLoad = function() {
   var parsedText = angular.element(document.querySelector('#userStory'));
   parsedText.empty();
   parsedText.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
+  window.scrollTo(0,0);
 }; // end myStoryLoad
 
 $scope.chooseNamePopup = function() {
@@ -47,10 +48,12 @@ $scope.nameReplace = function() {
   $scope.myStoryLoad();
 }; // end nameReplace
 
-$scope.nextPage = function() {
-  $rootScope.pageIndex++;
-  if ($rootScope.pageIndex === $scope.currentStory.length) {
-    $rootScope.pageIndex = 0;
+$scope.nextPage = function(){
+  console.log( "next clicked" );
+  $scope.pageIndex++;
+  console.log('$scope.pageIndex++;', $scope.pageIndex);
+  if( $scope.pageIndex == $scope.currentStory.length ){
+    $scope.pageIndex = 0;
   } // end if
   var text = angular.element(document.querySelector('#userStory'));
   text.empty();
@@ -95,6 +98,24 @@ $scope.submitChange = function() {
   $rootScope.cancel();
 }; // end submitChange
 
+$scope.arialFont = function(){
+  $scope.storyClass = "arialClass";
+};
+$scope.comicFont = function(){
+  $scope.storyClass = "comicClass";
+};
+$scope.openDyslexicFont = function(){
+  $scope.storyClass = "openDyslexicClass";
+};
+$scope.smallFont = function(){
+  $scope.sizeClass = "smallClass";
+};
+$scope.mediumFont = function(){
+  $scope.sizeClass = "mediumClass";
+};
+$scope.largeFont = function(){
+  $scope.sizeClass = "largeClass";
+};
 
 }]); // end userStoryController
 

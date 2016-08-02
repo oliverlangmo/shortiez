@@ -27,7 +27,8 @@ router.post('/getUserCheck', function(req, res){
 }); // end getUserCheck
 
 router.get('/getUsers', function(req, res){
-  TempUser.find().then(function(data){
+  // console.log('hit user get route');
+  User.find().then(function(data){
   res.send(data);
   }); // end TempUser.find
 }); //end getTempUser
@@ -77,5 +78,12 @@ router.post('/updateTempUser', function(req, res){
     } // end else
   }); // TempUser.findOne
 }); // end updateTempUser
+router.post('/userUpdate', function(req,res){
+  console.log('in update route');
+  var query = req.body.id;
+  User.findOneAndUpdate(query,{name:req.body.name, username: req.body.username, email: req.body.email, grade: req.body.grade, admin: req.body.admin }, function(err){
 
+  });
+
+});
 module.exports = router;

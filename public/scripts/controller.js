@@ -29,8 +29,12 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
       })
+
       .when('/chooseName', {
           templateUrl: '/views/pages/chooseName.html'
+      })
+      .when('/userStats', {
+          templateUrl: '/views/pages/userStats.html'
       })
       .otherwise({
       redirectTo: '/login'
@@ -49,10 +53,13 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
   $rootScope.tempIndex = '';
+  $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
+  $rootScope.usersArray = [];
   $rootScope.wordByElementId = ''; // needed for modal textPopup
   $rootScope.tempIdNum = 0; // needed for modal textPopup
   $rootScope.pageIndex = 0; // needed for modal textPopup
+  $rootScope.page = [];
 
 
   var adminCheck = function() {
