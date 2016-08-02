@@ -1,6 +1,6 @@
 angular.module('myApp').controller('libraryAdminController',
-['$scope', '$http', '$rootScope', '$location', 'userData',
-function ($scope, $http, $rootScope, $location, userData) {
+['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
+function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
 // userData.adminCheck();
 
@@ -9,12 +9,12 @@ event.preventDefault();
 
 $rootScope.stories = [];
 
-$scope.addStory = function(){ // adds issue on button click
-  var storyToCreate = {  // package object to send, with inputs
+$scope.addStory = function() {
+  var storyToCreate = {
     story_title: $scope.storyTitleBinder,
     story_cover: $scope.storyCoverBinder,
     story_description: $scope.storyDescrpitionBinder
-  }; //end objectToSend
+  }; // end objectToSend
   console.log(storyToCreate, "storyToCreate");
   $http({
     method: 'POST',
@@ -25,18 +25,17 @@ $scope.addStory = function(){ // adds issue on button click
     $scope.storyCoverBinder ='';
     $scope.storyDescrpitionBinder = '';
     // $location.path('/#/adminEdit')
-}; //end addStory
+}; // end addStory
 
 $scope.toggle = function() {
   $scope.addStoryToggle = !$scope.addStoryToggle;
 }; // end toggle
 
-$scope.editStory= function(index){
+$scope.editStory= function(index) {
   var path= "#adminEdit";
   $rootScope.tempIndex = $rootScope.stories[index]._id;
   $rootScope.storyIndex = $rootScope.stories[index];
-  console.log("Stories: " + $rootScope.stories[index]._id);
   window.location.href = path;
 }; // end editStory
 
-}]);//end of libraryCtrl controller
+}]); // end of libraryCtrl controller

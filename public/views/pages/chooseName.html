@@ -1,0 +1,20 @@
+<div ng-controller="userStoryController">
+  <div class="modal-header">
+    <h3 class="modal-title"> Change Name </h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="nameChangeBox">
+      <div>
+        <label for="nameChange">Enter your name: </label>
+        <input type="text" name="nameChange" id="nameChange" ng-model="newName"><br>
+        <p> Name to replace: {{$rootScope.readerIndex.story_mainCharacterName}} </p>
+      </div>
+    </div> <!-- end nameChangeBox -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button class="btn-primary" ng-click="nameReplace()"> Submit </button>
+    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div> <!-- end userStoryController -->

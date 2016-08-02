@@ -1,7 +1,8 @@
-
-<div ng-controller="userStoryController" ng-init="myStoryLoad()">
+<div ng-controller="userStoryController" ng-init="chooseNamePopup()">
   <div id="wrapper">
+
     <!-- Sidebar -->
+
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav sideNav">
         <li class="sidebar-brand">
@@ -11,13 +12,13 @@
               <p> {{readerIndex.story_title}} </p>
               <img ng-src="{{readerIndex.story_cover}}" height='100px'/>
             </div>
-          </li>
-          <li>
-            <div class="character"> Characters </div>
-          </li>
-          <li id="charIcon">
-            <div class="charIcon" ng-repeat="character in characters">
-              <img ng-src="{{character.character_photo}}" height='100px' /><br>
+          </a>
+          <a href="#"> Characters </a>
+        </li>
+        <li>
+          <div class="charIcon">
+            <div ng-repeat="character in characters">
+              <img ng-src="{{character.character_photo}}" height='100px'/><br>
               {{character.character_name}}
               <p> Traits: {{character.character_traits}} </p>
             </div>
@@ -25,7 +26,9 @@
         </li>
       </ul>
     </div>
+
   <!-- body -->
+
     <div id="page-content-wrapper">
       <div class="container">
         <div class="row">
@@ -34,21 +37,24 @@
               <div class="{{sizeClass}}">
                 <h1>{{readerIndex.story_title}}</h1>
                 <img ng-src="{{myStory.page_illustration}}" height='100px'/>
-                <div class="readerFontSize"> {{myStory.page_text}} </div><br>
+                <div id="userStory"></div>
               </div>
             </div>
-            <!-- <div class="divbtn" -->
           </div>
             <footer>
-                <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
-              <button  class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">Back</button>
+              <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
+              <div class="navBtns">
+              <button class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">Back</button>
               <button class="nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">Next</button>
+              </div>
+              <div class= "fontBtns">
               <button class= "arialButton" type= "button" name="arialButton" ng-click= "arialFont()">Font 1</button>
               <button class= "comicButton" type= "button" name="comicButton" ng-click= "comicFont()">Font 2</button>
               <button class= "openDyslexicButton" type= "button" name="openDyslexicButton" ng-click= "openDyslexicFont()">Font 3</button>
               <button class= "smallButton" type= "button" name="smallButton" ng-click= "smallFont()">small</button>
               <button class= "mediumButton" type= "button" name="mediumButton" ng-click= "mediumFont()">medium</button>
               <button class= "largeButton" type= "button" name="largeButton" ng-click= "largeFont()">large</button>
+            </div>
             </footer>
           </div>
       </div>
