@@ -40,10 +40,9 @@ $http({
   method: 'PUT',
   url: '/userUpdate',
   data: updateInfo
-}).then(function(response){
-  $scope.getUsers();
 });
 $rootScope.cancel();
+$scope.getUsers();
 };
 
 $scope.deleteUser = function(id) {
