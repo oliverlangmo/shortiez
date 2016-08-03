@@ -74,11 +74,11 @@
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
-  background-color: #ba945d;
+  /*background-color: #ba945d;*/
   bottom: 0;
   right: 0;
   left: 0;
-  height: 120px;
+  height: 100px;
 }
 .pageination{
   margin: auto;
