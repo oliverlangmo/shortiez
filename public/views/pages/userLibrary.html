@@ -48,9 +48,9 @@
               <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
               <div class="navBtns">
                 <button  class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
+                <button class="nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
                 <button type="button" name="button" ng-click="toggle()">Change Font</button>
                 <div id="fontBox" ng-show="commentText">
-                <button class="nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
               <div class= "fontBtns">
               <button class= "arialButton" type= "button" name="arialButton" ng-click= "arialFont()">Font 1</button>
               <button class= "comicButton" type= "button" name="comicButton" ng-click= "comicFont()">Font 2</button>
@@ -59,10 +59,6 @@
               <button class= "smallButton" type= "button" name="smallButton" ng-click= "smallFont()">small</button>
               <button class= "mediumButton" type= "button" name="mediumButton" ng-click= "mediumFont()">medium</button>
               <button class= "largeButton" type= "button" name="largeButton" ng-click= "largeFont()">large</button>
-
-              <button class= "arialButton" type= "button" name="arialButton" ng-click= "arialFont()">Font 1</button>
-              <button class= "comicButton" type= "button" name="comicButton" ng-click= "comicFont()">Font 2</button>
-              <button class= "openDyslexicButton" type= "button" name="openDyslexicButton" ng-click= "openDyslexicFont()">Font 3</button>
             <!-- </div> -->
           </div>
           </div>

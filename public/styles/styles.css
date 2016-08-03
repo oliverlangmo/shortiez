@@ -15,6 +15,49 @@
    height: 100%;
    font-size: 1em;
  }
+
+
+ /*---------------------------------    nav bar   -------------------------------------*/
+ .headerBtn{
+   color: white;
+   font-family: 'Comic Sans MS';
+   font-size: 24px;
+     background-color: #118cc3;
+   /*height: 30px;*/
+   margin-right: 5px;
+   padding-top: 30px;
+   padding-bottom: 10px;
+   text-decoration: none;
+ }
+.headerBtn:hover{
+  background-color: #5f3cb0;
+  text-decoration: none;
+  color: white;
+}
+ #loginB{
+   color: white;
+   padding-left: 5px;
+   margin-right: 5px;
+   margin-left: 10px;
+   font-family: 'Comic Sans MS';
+   /*font-family: 'blowbrush';*/
+   font-size: 24px;
+ }
+ #login:hover{
+   color: #118cc3;
+   background-color: white;
+ }
+#logoutBtn{
+  align-items: right;
+
+}
+ .navbar-default{
+    /*background-color: #118cc3;*/--blue
+    background-color: #fefefe;
+    padding-top: 10px;
+    padding-bottom: 10px; /*helps move the text in the sidenav up*/
+  }
+
 /*--------------------------------      readerStory         --------------------------------*/
 
  textarea {
@@ -22,12 +65,7 @@
    height: 300px;
    vertical-align: middle;;
  }
-.navbar-default{
-   background-color: #118cc3;
-   /*background-color: #2b43b0;*/
-   padding-top: 30px;
-   padding-bottom: 10px; /*helps move the text in the sidenav up*/
- }
+
  .sideNav {
    float: left;
    color: white;
@@ -73,11 +111,12 @@
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
-  background-color: #ba945d;
+  background-color: #f5e5d2;
+  opacity: 1;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 120px;
+  height: 100px;
 }
 .pageination{
   margin: auto;
@@ -128,8 +167,8 @@
 }
 .arialButton{
  font-family: 'Arial', sans-serif;
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
+ font-size: 1em;
+ background-color: #5f3cb0; /* purple */
  border: none;
  color: white;
 }
@@ -138,8 +177,8 @@
 }
 .comicButton{
  font-family: 'Comic Sans MS';
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
+ font-size: 1em;
+ background-color: #5f3cb0; /* purple */
  border: none;
  color: white;
 }
@@ -148,8 +187,8 @@
 }
 .openDyslexicButton{
   font-family: "OpenDyslexic";
-  font-size: 1.5em;
-  background-color: #4CAF50; /* Green */
+  font-size: 1em;
+  background-color: #5f3cb0; /* purple */
   border: none;
   color: white;
 }
@@ -161,7 +200,7 @@
 }
 .smallButton{
    font-size: 1.0em;
-   background-color: #4CAF50; /* Green */
+   background-color: #5f3cb0; /* purple */
    border: none;
    color: white;
 }
@@ -171,8 +210,8 @@
    line-height: 225%
  }
 .mediumButton{
-   font-size: 1.25em;
-   background-color: #4CAF50; /* Green */
+   font-size: 1em;
+   background-color: #5f3cb0; /* purple */
    border: none;
    color: white;
  }
@@ -182,8 +221,8 @@
    line-height: 225%
  }
 .largeButton{
-   font-size: 1.5em;
-   background-color: #4CAF50; /* Green */
+   font-size: 1em;
+   background-color: #5f3cb0; /* purple */
    border: none;
    color: white;
  }
@@ -191,6 +230,11 @@
  #fontBtns{
    margin-left: 60px;
    /*padding-left: 80px;*/
+ }
+
+ #fontBox{
+   border: solid;
+   background-color:#f5e5d2;
  }
 /*---------------------     end readerStory Nav     --------------------------------*/
 /*---------------------      end readerStory        --------------------------------*/
@@ -213,13 +257,6 @@
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
 }
 
-/*nav bar*/
-.headerBtn{
-  color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 24px;
-}
-
 /*--------------------------------    login        --------------------------------*/
 .loginCont {
   position: fixed;
@@ -227,18 +264,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-#login{
-  color: white;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-family: 'Comic Sans MS';
-  /*font-family: 'blowbrush';*/
-  font-size: 30px;
-}
-#login:hover{
-  color: #118cc3;
-  background-color: white;
 }
 
 /*Admin Library*/
@@ -274,8 +299,4 @@
 /*--------------------------------     modals        --------------------------------*/
 .btn-primary{
   background-color: #5f3cb0;
-}
-#fontBox{
-  border: solid;
-  background-color:#f5e5d2; 
 }
