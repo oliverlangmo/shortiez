@@ -6,9 +6,10 @@
   <div class="modal-body">
     <div id="nameChangeBox">
       <div id="charactersListDiv" ng-repeat="names in characters">
-        Old name: {{names}} New name:
+        Old name: {{names}}
         <input type="text" name="name" ng-model="name">
-        <button ng-click="nameReplace(name, names)"> Submit </button>
+        <button ng-click="nameReplace(name, names)"> Change </button>
+        <!-- <button ng-click="editName()"> Edit </button> -->
       </div> <!-- end ng-repeat -->
     </div> <!-- end nameChangeBox -->
   </div> <!-- end modal-body -->

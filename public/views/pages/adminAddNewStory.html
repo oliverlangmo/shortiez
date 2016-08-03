@@ -1,0 +1,27 @@
+<div ng-controller="libraryAdminController">
+  <div class="modal-header">
+    <h3 class="modal-title"> Add New Story </h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="storyInputBox">
+    <h3> Story Input </h3>
+    <label for="storyTitle"> Title </label>
+    <input type="text" name="storyTitle" ng-model="storyTitleBinder" value="" placeholder="Title"><br>
+    <label for="storyDescription"> Description </label>
+    <input type="text" name="storyDescription" ng-model="storyDescrpitionBinder" value="" placeholder="Description"><br>
+    <label for="storyCoverImg"> Cover URL</label>
+    <input type="text" name="storyCoverImg" ng-model="storyCoverBinder" value="" placeholder="URL">
+      <div id="storyPreview">
+        <h4> Title: {{storyTitleBinder}}</h4>
+        <h5> Description: {{storyDescrpitionBinder}} </h5>
+        <img ng-src="{{storyCoverBinder}}" height="50px"/>
+      </div>
+  </div> <!-- end storyInputBox -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button class="btn-primary" ng-click="addStory()"> Submit </button>
+    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div> <!-- end libraryAdminController -->
