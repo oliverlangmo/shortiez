@@ -86,19 +86,20 @@
     position: relative;
     /*overflow-y: auto;*/
   }
-  #storyPage {
+  /*#storyPage {
    width: 800px;
    height: 900px;
    border: solid 1px #ccc;
    background: #ddd;
    position: relative;
    z-index: 9999;
-  }
-  #userStory {
+  }*/
+  .storyPage {
     border-radius: 2px;
     float: left;
-     height: 900px;
-     width: 900px;
+    position: relative:
+     height: 50vw;
+     width: 50vw;
      border-width: thick;
      border-style: outset;
      border-color: #0088dd;
@@ -106,8 +107,8 @@
      margin: 50px 50px 50px 0px;
      text-align: center;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-     background-color: yellow;
-  }
+     background-color: #f7f3ee;
+}
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
@@ -294,7 +295,6 @@
   padding-bottom: 100px;
   margin: auto;
 }
-
 
 /*--------------------------------     modals        --------------------------------*/
 .btn-primary{
