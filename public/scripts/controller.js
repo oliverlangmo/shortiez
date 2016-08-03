@@ -29,9 +29,11 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
       })
-
       .when('/chooseName', {
           templateUrl: '/views/pages/chooseName.html'
+      })
+      .when('/adminAddNewStory', {
+          templateUrl: '/views/pages/adminAddNewStory.html'
       })
       .when('/userStats', {
           templateUrl: '/views/pages/userStats.html'
@@ -52,7 +54,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
 
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.tempIndex = '';
+  $rootScope.tempIndex = 0;
   $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
   $rootScope.usersArray = [];
@@ -60,8 +62,10 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.tempIdNum = 0; // needed for modal textPopup
   $rootScope.pageIndex = 0; // needed for modal textPopup
   $rootScope.characters = []; // needed for modal textPopup
+  $rootScope.nameChangeArray = []; // needed for modal textPopup
   $rootScope.page = [];
-
+  $rootScope.tempPageId = '';
+  $rootScope.storyArrayIndex = 0;
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
