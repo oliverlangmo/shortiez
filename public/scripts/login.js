@@ -1,14 +1,6 @@
-angular.module('myApp').controller('loginController',['$scope', '$http', '$uibModal', '$rootScope', '$location', 'userData', 'ngAnimate', 'ui.bootstrap',
-function($scope, $http, $uibModal, $rootScope, $location, userData, ngAnimate){
-  $scope.collapse = function () {
-    console.log("collapse please");
-  isCollapsed = !isCollapsed;
-  $scope.isCollapsed = false;
-};
-$scope.toggle =function(){
-  console.log("toggle clicked");
-  $scope.commentText = !$scope.commentText;
-};
+angular.module('myApp').controller('loginController',['$scope', '$http', '$uibModal', '$rootScope', '$location', 'userData',
+function($scope, $http, $uibModal, $rootScope, $location, userData){
+
   $scope.setPrivileges = function(){
     var getUserInfo = {
       username: $scope.userNameInfo
