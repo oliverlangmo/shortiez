@@ -15,7 +15,8 @@
    height: 100%;
    font-size: 1em;
  }
-/*readerStory*/
+/*--------------------------------      readerStory         --------------------------------*/
+
  textarea {
    width: 900px;
    height: 300px;
@@ -33,7 +34,43 @@
    /*overflow-y: scroll;*/
    position: fixed;
  }
-/*readerStory Nav*/
+ .charIcon, .storyTitle, .character{
+   text-align: center;
+ }
+ .storyTitle{
+   font-size: 20px;
+ }
+ .title{
+   font-family: 'blowbrush';
+   font-size: 100px;
+ }
+ #sidebar-wrapper{
+    position: relative;
+    /*overflow-y: auto;*/
+  }
+  #storyPage {
+   width: 800px;
+   height: 900px;
+   border: solid 1px #ccc;
+   background: #ddd;
+   position: relative;
+   z-index: 9999;
+  }
+  #userStory {
+    border-radius: 2px;
+    float: left;
+     height: 900px;
+     width: 900px;
+     border-width: thick;
+     border-style: outset;
+     border-color: #0088dd;
+     padding: 10px;
+     margin: 50px 50px 50px 0px;
+     text-align: center;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+     background-color: yellow;
+  }
+/*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
   background-color: #ba945d;
@@ -86,17 +123,6 @@
 .previousButton:hover {
   background-color: #3e8e41;
 }
-.charIcon, .storyTitle, .character{
-  text-align: center;
-}
-.storyTitle{
-  font-size: 20px;
-}
-.title{
-  font-family: 'blowbrush';
-  font-size: 100px;
-}
-
 .arialClass{
  font-family: 'Arial', sans-serif;
 }
@@ -127,14 +153,12 @@
   border: none;
   color: white;
 }
-
 .smallClass{
  font-size: 1.5em;
  letter-spacing: 2px;
  line-height: 225%;*/
  width: 90%;
 }
-
 .smallButton{
    font-size: 1.0em;
    background-color: #4CAF50; /* Green */
@@ -168,37 +192,11 @@
    margin-left: 60px;
    /*padding-left: 80px;*/
  }
+/*---------------------     end readerStory Nav     --------------------------------*/
+/*---------------------      end readerStory        --------------------------------*/
 
- #sidebar-wrapper{
-   position: relative;
-   /*overflow-y: auto;*/
- }
- #storyPage {
-  width: 800px;
-  height: 900px;
-  border: solid 1px #ccc;
-  background: #ddd;
-  position: relative;
-  z-index: 9999;
- }
- #userStory {
-   border-radius: 2px;
-   float: left;
-    height: 900px;
-    width: 900px;
-    border-width: thick;
-    border-style: outset;
-    border-color: #0088dd;
-    padding: 10px;
-    margin: 50px 50px 50px 0px;
-    text-align: center;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-    background-color: yellow;
- }
 
-/*end readerStory Nav*/
-
-/*customize word */
+/*--------------------------------customize word         --------------------------------*/
 
 .wordBtn {
   border-radius: 8px;
@@ -222,7 +220,7 @@
   font-size: 24px;
 }
 
-/*login*/
+/*--------------------------------    login        --------------------------------*/
 .loginCont {
   position: fixed;
   text-align: center;
@@ -273,7 +271,7 @@
 }
 
 
-/*modals*/
+/*--------------------------------     modals        --------------------------------*/
 .btn-primary{
   background-color: #5f3cb0;
 }
