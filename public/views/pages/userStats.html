@@ -3,7 +3,7 @@
 
 
 <div class='md-padding' layout="row" layout-wrap >
-      <md-card style="width: 400px; height: 210px;" ng-repeat="user in usersArray">
+      <md-card style="width: 400px; height: 230px;" ng-repeat="user in usersArray">
         <md-card-content>
 
           <p>User Info for {{user.username}}</p>
@@ -13,6 +13,7 @@
             <li>Grade: {{user.grade}}</li>
             <li>Email: {{user.email}}</li>
             <li>Admin? {{user.admin}}</li>
+            <li>Auth? {{user.auth}}</li>
           </ul>
         <div class="md-actions" layout="row" layout-align="end center">
           <md-button ng-click="editUser($index)">Edit</md-button>
