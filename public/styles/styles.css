@@ -21,6 +21,18 @@
    height: 300px;
    vertical-align: middle;;
  }
+.navbar-default{
+   background-color: #118cc3;
+   /*background-color: #2b43b0;*/
+   padding-top: 30px;
+   padding-bottom: 10px; /*helps move the text in the sidenav up*/
+ }
+ .sideNav {
+   float: left;
+   color: white;
+   /*overflow-y: scroll;*/
+   position: fixed;
+ }
 /*readerStory Nav*/
  footer {
   position: fixed;
@@ -114,12 +126,14 @@
    color: white;
  }
 /*end readerStory Nav*/
+
+/*customize word */
+
 .wordBtn {
   border-radius: 8px;
   border: none;
   text-align: center;
   display: inline-block;
-  /*font-size: 12px;*/
   margin: 2px 1px;
   cursor: pointer;
   -webkit-transition-duration: 0.3s; /* Safari */
@@ -162,22 +176,14 @@
   background-color: #3e8e41;
 }
 
-.navbar-default{
-  background-color: #118cc3;
-  /*background-color: #2b43b0;*/
-  padding-top: 30px;
-  padding-bottom: 10px; /*helps move the text in the sidenav up*/
-}
-
+/*nav bar*/
 .headerBtn{
   color: white;
   font-family: 'Comic Sans MS';
   font-size: 24px;
 }
 
-.main{
-  text-align: center;
-}
+/*login*/
 .loginCont {
   position: fixed;
   text-align: center;
@@ -185,14 +191,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.sideNav {
-  float: left;
-  color: white;
-  /*overflow-y: scroll;*/
-  position: fixed;
-}
-
+/*Admin Library*/
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px;
 }
