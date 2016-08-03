@@ -32,29 +32,29 @@ $scope.selectReaderStory = function(index) {
   $rootScope.readerIndex = $rootScope.stories[index];
   for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
     $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
-  }
+  } // end for loop
   var path = "#userLibrary";
   window.location.href = path;
 }; // end selectReaderStory
 
 $scope.nameReplace = function(newName, oldName) {
+  var regExp = new RegExp(oldName, 'gi');
   for (var i = 0; i < $rootScope.readerIndex.story_pages.length; i++) { // for loop 1
-    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.join(' ');
-    var regExp = new RegExp(oldName, 'gi');
-    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.replace(regExp, newName).trim();
-    $rootScope.readerIndex.story_pages[i].page_text_btn = $rootScope.readerIndex.story_pages[i].page_text_btn.split(' ');
+    for (var x = 0; x < $rootScope.readerIndex.story_pages[i].page_text_btn.length; x++) { // for loop 2
+      $rootScope.readerIndex.story_pages[i].page_text_btn[x] = $rootScope.readerIndex.story_pages[i].page_text_btn[x].replace(regExp, newName);
+    } // end for loop 2
   } // end for loop 1
   $scope.myStoryLoad();
 }; // end nameReplace
 
-$scope.nextPage = function(){
+$scope.nextPage = function() {
   $rootScope.pageIndex++;
-  if ($rootScope.pageIndex == $scope.currentStory.length ) {
+  if ($rootScope.pageIndex === $scope.currentStory.length ) {
     $rootScope.pageIndex = 0;
   } // end if
-  var text = angular.element(document.querySelector('#userStory'));
-  text.empty();
-  text.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
+  var page = angular.element(document.querySelector('#userStory'));
+  page.empty();
+  page.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
   $scope.myStoryLoad();
   event.preventDefault();
 }; // end nextPage
@@ -62,11 +62,11 @@ $scope.nextPage = function(){
 $scope.prevPage = function() {
   $rootScope.pageIndex--;
   if ($rootScope.pageIndex === - 1) {
-    $rootScope.pageIndexx = $scope.currentStory.length - 1;
+    $rootScope.pageIndex = $scope.currentStory.length - 1;
   } // end if
-  var text = angular.element(document.querySelector('#userStory'));
-  text.empty();
-  text.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
+  var page = angular.element(document.querySelector('#userStory'));
+  page.empty();
+  page.append($scope.currentStory[$rootScope.pageIndex].page_text_btn.join(' '));
   $scope.myStoryLoad();
   event.preventDefault();
 }; // end prevPage
@@ -94,22 +94,22 @@ $scope.submitChange = function() {
   $rootScope.cancel();
 }; // end submitChange
 
-$scope.arialFont = function(){
+$scope.arialFont = function() {
   $scope.storyClass = "arialClass";
 };
-$scope.comicFont = function(){
+$scope.comicFont = function() {
   $scope.storyClass = "comicClass";
 };
-$scope.openDyslexicFont = function(){
+$scope.openDyslexicFont = function() {
   $scope.storyClass = "openDyslexicClass";
 };
-$scope.smallFont = function(){
+$scope.smallFont = function() {
   $scope.sizeClass = "smallClass";
 };
-$scope.mediumFont = function(){
+$scope.mediumFont = function() {
   $scope.sizeClass = "mediumClass";
 };
-$scope.largeFont = function(){
+$scope.largeFont = function() {
   $scope.sizeClass = "largeClass";
 };
 
@@ -120,7 +120,7 @@ $scope.largeFont = function(){
 angular.module('myApp').controller('textPopupController',
 function ($scope, $uibModalInstance, $rootScope) {
 
-  $rootScope.cancel = function(){
+  $rootScope.cancel = function() {
     $uibModalInstance.close();
   }; // end cancel
 }); // end logoutModalController

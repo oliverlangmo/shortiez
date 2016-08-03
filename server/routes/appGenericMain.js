@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
 ///BadWord Filter. Use filter.clean() to activate.
-var Filter = require('bad-words'),
-  filter = new Filter();
+// var Filter = require('bad-words'),
+//   filter = new Filter();
 
 var router = express.Router();
 

@@ -9,6 +9,13 @@ event.preventDefault();
 
 $rootScope.stories = [];
 
+$scope.addNewStoryPopup = function() {
+  $uibModal.open({
+    templateUrl: 'views/pages/adminAddNewStory.html',
+    controller: 'adminAddStoryPopupController'
+  }); // end $modal.open
+}; // end openTextPopup
+
 $scope.addStory = function() {
   var storyToCreate = {
     story_title: $scope.storyTitleBinder,
@@ -21,21 +28,34 @@ $scope.addStory = function() {
     url: '/addStory',
     data: storyToCreate
   }); //end $http
-    $scope.storyTitleBinder ='';
-    $scope.storyCoverBinder ='';
-    $scope.storyDescrpitionBinder = '';
-    // $location.path('/#/adminEdit')
+  var path = "#adminEdit";
+  $scope.storyTitleBinder ='';
+  $scope.storyCoverBinder ='';
+  $scope.storyDescrpitionBinder = '';
+  window.location.href = path;
+  $rootScope.cancel();
 }; // end addStory
 
 $scope.toggle = function() {
   $scope.addStoryToggle = !$scope.addStoryToggle;
 }; // end toggle
 
-$scope.editStory= function(index) {
-  var path= "#adminEdit";
+$scope.editStory = function(index) {
+  var path = "#adminEdit";
   $rootScope.tempIndex = $rootScope.stories[index]._id;
   $rootScope.storyIndex = $rootScope.stories[index];
+  $rootScope.storyArrayIndex = index;
   window.location.href = path;
 }; // end editStory
 
 }]); // end of libraryCtrl controller
+
+//-----------------------------------------  adminAddStoryPopupController -----------------------------------------
+
+angular.module('myApp').controller('adminAddStoryPopupController',
+function ($scope, $uibModalInstance, $rootScope) {
+
+  $rootScope.cancel = function() {
+    $uibModalInstance.close();
+  }; // end cancel
+}); // end logoutModalController

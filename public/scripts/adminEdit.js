@@ -6,22 +6,24 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
 userData.getAllStories();
 
-$rootScope.stories = [];
+
 $scope.myStory = [];
-$scope.characters=[];
+$scope.characters = [];
 $scope.pages = [];
 $scope.tempTextArray = []; // array that holds all words as checked boxes.
 $scope.checkedArray = []; // array that only holds words that have been checked.
 $scope.newTextArray = []; // array that holds new text after check boxes have been removed and buttons applied.
 
 $scope.adminStoryLoad = function() {
+  console.log($rootScope.tempIndex);
+  console.log($rootScope.stories[$rootScope.storyArrayIndex]);
   // $scope.currentStory = $rootScope.storyIndex.story_pages;
   $scope.characters = $rootScope.storyIndex.story_characters;
   $scope.pages = $rootScope.storyIndex.story_pages;
 }; // end adminStoryLoad()
 
-$scope.addChar = function() { // adds issue on button click
-  var characterObject = { // package object to send, with inputs
+$scope.addChar = function() { 
+  var characterObject = {
     character_name: $scope.characterNameBinder,
     character_traits: [$scope.characterTraitBinderOne, $scope.characterTraitBinderTwo, $scope.characterTraitBinderThree],
     character_bio: $scope.characterBioBinder,
@@ -39,6 +41,7 @@ $scope.addChar = function() { // adds issue on button click
   $scope.characterTraitBinderThree = '';
   $scope.characterBioBinder = '';
   $scope.characterPhotoBinder = '';
+  userData.getAllStories();
 }; // end addChar
 
 $scope.displayBefore = true;
@@ -51,11 +54,11 @@ $scope.captureStoryInput = function() {
   // } else if ($scope.pageNumberBinder === '' || $scope.pageNumberBinder === undefined || $scope.pageNumberBinder === null){
   //   window.alert('Page number can not be left empty.\nPlease enter a page number.');
   } else {
-    $scope.cleanText = $scope.pageTextBinder;
+    $scope.cleanText = $scope.pageTextBinder; // stores copy of original clean text
     $scope.tempTextArray = $scope.pageTextBinder;
     $scope.tempTextArray = $scope.tempTextArray.replace(/\n/g, ''); // removes page breaks
-    $scope.stringLength = $scope.tempTextArray.split(/[^\s]+/).length - 1;
-    $scope.tempTextArray = $scope.tempTextArray.split(' ');
+    $scope.stringLength = $scope.tempTextArray.split(/[^\s]+/).length - 1; // counts total words excluding spaces
+    $scope.tempTextArray = $scope.tempTextArray.split(' '); // splits remaining words into an array
     for (var i = 0; i < $scope.stringLength; i++) { // for loop 1
       var taggedWord = '<input type="checkbox" onclick="setWordTrue('+ i +')" id="wordNum'+ i +'">' + $scope.tempTextArray[i] + ' ';
       $scope.tempTextArray.splice(i, 1, taggedWord);
@@ -112,9 +115,8 @@ $scope.saveStory = function() {
     var parsedWord = $scope.tempTextArray[num].replace('<input type="checkbox" onclick="setWordTrue('+ num +')" id="wordNum'+ num +'">', '').trim();
     $scope.newTextArray.push(parsedWord);
   } // end for loop 1
-  // var parsedText = $scope.newTextArray.join(' ');
   var pageObject = {
-    page_number: i + 1,
+    page_number: $scope.pageNumberBinder,
     page_text_plain: $scope.cleanText,
     page_text_btn: $scope.newTextArray,
     page_illustration: $scope.pageIllustrationBinder,
@@ -128,5 +130,12 @@ $scope.saveStory = function() {
     $scope.textReset();
   }); // end $http
 }; // end saveStory
+
+$scope.editPage = function(index) {
+  $rootScope.tempPageId = '';
+  console.log($rootScope.storyIndex.story_pages[index].id);
+  $rootScope.tempPageId = $rootScope.storyIndex.story_pages[index].id;
+
+};
 
 }]);
