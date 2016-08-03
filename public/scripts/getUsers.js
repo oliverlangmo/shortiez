@@ -33,7 +33,8 @@ $scope.updateUser = function(id){
     username: $scope.username,
     grade: $scope.gradeUpdate,
     birthday: $scope.bdayUpdate,
-    admin: $scope.adminUpdate
+    admin: $scope.adminUpdate,
+    auth: $scope.authUpdate
   };
 console.log(updateInfo);
 $http({
@@ -69,6 +70,7 @@ $scope.username = $rootScope.usersArray[userId].username;
 $scope.gradeUpdate = $rootScope.usersArray[userId].grade;
 $scope.bdayUpdate = $rootScope.usersArray[userId].birthday;
 $scope.adminUpdate = $rootScope.usersArray[userId].admin;
+$scope.authUpdate = $rootScope.usersArray[userId].auth;
 
 $rootScope.cancel = function(){
   $uibModalInstance.close();
