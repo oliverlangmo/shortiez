@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
 ///BadWord Filter. Use filter.clean() to activate.
-var Filter = require('bad-words'),
-  filter = new Filter();
+// var Filter = require('bad-words'),
+//   filter = new Filter();
 
 var router = express.Router();
 
@@ -15,7 +15,7 @@ router.get('/checkUser', function(req, res){
 }); //end checkUser
 
 router.post('/getUserCheck', function(req, res){
-  var findUser= req.body.username;
+  var findUser = req.body.username;
   User.findOne({username: findUser}, function(err, data) {
     if(err){
       console.log(err);
@@ -27,7 +27,8 @@ router.post('/getUserCheck', function(req, res){
 }); // end getUserCheck
 
 router.get('/getUsers', function(req, res){
-  TempUser.find().then(function(data){
+  // console.log('hit user get route');
+  User.find().then(function(data){
   res.send(data);
   }); // end TempUser.find
 }); //end getTempUser
@@ -77,5 +78,25 @@ router.post('/updateTempUser', function(req, res){
     } // end else
   }); // TempUser.findOne
 }); // end updateTempUser
+router.put('/userUpdate', function(req,res){
+  console.log(req.body);
+  console.log('in update route');
+  var query = {_id: req.body.id};
+  User.findOneAndUpdate(query,{name:req.body.name, username: req.body.username, email: req.body.email, grade: req.body.grade, admin: req.body.admin, birthday: req.body.birthday }, function(err){
+});
+});
+router.delete('/deleteUserInfo', function(req, res){
+  console.log('delete route with', req.body);
+  var query = {_id: req.body.id};
+  User.findOne({_id: req.body.id}, function(err, userResult) {
+      if(err){
+        console.log(err);
+        res.sendStatus(500);
+      }else{
+        User.remove({_id: userResult._id}, function(err) {});
+        res.sendStatus(200);
+      }
+    });
+});
 
 module.exports = router;

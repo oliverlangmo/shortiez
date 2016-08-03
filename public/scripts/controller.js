@@ -2,9 +2,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'x
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
-      .when('/genericMain', {
-          templateUrl: '/views/pages/genericMain.html',
-      })
       .when('/login', {
           templateUrl: '/views/pages/login.html',
       })
@@ -17,69 +14,72 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/registerFail', {
           templateUrl: '/views/pages/registerFail.html',
       })
-      .when('/adminTest', {
-        templateUrl: '/views/pages/adminTest.html',
-      })
-      .when('/libraryAdmin', {
-          templateUrl: '/views/pages/libraryAdmin.html',
-      })
-      .when('/adminAddStory', {
-          templateUrl: '/views/pages/adminAddStory.html',
-      })
-      .when('/adminPagesCharInput', {
-          templateUrl: '/views/pages/adminPagesCharInput.html',
-      })
-      .when('/readerLandingPage', {
-          templateUrl: '/views/pages/readerLandingPage.html',
+      .when('/userLibrary', {
+          templateUrl: '/views/pages/userLibrary.html',
       })
       .when('/viewLibrary', {
-          templateUrl: '/views/pages/viewLibrary.html'
+          templateUrl: '/views/pages/viewLibrary.html',
+      })
+      .when('/adminEdit', {
+          templateUrl: '/views/pages/adminEdit.html',
+      })
+      .when('/adminLibrary', {
+          templateUrl: '/views/pages/adminLibrary.html'
       })
       .when('/textPopup', {
           templateUrl: '/views/pages/textPopup.html'
+      })
+      .when('/chooseName', {
+          templateUrl: '/views/pages/chooseName.html'
+      })
+      .when('/adminAddNewStory', {
+          templateUrl: '/views/pages/adminAddNewStory.html'
+      })
+      .when('/userStats', {
+          templateUrl: '/views/pages/userStats.html'
       })
       .otherwise({
       redirectTo: '/login'
     }); // end $routeProvider
 
-  myApp.run(function(editableOptions) {
+  myApp.run(function(editableOptions) {  // <-- for xeditibles
     editableOptions.theme = 'bs3';
   }); // end editableOptions
+
 }]); // end myApp
 
 //-----------------------------------------  userData factory-----------------------------------------
 
-myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location){
+myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $rootScope, $location) {
 
-  $rootScope.usersArray = [];
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.newTextArray = [];
+  $rootScope.tempIndex = 0;
+  $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
-  $rootScope.wordByElementId = '';
-  $rootScope.tempIndex = '';
+  $rootScope.usersArray = [];
+  $rootScope.wordByElementId = ''; // needed for modal textPopup
+  $rootScope.tempIdNum = 0; // needed for modal textPopup
+  $rootScope.pageIndex = 0; // needed for modal textPopup
+  $rootScope.characters = []; // needed for modal textPopup
+  $rootScope.nameChangeArray = []; // needed for modal textPopup
+  $rootScope.page = [];
+  $rootScope.tempPageId = '';
+  $rootScope.storyArrayIndex = 0;
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
-    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
       $location.path('/#/login');
     } // end if
-  }; // end userCheck
+  }; // end adminCheck
 
   var checkAuth = function() {
     var check = $rootScope.userAuthCheck;
-    if(check === false || check === 'false' || check === undefined || check === null || check === ''){
+    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
       $location.path('/#/login');
     } // end if
   }; // end checkAuth
-
-  // var getUsers = function() {
-  //   $http({
-  //     method: 'GET',
-  //     url: '/getUsers', }).then(function(response){
-  //       $rootScope.usersArray = response.data;
-  //     }); // end http GET
-  // }; // end getUsers
 
   var randomId = function() {
     var text = [];
@@ -94,28 +94,18 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
-
-
-
-
-
-
-  var getAllStories = function(){
-
-    console.log("button clicked");
+  var getAllStories = function() {
     $http({
       method: 'GET',
       url: '/getStories',
-      }).then(function(response){
+      }).then(function(response) {
         $rootScope.stories = response.data;
-        console.log(response.data);
       }); // end http GET
   }; // end getStories
 
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
-    // getUsers: getUsers,
     randomId: randomId,
     randomNum: randomNum,
     getAllStories: getAllStories

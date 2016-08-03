@@ -46,4 +46,5 @@ function ($scope, $uibModalInstance, $rootScope) {
   $scope.cancel = function(){
     $uibModalInstance.close();
   }; // end cancel
+
 }); // end logoutModalController

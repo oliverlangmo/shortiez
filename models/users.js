@@ -17,6 +17,16 @@ var UserSchema = new Schema({
       max: 18,
       required: true
     },
+    name: {
+      type: String,
+      required: true,
+      min: 3,
+      max: 18,
+    },
+    email: String,
+    birthday: Date,
+    grade: Number,
+    // timestamps: {createdAt: 'created_at'}, 
     auth: false,
     admin: false
 }); // end UserSchema
