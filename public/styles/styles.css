@@ -15,13 +15,63 @@
    height: 100%;
    font-size: 1em;
  }
-/*readerStory*/
+/*--------------------------------      readerStory         --------------------------------*/
+
  textarea {
    width: 900px;
    height: 300px;
    vertical-align: middle;;
  }
-/*readerStory Nav*/
+.navbar-default{
+   background-color: #118cc3;
+   /*background-color: #2b43b0;*/
+   padding-top: 30px;
+   padding-bottom: 10px; /*helps move the text in the sidenav up*/
+ }
+ .sideNav {
+   float: left;
+   color: white;
+   /*overflow-y: scroll;*/
+   position: fixed;
+ }
+ .charIcon, .storyTitle, .character{
+   text-align: center;
+ }
+ .storyTitle{
+   font-size: 20px;
+ }
+ .title{
+   font-family: 'blowbrush';
+   font-size: 100px;
+ }
+ #sidebar-wrapper{
+    position: relative;
+    /*overflow-y: auto;*/
+  }
+  /*#storyPage {
+   width: 800px;
+   height: 900px;
+   border: solid 1px #ccc;
+   background: #ddd;
+   position: relative;
+   z-index: 9999;
+  }*/
+  .storyPage {
+    border-radius: 2px;
+    float: left;
+    position: relative:
+     height: 50vw;
+     width: 50vw;
+     border-width: thick;
+     border-style: outset;
+     border-color: #0088dd;
+     padding: 10px;
+     margin: 50px 50px 50px 0px;
+     text-align: center;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+     background-color: #f7f3ee;
+}
+/*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
   background-color: #ba945d;
@@ -43,93 +93,6 @@
   float: right;
   margin-right: 15px;
 }
-#fontBtns{
-  margin-left: 60px;
-  /*padding-left: 80px;*/
-}
-.arialClass{
- font-family: 'Arial', sans-serif;
-}
-.arialButton{
- font-family: 'Arial', sans-serif;
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
-}
-.comicClass{
- font-family: 'Comic Sans MS';
-}
-.comicButton{
- font-family: 'Comic Sans MS';
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
-}
-.openDyslexicClass{
- font-family: "OpenDyslexic";
-}
-.openDyslexicButton{
-  font-family: "OpenDyslexic";
-  font-size: 1.5em;
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-}
-
-.smallClass{
- font-size: 1.5em;
- letter-spacing: 2px;
- line-height: 225%;*/
- width: 90%;
-}
-
-.smallButton{
-   font-size: 1.0em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
-}
-.mediumClass{
-   font-size: 1.75em;
-   letter-spacing: 2.5px;
-   line-height: 225%
- }
-.mediumButton{
-   font-size: 1.25em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
- }
-.largeClass{
-   font-size: 2.0em;
-   letter-spacing: 3px;
-   line-height: 225%
- }
-.largeButton{
-   font-size: 1.5em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
- }
-/*end readerStory Nav*/
-.wordBtn {
-  border-radius: 8px;
-  border: none;
-  text-align: center;
-  display: inline-block;
-  /*font-size: 12px;*/
-  margin: 2px 1px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s; /* Safari */
-  transition-duration: 0.3s;
-}
-
-.wordBtn:hover {
-  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
 .nextButton {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -161,85 +124,110 @@
 .previousButton:hover {
   background-color: #3e8e41;
 }
+.arialClass{
+ font-family: 'Arial', sans-serif;
+}
+.arialButton{
+ font-family: 'Arial', sans-serif;
+ font-size: 1.5em;
+ background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+}
+.comicClass{
+ font-family: 'Comic Sans MS';
+}
+.comicButton{
+ font-family: 'Comic Sans MS';
+ font-size: 1.5em;
+ background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+}
+.openDyslexicClass{
+ font-family: "OpenDyslexic";
+}
+.openDyslexicButton{
+  font-family: "OpenDyslexic";
+  font-size: 1.5em;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+}
+.smallClass{
+ font-size: 1.5em;
+ letter-spacing: 2px;
+ line-height: 225%;*/
+ width: 90%;
+}
+.smallButton{
+   font-size: 1.0em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+}
+.mediumClass{
+   font-size: 1.75em;
+   letter-spacing: 2.5px;
+   line-height: 225%
+ }
+.mediumButton{
+   font-size: 1.25em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+ }
+.largeClass{
+   font-size: 2.0em;
+   letter-spacing: 3px;
+   line-height: 225%
+ }
+.largeButton{
+   font-size: 1.5em;
+   background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+ }
 
-.navbar-default{
-  background-color: #118cc3;
-  /*background-color: #2b43b0;*/
-  padding-top: 30px;
-  padding-bottom: 10px; /*helps move the text in the sidenav up*/
+ #fontBtns{
+   margin-left: 60px;
+   /*padding-left: 80px;*/
+ }
+/*---------------------     end readerStory Nav     --------------------------------*/
+/*---------------------      end readerStory        --------------------------------*/
+
+
+/*--------------------------------customize word         --------------------------------*/
+
+.wordBtn {
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
 }
 
+.wordBtn:hover {
+  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*nav bar*/
 .headerBtn{
   color: white;
   font-family: 'Comic Sans MS';
   font-size: 24px;
 }
 
-.main{
-  text-align: center;
-}
+/*--------------------------------    login        --------------------------------*/
 .loginCont {
   position: fixed;
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.sideNav {
-  float: left;
-  color: white;
-  /*overflow-y: scroll;*/
-  position: fixed;
-}
-
-.gridListdemoBasicUsage md-grid-list {
-  margin: 8px;
-}
-
-.gridListdemoBasicUsage .gray {
-  background: #f5f5f5;
-}
-
-.gridListdemoBasicUsage md-grid-tile {
-  transition: all 400ms ease-out 50ms;
-}
-
-.charIcon, .storyTitle, .character{
-  text-align: center;
-}
-.storyTitle{
-  font-size: 20px;
-}
-.title{
-  font-family: 'blowbrush';
-  font-size: 100px;
-}
-
-.nextGliph{
-  color: black;
-}
-
-.btn-primary{
-  background-color: #5f3cb0;
-}
-
-#sidebar-wrapper{
-  position: relative;
-  /*overflow-y: auto;*/
-}
-
-#storyInput {
-  height: 200px;
-  width: 700px;
-  overflow: hidden;
-  display: block;
-}
-
-#adminTestBox {
-  height: 100px;
-  width: 700px;
-  overflow: auto;
 }
 #login{
   color: white;
@@ -253,30 +241,37 @@
   color: #118cc3;
   background-color: white;
 }
+
+/*Admin Library*/
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+}
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+}
+#storyInput {
+  height: 200px;
+  width: 700px;
+  overflow: hidden;
+  display: block;
+}
+#adminTestBox {
+  height: 100px;
+  width: 700px;
+  overflow: auto;
+}
 #storyInput{
   overflow: auto;
   padding-bottom: 100px;
   margin: auto;
 }
-#storyPage {
- width: 800px;
- height: 900px;
- border: solid 1px #ccc;
- background: #ddd;
- position: relative;
- z-index: 9999;
-}
-#userStory {
-  border-radius: 2px;
-  float: left;
-   height: 900px;
-   width: 900px;
-   border-width: thick;
-   border-style: outset;
-   border-color: #0088dd;
-   padding: 10px;
-   margin: 50px 50px 50px 0px;
-   text-align: center;
-   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-   background-color: yellow;
+
+/*--------------------------------     modals        --------------------------------*/
+.btn-primary{
+  background-color: #5f3cb0;
 }

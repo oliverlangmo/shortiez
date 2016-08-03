@@ -5,8 +5,8 @@
     <h2> Click on a story cover to start. </h2>
   </div>
 
-  <div class='md-padding' layout="row" layout-wrap >
-    <md-card style="width: 400px;" ng-repeat="story in stories">
+  <div class='md-padding' layout="row" layout-wrap layout-align="center center">
+    <md-card style="width: 400px; height:600px;" ng-repeat="story in stories">
       <md-card-content>
       <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
 

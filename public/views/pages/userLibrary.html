@@ -18,7 +18,7 @@
         <li>
           <div class="charIcon">
             <div ng-repeat="character in $rootScope.readerIndex.story_characters">
-              <img ng-src="{{character.character_photo}}" height='100px'/><br>
+              <img ng-src="{{character.character_photo}}" height='200px'/><br>
               {{character.character_name}}
               <p> Traits: {{character.character_traits}} </p>
             </div>
@@ -36,23 +36,24 @@
           <div class="col-xs-8">
             <div class="{{storyClass}}">
               <div class="{{sizeClass}}">
+
+                <div class="storyPage">
                 <h1>{{readerIndex.story_title}}</h1>
-                <img ng-src="{{myStory.page_illustration}}" height='100px'/>
                 <div id="userStory"></div>
+                    <img ng-src="{{myStory.page_illustration}}" height='100px'/>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          <!-- </div> -->
           </div>
 
             <footer>
-              <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
+              <!-- <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span> -->
               <div class="navBtns">
                 <button  class="previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
                 <button class="nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
               <div class= "fontBtns">
-              <button class= "arialButton" type= "button" name="arialButton" ng-click= "arialFont()">Font 1</button>
-              <button class= "comicButton" type= "button" name="comicButton" ng-click= "comicFont()">Font 2</button>
-              <button class= "openDyslexicButton" type= "button" name="openDyslexicButton" ng-click= "openDyslexicFont()">Font 3</button>
 
               <button class= "smallButton" type= "button" name="smallButton" ng-click= "smallFont()">small</button>
               <button class= "mediumButton" type= "button" name="mediumButton" ng-click= "mediumFont()">medium</button>
@@ -67,4 +68,5 @@
       </footer>
     </div>
   </div>
+</div>
 </div>
