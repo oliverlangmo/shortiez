@@ -39,7 +39,9 @@
                 <div class="storyPage">
                 <h1>{{readerIndex.story_title}}</h1>
                 <div id="userStory"></div>
-                <img ng-src="{{myStory.page_illustration}}" height='100px'/>
+                <img ng-src="{{myStory.page_illustration}}" height='200px'/><br>
+                <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
+                <div class="navBtns">
               </dive>
               </div>
             </div>
@@ -47,7 +49,6 @@
           </div>
 
             <footer>
-              <span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
               <div class="navBtns">
                 <button  class="btn previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
                 <button class="btn nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>

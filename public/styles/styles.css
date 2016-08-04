@@ -121,28 +121,25 @@
     position: relative;
     /*overflow-y: auto;*/
   }
-  /*#storyPage {
-   width: 800px;
-   height: 900px;
-   border: solid 1px #ccc;
-   background: #ddd;
-   position: relative;
-   z-index: 9999;
-  }*/
   .storyPage {
-    border-radius: 2px;
+    border-radius: 6px;
     float: left;
     position: relative:
      height: 50vw;
-     width: 50vw;
+     width: 60vw;
      border-width: thick;
      border-style: outset;
      border-color: #0088dd;
-     padding: 10px;
+     padding: 100px;
      margin: 50px 50px 50px 0px;
      text-align: center;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
      background-color: #f7f3ee;
+}
+#illustration {
+  border-radius: 10px;
+  height: 200px;
+
 }
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
