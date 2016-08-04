@@ -27,7 +27,12 @@
    margin-right: 5px;
    padding-bottom: 10px;
    text-decoration: none;
-   border-radius: 15px;
+  border-radius: 25px;
+  /*border-top-right-radius: 25px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+
  }
 .headerBtn:hover{
   background-color: #5f3cb0;
@@ -43,6 +48,8 @@
    font-family: 'Comic Sans MS';
    /*font-family: 'blowbrush';*/
    font-size: 24px;
+   width: 50px;
+   height: 50px;
  }
  #login:hover{
    color: #118cc3;
@@ -52,7 +59,8 @@
   /*position: absolute;*/
   float: right;
   margin-top: 0px;
-
+  padding-left: 20px;
+  padding-right: 20px;
 }
  .navbar-default{
     /*background-color: #118cc3;*/--blue
@@ -253,7 +261,7 @@
 
  #fontBox{
    border: solid;
-   background-color:#f5e5d2;
+   background-color:rgba(245,229,210,0.5);
  }
 /*---------------------     end readerStory Nav     --------------------------------*/
 /*---------------------      end readerStory        --------------------------------*/
