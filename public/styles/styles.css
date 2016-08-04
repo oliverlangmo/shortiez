@@ -9,7 +9,8 @@
 
  body, html{
    /*background-color: #f7f3ee;*/
-   background: url(../views/images/urbanwatercoloredit2.jpg);
+   background: url(../views/images/urbanwatercoloredit.jpg);
+   /*background: url(../views/images/watercolorback.jpg);*/
    background-attachment: fixed;
    background-size: cover;
    height: 100%;
@@ -27,7 +28,7 @@
    margin-right: 5px;
    padding-bottom: 10px;
    text-decoration: none;
-  border-radius: 25px;
+  border-radius: 10px;
   /*border-top-right-radius: 25px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -35,7 +36,7 @@
 
  }
 .headerBtn:hover{
-  background-color: #5f3cb0;
+  background-color: #3FBFBF;
   text-decoration: none;
   color: white;
 }
@@ -51,23 +52,41 @@
    width: 50px;
    height: 50px;
  }
- #login:hover{
-   color: #118cc3;
-   background-color: white;
- }
+
 #logoutBtn{
   /*position: absolute;*/
   float: right;
   margin-top: 0px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #3FBFBF;
+}
+#userB{
+  background-color: #BF3FBF;
+}
+#userB:hover{
+  background-color: #3FBFBF;
+}
+#adminB {
+  background-color: #5EAF5E;
+}
+#adminB:hover{
+  background-color: #3FBFBF;
+}
+#manageB{
+  background-color: #5f3cb0;
+}
+#manageB:hover{
+  background-color: #3FBFBF;
 }
  .navbar-default{
-    /*background-color: #118cc3;*/--blue
-    background-color: #64bbcc;
+   background-color: black;
+    /*background-color: #118cc3;--blue*/
+    /*background-color: #64bbcc;*/
     padding-top: 10px;
     padding-bottom: 10px; /*helps move the text in the sidenav up*/
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
 
 /*--------------------------------      readerStory         --------------------------------*/
@@ -83,17 +102,20 @@
    color: white;
    /*overflow-y: scroll;*/
    position: fixed;
-   background-color: #f7f3ee;
+   background-color: url(../views/images/watercolorside2.jpg);
  }
  .charIcon, .storyTitle, .character{
    text-align: center;
  }
  .storyTitle{
-   font-size: 20px;
+   font-size: 30px;
+   font-family: 'blowbrush';
+   color: black;
  }
  .title{
    font-family: 'blowbrush';
-   font-size: 100px;
+   height:200px;
+   width: auto;
  }
  #sidebar-wrapper{
     position: relative;
@@ -128,23 +150,29 @@
   bottom: 0;
   right: 0;
   left: 0;
-  height: 100px;
+  height: 75px;
+}
+.characters{
+  font-family: 'blowbrush';
+  color: black;
+  font-size: 30px;
 }
 .pageination{
-  margin: auto;
+  margin-left: 400px;
 }
 .previousButton{
   float: left;
   margin-left: 15px;
-  margin-top: 20px;
+  margin-top: -200px;
 }
 .nextButton{
   margin-top: 20px;
   float: right;
   margin-right: 15px;
+  margin-top: -200px;
 }
 .nextButton {
-  background-color: #4CAF50; /* Green */
+  background-color: #5f3cb0; /* purple */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -157,10 +185,10 @@
   opacity: 50%;
 }
 .nextButton:hover {
-  background-color: #3e8e41;
+  background-color: #6600ff;
 }
 .previousButton {
-  background-color: #4CAF50; /* Green */
+  background-color: #5f3cb0; /* purple */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -170,9 +198,19 @@
   font-size: 16px;
   cursor: pointer;
   margin-left: 250px;
+  margin-bottom: 100px:
+  bottom: 50%;
 }
 .previousButton:hover {
-  background-color: #3e8e41;
+  background-color: #6600ff;
+}
+.toggleButton{
+  float: right;
+  position: relative;
+  margin-right: 300px;
+  background-color: #118cc3;
+  color: white;
+
 }
 .arialClass{
  font-family: 'Arial', sans-serif;
@@ -183,6 +221,7 @@
  background-color: #118cc3;
  border: none;
  color: white;
+ display: inline-block;
 }
 .arialButton:hover{
   background-color: #5f3cb0; /* purple */
@@ -196,6 +235,8 @@
  background-color: #118cc3;
  border: none;
  color: white;
+ display: inline-block;
+
 }
 .comicButton:hover{
   background-color: #5f3cb0; /* purple */
@@ -209,6 +250,7 @@
   background-color: #118cc3;
   border: none;
   color: white;
+  display: inline-block;
 }
 .openDyslexicButton:hover{
   background-color: #5f3cb0; /* purple */
@@ -224,6 +266,7 @@
    background-color: #118cc3;
    border: none;
    color: white;
+   display: inline-block;
 }
 .smallButton:hover{
   background-color: #5f3cb0; /* purple */
@@ -238,6 +281,7 @@
    background-color: #118cc3;
    border: none;
    color: white;
+   display: inline-block;
  }
  .mediumButton:hover{
    background-color: #5f3cb0; /* purple */
@@ -252,6 +296,8 @@
    background-color: #118cc3;
    border: none;
    color: white;
+   display: inline-block;
+   position: relative;
  }
 .largeButton:hover{
   background-color: #5f3cb0; /* purple */
@@ -260,11 +306,16 @@
  #fontBtns{
    margin-left: 60px;
    /*padding-left: 80px;*/
+   align-items: center;
  }
 
  #fontBox{
    border: solid;
+   border-color: #118cc3;
    background-color:rgba(245,229,210,0.5);
+   width: 450px;
+   margin-left: 400px;
+   align-items: center;
  }
 /*---------------------     end readerStory Nav     --------------------------------*/
 /*---------------------      end readerStory        --------------------------------*/
