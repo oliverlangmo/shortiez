@@ -58,6 +58,7 @@ $scope.deleteUser = function(id) {
     data: userToDelete,
     headers: {'Content-Type': 'application/json;charset=utf-8'}
   });
+  $scope.getUsers();
 };
 
 }]);
