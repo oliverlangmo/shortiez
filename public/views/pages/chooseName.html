@@ -5,8 +5,16 @@
 
   <div class="modal-body">
     <div id="nameChangeBox">
+      <h2>Welcome to your story!</h2>
+      <h3>Here are the characters. Please name them and then start reading.</h3>
+      <div ng-repeat="character in readerIndex.story_characters">
+        <img ng-src="{{character.character_photo}}" height='100px'/>
+        {{character.character_name}}
+        <p> Traits: {{character.character_traits[0]}}, {{character.character_traits[1]}}, {{character.character_traits[2]}}</p>
+        <p> Biography: {{readerIndex.story_characters.character_bio}}</p>
+      </div>
       <div id="charactersListDiv" ng-repeat="names in characters">
-        Old name: {{names}}
+        Change {{names}} to
         <input type="text" name="name" ng-model="name">
         <button ng-click="nameReplace(name, names)"> Change </button>
         <!-- <button ng-click="editName()"> Edit </button> -->

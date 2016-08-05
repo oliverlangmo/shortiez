@@ -17,7 +17,7 @@
         </li>
         <li>
           <div class="charIcon">
-            <div ng-repeat="character in $rootScope.readerIndex.story_characters">
+            <div ng-repeat="character in readerIndex.story_characters">
               <img ng-src="{{character.character_photo}}" height='100px'/><br>
               {{character.character_name}}
               <p> Traits: {{character.character_traits}} </p>

@@ -22,16 +22,19 @@ $scope.myStoryLoad = function() {
 }; // end myStoryLoad
 
 $scope.chooseNamePopup = function() {
+  console.log("characters", $rootScope.characters);
   $scope.myStoryLoad();
   $uibModal.open({
     templateUrl: 'views/pages/chooseName.html',
-    controller: 'textPopupController'
+    controller: 'textPopupController',
+    size: "md"
   }); // end $modal.open
 }; // end openTextPopup
 
 $scope.selectReaderStory = function(index) {
   $rootScope.characters = [];
   $rootScope.readerIndex = $rootScope.stories[index];
+  console.log($rootScope.readerIndex, "is readerIndex");
   for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
     $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
   } // end for loop
