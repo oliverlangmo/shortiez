@@ -2,7 +2,7 @@ angular.module('myApp').controller('genericMainController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
-  // userData.checkAuth();
+  userData.checkAuth();
 
   $scope.nameInput = '';
   $rootScope.usersArray = [];
@@ -64,7 +64,7 @@ function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
         }); // end http
   }; // end updateUser
 
-  
+
 
 //---------------------------------------------------  TEST  -------------------------------------------------
 

@@ -90,14 +90,14 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
     if (check === false || check === 'false' || check === undefined || check === null || check === '') {
-      $location.path('/#/login');
+      $location.path('/#/adminLibrary');
     } // end if
   }; // end adminCheck
 
   var checkAuth = function() {
     var check = $rootScope.userAuthCheck;
     if (check === false || check === 'false' || check === undefined || check === null || check === '') {
-      $location.path('/#/login');
+      $location.path('/#/viewLibrary');
     } // end if
   }; // end checkAuth
 

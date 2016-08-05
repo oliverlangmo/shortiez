@@ -32,6 +32,7 @@ $scope.editStory = function(index) {
   window.location.href = path;
 }; // end editStory
 
+
 $scope.addStory = function() {
   $rootScope.tempStoryName = $scope.storyTitleBinder;
   var storyToAdd = {
@@ -62,6 +63,7 @@ $scope.addNewChar = function() {
     controller: 'adminEditPopupController'
   }); // end $modal.open
 }; // end addNewChar
+
 
 $scope.addChar = function() {
   var characterObject = {
