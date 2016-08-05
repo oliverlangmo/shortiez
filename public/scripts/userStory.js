@@ -3,6 +3,7 @@ angular.module('myApp').controller('userStoryController',
 function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal) {
 
 userData.checkAuth();
+
 $scope.toggle =function(){
   console.log("toggle clicked");
   $scope.commentText = !$scope.commentText;
