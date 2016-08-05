@@ -41,6 +41,14 @@ $scope.selectReaderStory = function(index) {
 }; // end selectReaderStory
 
 $scope.nameReplace = function(newName, oldName) {
+// $scope.activeItem=item;
+  // $scope.alertText = !$scope.alertText;
+  // document.getElementById("changeBtn").
+  // addEventListener("click", function(){
+  //   this.style.backgroundColor = "red";
+    // angular.element($event.target).scope().style.backgroundColor = "red";
+
+// });
   var regExp = new RegExp(oldName, 'gi');
   for (var i = 0; i < $rootScope.readerIndex.story_pages.length; i++) { // for loop 1
     for (var x = 0; x < $rootScope.readerIndex.story_pages[i].page_text_btn.length; x++) { // for loop 2
@@ -89,7 +97,7 @@ openTextPopup = function(num) {
 $scope.submitChange = function() {
   var num = $rootScope.tempIdNum;
   var pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
-  var newTaggedWord = '<button class="wordBtn" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
+  var newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
   pageArray.splice((num), 1, newTaggedWord);
   var text = angular.element(document.querySelector('#userStory'));
   text.empty();
