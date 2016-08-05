@@ -6,7 +6,16 @@
      font-family: 'blowbrush';
      src: url(blowbrush.ttf);
  }
-
+ @keyframes pulse_animation {
+ 	0% { transform: scale(1); }
+ 	30% { transform: scale(1); }
+ 	40% { transform: scale(1.08); }
+ 	50% { transform: scale(1); }
+ 	60% { transform: scale(1); }
+ 	70% { transform: scale(1.05); }
+ 	80% { transform: scale(1); }
+ 	100% { transform: scale(1); }
+ }
  body, html{
    /*background-color: #f7f3ee;*/
    background: url(../views/images/urbanwatercoloredit.jpg);
@@ -29,11 +38,6 @@
    padding-bottom: 10px;
    text-decoration: none;
   border-radius: 10px;
-  /*border-top-right-radius: 25px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;*/
-
  }
 .headerBtn:hover{
   background-color: #3FBFBF;
@@ -63,18 +67,22 @@
 }
 #userB{
   background-color: #BF3FBF;
+  padding-left: 5px;
 }
 #userB:hover{
   background-color: #3FBFBF;
 }
 #adminB {
   background-color: #5EAF5E;
+  padding-left: 5px;
 }
 #adminB:hover{
   background-color: #3FBFBF;
 }
 #manageB{
   background-color: #5f3cb0;
+  padding-left: 5px;
+  padding-right: 10px;
 }
 #manageB:hover{
   background-color: #3FBFBF;
@@ -99,10 +107,11 @@
 
  .sideNav {
    float: left;
-   color: white;
+   color: black;
    /*overflow-y: scroll;*/
    position: fixed;
-   background-color: url(../views/images/watercolorside2.jpg);
+   background-color: url(../views/images/watercolorside3.jpg);
+   background-size: 50px;
  }
  .charIcon, .storyTitle, .character{
    text-align: center;
@@ -334,14 +343,29 @@ img{
   display: inline-block;
   margin: 2px 1px;
   cursor: pointer;
-  -webkit-transition-duration: 0.3s; /* Safari */
+  background-color: #d2f2fe;
+  -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.3s;
+  animation-name: pulse_animation;
+	animation-duration: 1000ms;
+	transform-origin: 70%;
+	animation-iteration-count: 50;
+	animation-timing-function: linear;
 }
 
 .wordBtn:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
 }
-
+.wordBtn:active{
+  background-color: purple;
+}
+/*.pulse{
+  animation-name: pulse_animation;
+	animation-duration: 1000ms;
+	transform-origin:70% 70%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}*/
 /*--------------------------------    login        --------------------------------*/
 .loginCont {
   position: fixed;
@@ -383,4 +407,12 @@ img{
 /*--------------------------------     modals        --------------------------------*/
 .btn-primary{
   background-color: #5f3cb0;
+}
+.modalAll{
+  background-image: url(../views/images/watercolorsidemodal.jpg);
+  background-size: 100%;
+  border-radius: 10px;
+}
+.titlePage{
+  font-size: 50px;
 }
