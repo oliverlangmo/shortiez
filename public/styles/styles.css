@@ -343,7 +343,7 @@ img{
   display: inline-block;
   margin: 2px 1px;
   cursor: pointer;
-  background-color: #d2f2fe;
+  background-color: #35b3f4;
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.3s;
   animation-name: pulse_animation;
