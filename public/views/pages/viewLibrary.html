@@ -1,9 +1,6 @@
 <div ng-controller = "userStoryController" ng-init ='getAllStories()' ng-cloak  class="gridListdemoBasicUsage">
 
-  <div class="welcomeDiv">
-    <h1> Welcome to your library, {{username.name}}! </h1>
-    <h2> Click on a story cover to start. </h2>
-  </div>
+<div ng-include=" '/views/partials/welcome.html' "></div>
 
   <div class='md-padding' layout="row" layout-wrap layout-align="center center">
     <md-card style="width: 350px; height: 350px" ng-repeat="story in stories">
