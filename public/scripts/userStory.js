@@ -4,10 +4,17 @@ function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal)
 
 // userData.checkAuth();
 
-$scope.toggle =function(){
-  console.log("toggle clicked");
-  $scope.commentText = !$scope.commentText;
+$scope.charSidebar = true;
+$scope.toggleBtn = "Show Characters";
+
+$scope.toggleCharSidebar = function(){
+  $scope.charSidebar = !$scope.charSidebar; 
+if ($scope.charSidebar === false){$scope.toggleBtn = "Hide Characters";}
+else{
+  $scope.toggleBtn = "Show Characters";
+}
 };
+
 userData.getAllStories();
 
 $scope.myStory = [];

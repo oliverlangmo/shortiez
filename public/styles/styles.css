@@ -109,9 +109,9 @@
    float: left;
    color: black;
    /*overflow-y: scroll;*/
-   position: fixed;
+   /*position: fixed;*/
    background-color: url(../views/images/watercolorside3.jpg);
-   background-size: 50px;
+   background-size: 400px;
  }
  .charIcon, .storyTitle, .character{
    text-align: center;
@@ -127,9 +127,16 @@
    width: auto;
  }
  #sidebar-wrapper{
-    position: relative;
+    /*position: relative;*/
+    width: 400px;
     /*overflow-y: auto;*/
   }
+  .sample-show-hide {
+  transition: all linear 1.5s;
+}
+.sample-show-hide.ng-hide {
+  opacity: 0;
+}
   .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
