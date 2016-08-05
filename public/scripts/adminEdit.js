@@ -2,7 +2,7 @@ myApp.controller('adminEditController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
-// userData.adminCheck();
+userData.adminCheck();
 
 userData.getAllStories();
 
