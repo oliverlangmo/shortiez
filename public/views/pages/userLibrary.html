@@ -2,12 +2,11 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-
-    <div id="sidebar-wrapper">
+<button ng-click="openNav()">Show Characters</button>
+    <div ng-show= "sidebar" id="sidebar-wrapper" >
       <ul class="sidebar-nav sideNav">
         <li class="sidebar-brand">
           <li>
-
             <div class="storyTitle">
               <img ng-src="{{readerIndex.story_cover}}" height='100px'/>
               <p> {{readerIndex.story_title}} </p>
@@ -26,9 +25,9 @@
         </li>
       </ul>
     </div>
+</div>
 
   <!-- body -->
-
     <div id="page-content-wrapper">
       <div class="container">
         <!-- <div id="storyPage"> -->
@@ -71,4 +70,8 @@
       </footer>
     </div>
   </div>
+</div>
+</div>
+</div>
+</div>
 </div>

@@ -49,6 +49,10 @@ $scope.nameReplace = function(newName, oldName) {
   $scope.myStoryLoad();
 }; // end nameReplace
 
+$scope.openNav = function() {
+  console.log("click");
+        $scope.sidebar = !$scope.sidebar;
+    };
 $scope.nextPage = function() {
   $rootScope.pageIndex++;
   if ($rootScope.pageIndex === $scope.currentStory.length ) {
