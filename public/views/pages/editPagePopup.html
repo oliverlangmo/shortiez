@@ -1,0 +1,27 @@
+<div ng-controller="adminEditController">
+  <div class="modal-header">
+    <h3 class="modal-title"> Edit Page Text </h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="editPageDiv">
+      <textarea name="textAreaEdit" class="readerFontSize" id="textAreaEdit" ng-model="pageTextBinder" placeholder="Place story page here" ng-show="displayBefore"></textarea><br>
+      <div id="wordCount" ng-show="displayAfter"> Word count: {{stringLength}} </div>
+      <div id="adminStory"></div><br>
+      <div ng-show="displayAfter">
+        Page #{{pageNumberBinder}}<br>
+        Illustration URL: {{pageIllustrationBinder}}
+      </div>
+      <label for="pageNumber" ng-show="displayBefore"> Page# </label>
+      <input name="pageNumber" id="pageNumInput" ng-model="pageNumberBinder" placeholder="Page Number" ng-show="displayBefore">
+      <label for="pageIllustration" ng-show="displayBefore"> Illustration </label>
+      <input name="pageIllustration" type="text" ng-model="pageIllustrationBinder" placeholder="URL" ng-show="displayBefore"><br><br>
+    </div> <!-- end editPageDiv -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button ng-click="captureStoryInput()" ng-show="displayBefore"> Submit </button>
+    <button type="submit" name="submitCharButton" ng-click="updatePage()" ng-show="displayAfter"> Save Page </button>
+    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div>

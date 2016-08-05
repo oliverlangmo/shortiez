@@ -1,0 +1,27 @@
+<div ng-controller="adminEditController">
+  <div class="modal-header">
+    <h3 class="modal-title"> Edit Character </h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="editCharactersDiv">
+      <label for="charName"> Name: </label>
+      <input type="text" name="charName" ng-model="charName" value="oldCharName" placeholder="Character Name"><br>
+      <label for="traitOne"> Trait 1: </label>
+      <input type="text" name="traitOne" ng-model="traitOne" value="oldTraitOne" placeholder="Character Trait 1"><br>
+      <label for="traitTwo"> Trait 2: </label>
+      <input type="text" name="traitTwo" ng-model="traitTwo" value="oldTraitTwo" placeholder="Character Trait 2"><br>
+      <label for="traitThree"> Trait 3: </label>
+      <input type="text" name="traitThree" ng-model="traitThree" value="oldTraitThree" placeholder="Character Trait 3"><br>
+      <label for="charBio"> Biography: </label>
+      <input type="text" name="charBio" ng-model="charBio" value="oldCharBio" placeholder="Character Bio"><br>
+      <label for="charPhoto"> Photo: </label>
+      <input type="text" name="charPhoto" ng-model="charPhoto" value="oldCharPhoto" placeholder="Character Photo URL"><br>
+    </div> <!-- end editCharactersDiv -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button ng-click= "updateCharacter()"> Save </button>
+    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div>

@@ -6,7 +6,6 @@ function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal)
 
 userData.getAllStories();
 
-$rootScope.stories = [];
 $scope.myStory = [];
 $scope.newName = '';
 
