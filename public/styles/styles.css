@@ -75,7 +75,7 @@
  textarea {
    width: 900px;
    height: 300px;
-   vertical-align: middle;;
+   vertical-align: left;;
  }
 
  .sideNav {
@@ -110,15 +110,19 @@
      border-color: #0088dd;
      padding: 100px;
      margin: 50px 50px 50px 0px;
-     text-align: center;
+     text-align: left;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
      background-color: #f7f3ee;
 }
-#illustration {
-  border-radius: 10px;
-  height: 200px;
-
+img{
+    display: block;
+    margin: 0 auto;
 }
+/*.parent{
+    text-align: center;
+}*/
+
+
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
