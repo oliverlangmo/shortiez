@@ -1,0 +1,21 @@
+<div ng-controller="adminEditController">
+  <div class="modal-header">
+    <h3 class="modal-title"> Edit Story Cover </h3>
+  </div> <!-- end modal-header -->
+
+  <div class="modal-body">
+    <div id="editCoverDiv">
+      <label for="storyTitle"> Title: </label>
+      <input type="text" name="storyTitle" ng-model="tempTitle" value="" placeholder="Title"><br>
+      <label for="storyDescription"> Description: </label>
+      <input type="text" name="storyDescription" ng-model="tempDescription" value="" placeholder="Description"><br>
+      <label for="storyCoverImg"> Photo URL: </label>
+      <input type="text" name="storyCoverImg" ng-model="tempCover" value="" placeholder="URL"><br>
+    </div> <!-- end editCoverDiv -->
+  </div> <!-- end modal-body -->
+
+  <div class="modal-footer">
+    <button ng-click="editCover()"> Edit </button>
+    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+  </div> <!-- end modal-footer -->
+</div>

@@ -9,7 +9,6 @@ $scope.toggle =function(){
 };
 userData.getAllStories();
 
-$rootScope.stories = [];
 $scope.myStory = [];
 $scope.newName = '';
 

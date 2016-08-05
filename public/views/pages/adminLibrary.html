@@ -1,19 +1,20 @@
-<div ng-controller="libraryAdminController" id="admin" ng-cloak  class="gridListdemoBasicUsage">
+<div ng-controller="adminEditController" ng-init ="getAllStories()" id="admin" class="gridListdemoBasicUsage">
   <h1> Admin Library </h1>
-  <button type="button" class="adminAddNewStoryBtn" name="addStoryButton" ng-click="addNewStoryPopup()"> Add a new story </button>
+  <button type="button" class="adminAddNewStoryBtn" name="addStoryButton" ng-click="openAdminEdit()"> Add a new story </button>
 
   <h2> Choose a story to edit </h2>
   <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width: 400px;" ng-repeat="story in stories">
       <md-card-content>
+
       <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'>
-
-        <h2> {{story.story_title}} </h2>
-        <p> {{story.story_description}} </p>
-
+      <h2> {{story.story_title}} </h2>
+      <p> {{story.story_description}} </p>
       <div class="md-actions" layout="row" layout-align="end center">
-        <md-button ng-click="editStory($index)">Edit</md-button>
+        <md-button ng-click="deleteStory($index)"> Delete </md-button>
+        <md-button ng-click="editStory($index)"> Edit </md-button>
       </div>
+
       </md-card-content>
     </md-card>
   </div>
