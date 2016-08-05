@@ -1,9 +1,9 @@
 <div ng-controller="loginController">
   <div class="navbar navbar-default">
-    <tab><a class="headerBtn" href="#login"> Login |</a></tab>
-    <a class="headerBtn" href="#viewLibrary">Reader Library |</a>
-    <a class="headerBtn" href="#adminLibrary">Admin Library |</a>
-    <a class="headerBtn" href="#userStats"> Manage Users |</a>
-    <tab class="headerBtn" id="logoutBtn" ng-click="openLogout()"> Logout </tab>
+    <tab><a class="headerBtn" id="loginB" href="#login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></tab>
+    <tab><a class="headerBtn" id="userB"href="#viewLibrary"><i class="fa fa-book" aria-hidden="true"></i>Reader Library </a></tab>
+    <tab><a class="headerBtn" id="adminB"href="#adminLibrary"><i class="fa fa-book" aria-hidden="true"></i>Admin Library </a></tab>
+    <tab><a class="headerBtn" id="manageB"href="#userStats"><i class="fa fa-line-chart" aria-hidden="true"></i> Manage Users </a></tab>
+    <tab class="headerBtn" id="logoutBtn" ng-click="openLogout()" align="right"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout </tab>
   </div>
 </div>

@@ -9,129 +9,167 @@
 
  body, html{
    /*background-color: #f7f3ee;*/
-   background: url(../views/images/urbanwatercoloredit2.jpg);
+   background: url(../views/images/urbanwatercoloredit.jpg);
+   /*background: url(../views/images/watercolorback.jpg);*/
    background-attachment: fixed;
    background-size: cover;
    height: 100%;
    font-size: 1em;
  }
-/*readerStory*/
+
+
+ /*---------------------------------    nav bar   -------------------------------------*/
+ .headerBtn{
+   color: white;
+   font-family: 'Comic Sans MS';
+   font-size: 24px;
+     background-color: #118cc3;
+   /*height: 30px;*/
+   margin-right: 5px;
+   padding-bottom: 10px;
+   text-decoration: none;
+  border-radius: 10px;
+  /*border-top-right-radius: 25px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+
+ }
+.headerBtn:hover{
+  background-color: #3FBFBF;
+  text-decoration: none;
+  color: white;
+}
+ #loginB{
+   color: white;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-right: 5px;
+   margin-left: 10px;
+   font-family: 'Comic Sans MS';
+   /*font-family: 'blowbrush';*/
+   font-size: 24px;
+   width: 50px;
+   height: 50px;
+ }
+
+#logoutBtn{
+  /*position: absolute;*/
+  float: right;
+  margin-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #3FBFBF;
+}
+#userB{
+  background-color: #BF3FBF;
+}
+#userB:hover{
+  background-color: #3FBFBF;
+}
+#adminB {
+  background-color: #5EAF5E;
+}
+#adminB:hover{
+  background-color: #3FBFBF;
+}
+#manageB{
+  background-color: #5f3cb0;
+}
+#manageB:hover{
+  background-color: #3FBFBF;
+}
+ .navbar-default{
+   background-color: black;
+    /*background-color: #118cc3;--blue*/
+    /*background-color: #64bbcc;*/
+    padding-top: 10px;
+    padding-bottom: 10px; /*helps move the text in the sidenav up*/
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+/*--------------------------------      readerStory         --------------------------------*/
+
  textarea {
    width: 900px;
    height: 300px;
    vertical-align: middle;;
  }
-/*readerStory Nav*/
+
+ .sideNav {
+   float: left;
+   color: white;
+   /*overflow-y: scroll;*/
+   position: fixed;
+   background-color: url(../views/images/watercolorside2.jpg);
+ }
+ .charIcon, .storyTitle, .character{
+   text-align: center;
+ }
+ .storyTitle{
+   font-size: 30px;
+   font-family: 'blowbrush';
+   color: black;
+ }
+ .title{
+   font-family: 'blowbrush';
+   height:200px;
+   width: auto;
+ }
+ #sidebar-wrapper{
+    position: relative;
+    /*overflow-y: auto;*/
+  }
+  .storyPage {
+    border-radius: 6px;
+    float: left;
+    position: relative:
+     height: 50vw;
+     width: 60vw;
+     border-width: thick;
+     border-style: outset;
+     border-color: #0088dd;
+     padding: 100px;
+     margin: 50px 50px 50px 0px;
+     text-align: center;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+     background-color: #f7f3ee;
+}
+#illustration {
+  border-radius: 10px;
+  height: 200px;
+
+}
+/*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
   position: fixed;
-  background-color: #ba945d;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 120px;
+  height: 75px;
+}
+.characters{
+  font-family: 'blowbrush';
+  color: black;
+  font-size: 30px;
 }
 .pageination{
-  margin: auto;
+  margin-left: 400px;
 }
 .previousButton{
   float: left;
   margin-left: 15px;
-  margin-top: 20px;
+  margin-top: -200px;
 }
 .nextButton{
   margin-top: 20px;
   float: right;
   margin-right: 15px;
+  margin-top: -200px;
 }
-#fontBtns{
-  margin-left: 60px;
-  /*padding-left: 80px;*/
-}
-.arialClass{
- font-family: 'Arial', sans-serif;
-}
-.arialButton{
- font-family: 'Arial', sans-serif;
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
-}
-.comicClass{
- font-family: 'Comic Sans MS';
-}
-.comicButton{
- font-family: 'Comic Sans MS';
- font-size: 1.5em;
- background-color: #4CAF50; /* Green */
- border: none;
- color: white;
-}
-.openDyslexicClass{
- font-family: "OpenDyslexic";
-}
-.openDyslexicButton{
-  font-family: "OpenDyslexic";
-  font-size: 1.5em;
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-}
-
-.smallClass{
- font-size: 1.5em;
- letter-spacing: 2px;
- line-height: 225%;*/
- width: 90%;
-}
-
-.smallButton{
-   font-size: 1.0em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
-}
-.mediumClass{
-   font-size: 1.75em;
-   letter-spacing: 2.5px;
-   line-height: 225%
- }
-.mediumButton{
-   font-size: 1.25em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
- }
-.largeClass{
-   font-size: 2.0em;
-   letter-spacing: 3px;
-   line-height: 225%
- }
-.largeButton{
-   font-size: 1.5em;
-   background-color: #4CAF50; /* Green */
-   border: none;
-   color: white;
- }
-/*end readerStory Nav*/
-.wordBtn {
-  border-radius: 8px;
-  border: none;
-  text-align: center;
-  display: inline-block;
-  /*font-size: 12px;*/
-  margin: 2px 1px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s; /* Safari */
-  transition-duration: 0.3s;
-}
-
-.wordBtn:hover {
-  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
 .nextButton {
-  background-color: #4CAF50; /* Green */
+  background-color: #5f3cb0; /* purple */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -144,10 +182,10 @@
   opacity: 50%;
 }
 .nextButton:hover {
-  background-color: #3e8e41;
+  background-color: #6600ff;
 }
 .previousButton {
-  background-color: #4CAF50; /* Green */
+  background-color: #5f3cb0; /* purple */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -157,27 +195,150 @@
   font-size: 16px;
   cursor: pointer;
   margin-left: 250px;
+  margin-bottom: 100px:
+  bottom: 50%;
 }
 .previousButton:hover {
-  background-color: #3e8e41;
+  background-color: #6600ff;
 }
-
-.navbar-default{
+.toggleButton{
+  float: right;
+  position: relative;
+  margin-right: 300px;
   background-color: #118cc3;
-  /*background-color: #2b43b0;*/
-  padding-top: 30px;
-  padding-bottom: 10px; /*helps move the text in the sidenav up*/
-}
-
-.headerBtn{
   color: white;
-  font-family: 'Comic Sans MS';
-  font-size: 24px;
+
+}
+.arialClass{
+ font-family: 'Arial', sans-serif;
+}
+.arialButton{
+ font-family: 'Arial', sans-serif;
+ font-size: 1em;
+ background-color: #118cc3;
+ border: none;
+ color: white;
+ display: inline-block;
+}
+.arialButton:hover{
+  background-color: #5f3cb0; /* purple */
+}
+.comicClass{
+ font-family: 'Comic Sans MS';
+}
+.comicButton{
+ font-family: 'Comic Sans MS';
+ font-size: 1em;
+ background-color: #118cc3;
+ border: none;
+ color: white;
+ display: inline-block;
+
+}
+.comicButton:hover{
+  background-color: #5f3cb0; /* purple */
+}
+.openDyslexicClass{
+ font-family: "OpenDyslexic";
+}
+.openDyslexicButton{
+  font-family: "OpenDyslexic";
+  font-size: 1em;
+  background-color: #118cc3;
+  border: none;
+  color: white;
+  display: inline-block;
+}
+.openDyslexicButton:hover{
+  background-color: #5f3cb0; /* purple */
+}
+.smallClass{
+ font-size: 1.5em;
+ letter-spacing: 2px;
+ line-height: 225%;*/
+ width: 90%;
+}
+.smallButton{
+   font-size: 1.0em;
+   background-color: #118cc3;
+   border: none;
+   color: white;
+   display: inline-block;
+}
+.smallButton:hover{
+  background-color: #5f3cb0; /* purple */
+}
+.mediumClass{
+   font-size: 1.75em;
+   letter-spacing: 2.5px;
+   line-height: 225%
+ }
+.mediumButton{
+   font-size: 1em;
+   background-color: #118cc3;
+   border: none;
+   color: white;
+   display: inline-block;
+ }
+ .mediumButton:hover{
+   background-color: #5f3cb0; /* purple */
+ }
+.largeClass{
+   font-size: 2.0em;
+   letter-spacing: 3px;
+   line-height: 225%
+ }
+.largeButton{
+   font-size: 1em;
+   background-color: #118cc3;
+   border: none;
+   color: white;
+   display: inline-block;
+   position: relative;
+ }
+.largeButton:hover{
+  background-color: #5f3cb0; /* purple */
 }
 
-.main{
-  text-align: center;
+ #fontBtns{
+   margin-left: 60px;
+   /*padding-left: 80px;*/
+   align-items: center;
+ }
+
+ #fontBox{
+   border: solid;
+   border-color: #118cc3;
+   background-color:rgba(245,229,210,0.5);
+   width: 450px;
+   margin-left: 400px;
+   align-items: center;
+ }
+/*---------------------     end readerStory Nav     --------------------------------*/
+/*---------------------      end readerStory        --------------------------------*/
+/*------------------------------    library    --------------------------------------*/
+.cards{
+  background-color: #f8f4f0;
 }
+
+/*--------------------------------customize word         --------------------------------*/
+
+.wordBtn {
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+
+.wordBtn:hover {
+  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24),0 10px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*--------------------------------    login        --------------------------------*/
 .loginCont {
   position: fixed;
   text-align: center;
@@ -186,13 +347,7 @@
   transform: translate(-50%, -50%);
 }
 
-.sideNav {
-  float: left;
-  color: white;
-  /*overflow-y: scroll;*/
-  position: fixed;
-}
-
+/*Admin Library*/
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px;
 }
@@ -204,79 +359,24 @@
 .gridListdemoBasicUsage md-grid-tile {
   transition: all 400ms ease-out 50ms;
 }
-
-.charIcon, .storyTitle, .character{
-  text-align: center;
-}
-.storyTitle{
-  font-size: 20px;
-}
-.title{
-  font-family: 'blowbrush';
-  font-size: 100px;
-}
-
-.nextGliph{
-  color: black;
-}
-
-.btn-primary{
-  background-color: #5f3cb0;
-}
-
-#sidebar-wrapper{
-  position: relative;
-  /*overflow-y: auto;*/
-}
-
 #storyInput {
   height: 200px;
   width: 700px;
   overflow: hidden;
   display: block;
 }
-
 #adminTestBox {
   height: 100px;
   width: 700px;
   overflow: auto;
-}
-#login{
-  color: white;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-family: 'Comic Sans MS';
-  /*font-family: 'blowbrush';*/
-  font-size: 30px;
-}
-#login:hover{
-  color: #118cc3;
-  background-color: white;
 }
 #storyInput{
   overflow: auto;
   padding-bottom: 100px;
   margin: auto;
 }
-#storyPage {
- width: 800px;
- height: 900px;
- border: solid 1px #ccc;
- background: #ddd;
- position: relative;
- z-index: 9999;
-}
-#userStory {
-  border-radius: 2px;
-  float: left;
-   height: 900px;
-   width: 900px;
-   border-width: thick;
-   border-style: outset;
-   border-color: #0088dd;
-   padding: 10px;
-   margin: 50px 50px 50px 0px;
-   text-align: center;
-   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-   background-color: yellow;
+
+/*--------------------------------     modals        --------------------------------*/
+.btn-primary{
+  background-color: #5f3cb0;
 }
