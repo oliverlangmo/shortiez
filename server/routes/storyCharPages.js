@@ -40,13 +40,14 @@ router.post('/addCharacter', function(req, res) {
 }); // end character post
 
 router.post('/addPage', function(req, res) {
-  var story_pages = {
+  console.log(req.body);
+  var storyPages = {
     page_number: req.body.page_number,
     page_text_plain: req.body.page_text_plain,
     page_text_btn: req.body.page_text_btn,
     page_illustration: req.body.page_illustration,
   }; // end pageToAdd
-  addStory.findOneAndUpdate({_id:req.body.id}, {$push: {story_pages: story_pages}}, function(err) {
+  addStory.findOneAndUpdate({_id:req.body.id}, {$push: {'story_pages': storyPages}}, function(err) {
     if (err) {
       console.log(err);
       res.sendStatus(500);
