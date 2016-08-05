@@ -35,6 +35,21 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/adminAddNewStory', {
           templateUrl: '/views/pages/adminAddNewStory.html'
       })
+      .when('/addNewCharPopup', {
+          templateUrl: '/views/pages/addNewCharPopup.html'
+      })
+      .when('/addNewPagePopup', {
+          templateUrl: '/views/pages/addNewPagePopup.html'
+      })
+      .when('/editPagePopup', {
+          templateUrl: '/views/pages/editPagePopup.html'
+      })
+      .when('/editCharactersPopup', {
+          templateUrl: '/views/pages/editCharactersPopup.html'
+      })
+      .when('/editCoverPopup', {
+          templateUrl: '/views/pages/editCoverPopup.html'
+      })
       .when('/userStats', {
           templateUrl: '/views/pages/userStats.html'
       })
@@ -54,7 +69,8 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
 
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.tempIndex = 0;
+  $rootScope.stories = [];
+  $rootScope.tempIndex = 0; // temporarily holds object index ID, very important!
   $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
   $rootScope.usersArray = [];
@@ -64,8 +80,12 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.characters = []; // needed for modal textPopup
   $rootScope.nameChangeArray = []; // needed for modal textPopup
   $rootScope.page = [];
-  $rootScope.tempPageId = '';
+  $rootScope.tempPageId = ''; // holds object array number/spot
   $rootScope.storyArrayIndex = 0;
+  $rootScope.tempStoryName = '';
+  $rootScope.tempNewStoryArray = []; // temporary array holding only newly added story
+  $rootScope.isNewOrEdit = 0; // determines whether or not called function is as New (0) or Edit (1)
+
 
   var adminCheck = function() {
     var check = $rootScope.userAdminCheck;
@@ -84,7 +104,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   var randomId = function() {
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    var idLength = 9;
+    var idLength = 24;
     for(var i=0; i < idLength; i++)
       text.push(possible.charAt(Math.floor(Math.random() * possible.length)));
     return text.join('');

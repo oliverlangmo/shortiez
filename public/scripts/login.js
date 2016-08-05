@@ -1,6 +1,8 @@
 angular.module('myApp').controller('loginController',['$scope', '$http', '$uibModal', '$rootScope', '$location', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, userData){
 
+  userData.getAllStories();
+
   $scope.setPrivileges = function(){
     var getUserInfo = {
       username: $scope.userNameInfo
