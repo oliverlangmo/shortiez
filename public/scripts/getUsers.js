@@ -53,6 +53,7 @@ $scope.getUsers();
 
 $scope.deleteUser = function(id) {
   console.log('button clicked');
+  if(confirm('Are you sure you want to Delete this user?')){
   var userToDelete ={
     id: $rootScope.usersArray[id]._id
   };
@@ -63,9 +64,11 @@ $scope.deleteUser = function(id) {
     data: userToDelete,
     headers: {'Content-Type': 'application/json;charset=utf-8'}
   });
-  $scope.getUsers();
+  } else{
+  return false;
+}
+$scope.getUsers();
 };
-
 }]);
 
 angular.module('myApp').controller('updateUserModal', function($scope, $uibModalInstance, $rootScope, userId){
@@ -74,7 +77,7 @@ $scope.nameUpdate = $rootScope.usersArray[userId].name;
 $scope.emailUpdate = $rootScope.usersArray[userId].email;
 $scope.username = $rootScope.usersArray[userId].username;
 $scope.gradeUpdate = $rootScope.usersArray[userId].grade;
-$scope.bdayUpdate = $rootScope.usersArray[userId].birthday;
+$scope.bdayUpdate = new Date($rootScope.usersArray[userId].birthday);
 $scope.adminUpdate = $rootScope.usersArray[userId].admin;
 $scope.authUpdate = $rootScope.usersArray[userId].auth;
 
