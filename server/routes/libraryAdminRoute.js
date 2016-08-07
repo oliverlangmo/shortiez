@@ -8,7 +8,6 @@ var addStory = require('../../models/addStory.js');  // requiring the addStory m
 var router = express.Router();
 
 router.get('/getStories', function (req, res) {
-
   // console.log('in /getStories');
   addStory.find().then(function(data){
   res.send(data);

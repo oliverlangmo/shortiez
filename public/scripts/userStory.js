@@ -2,7 +2,7 @@ angular.module('myApp').controller('userStoryController',
 ['$scope', '$http', '$rootScope', '$location', 'userData', '$mdSidenav', '$uibModal',
 function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal) {
 
-// userData.checkAuth();
+userData.checkAuth();
 
 $scope.toggle =function(){
   console.log("toggle clicked");
@@ -30,15 +30,15 @@ $scope.chooseNamePopup = function() {
   }); // end $modal.open
 }; // end openTextPopup
 
-$scope.selectReaderStory = function(index) {
-  $rootScope.characters = [];
-  $rootScope.readerIndex = $rootScope.stories[index];
-  for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
-    $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
-  } // end for loop
-  var path = "#userLibrary";
-  window.location.href = path;
-}; // end selectReaderStory
+// $scope.selectReaderStory = function(index) {
+//   $rootScope.characters = [];
+//   $rootScope.readerIndex = $rootScope.stories[index];
+//   for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
+//     $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
+//   } // end for loop
+//   var path = "#userLibrary";
+//   window.location.href = path;
+// }; // end selectReaderStory
 
 $scope.nameReplace = function(newName, oldName) {
   var regExp = new RegExp(oldName, 'gi');

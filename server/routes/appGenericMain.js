@@ -1,9 +1,5 @@
 var express = require('express');
 var path = require('path');
-///BadWord Filter. Use filter.clean() to activate.
-// var Filter = require('bad-words'),
-//   filter = new Filter();
-
 var router = express.Router();
 
 var User = require('../../models/users');
@@ -15,6 +11,7 @@ router.get('/checkUser', function(req, res){
 }); //end checkUser
 
 router.post('/getUserCheck', function(req, res){
+  console.log('getUserCheck hit');
   var findUser = req.body.username;
   User.findOne({username: findUser}, function(err, data) {
     if(err){
