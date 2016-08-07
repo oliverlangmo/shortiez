@@ -67,7 +67,7 @@ $scope.updateUser = function(id) {
     data: updateInfo
   }); // end $http
   $rootScope.cancel();
-  $scope.getUsers();
+  location.reload();
 }; // end updateUser
 
 $scope.deleteUser = function(id) {
