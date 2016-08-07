@@ -388,7 +388,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+#loginBox{
+  border: solid;
+  border-color: #e6e6e6;
+  /*background-image: url(../views/images/watercolorsidemodal.jpg);*/
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  display: table;
+}
 /*Admin Library*/
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px;
@@ -437,4 +447,34 @@
 }
 .register{
   color: white;
+}
+#registerTitle{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 34px;
+  font-family: 'blowbrush'
+}
+#registerBox{
+  border: solid;
+  border-color: #e6e6e6;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  display: table;
+  background-image: url(../views/images/watercolorsidemodal.jpg);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+
+}
+.inputDiv{
+  display: table-row;
+}
+.inputBox, .registerLabel{
+  display: table-cell;
+  margin-left: 35px;
+
 }
