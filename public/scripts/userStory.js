@@ -40,6 +40,8 @@ $scope.nameReplace = function(newName, oldName) {
     // angular.element($event.target).scope().style.backgroundColor = "red";
 
 // });
+
+
   var regExp = new RegExp(oldName, 'gi');
   for (var i = 0; i < $rootScope.readerIndex.story_pages.length; i++) { // for loop 1
     for (var x = 0; x < $rootScope.readerIndex.story_pages[i].page_text_btn.length; x++) { // for loop 2
@@ -86,35 +88,36 @@ openTextPopup = function(num) {
 }; // end openTextPopup
 
 $scope.submitChange = function() {
-  var num = 0;
-  var pageArray = '';
-  var newTaggedWord = '';
-  var text = '';
+  var badWordCheck = false;
   for (var i = 0; i < $rootScope.badWordsArray[0].badWords.length; i++) {
     if ($scope.newWord === $rootScope.badWordsArray[0].badWords[i]) {
-      window.alert("Timmy or Suzy, you have tried to submit a bad word."+
-        "\nou have been placed on Santa's naughty list."+
+      window.alert("Timmy, you have tried to submit a bad word." +
+        "\nYou have been placed on Santa's naughty list." +
         "\nYour birthday has been taken away." +
         "\nDo not try submitting bad words again." +
         "\nOr else.");
         num = $rootScope.tempIdNum;
         pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
-        newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BAD CHILD, BAD!!' + '</button> ';
+        newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BLEEP!' + '</button> ';
         pageArray.splice((num), 1, newTaggedWord);
         text = angular.element(document.querySelector('#userStory'));
         text.empty();
         text.append(pageArray.join(' '));
-    } else {
-      num = $rootScope.tempIdNum;
-      pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
-      newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
-      pageArray.splice((num), 1, newTaggedWord);
-      text = angular.element(document.querySelector('#userStory'));
-      text.empty();
-      text.append(pageArray.join(' '));
-    } // end else
+        badWordCheck = true;
+        $rootScope.cancel();
+      } // end if
   } // end for loop
-  $rootScope.cancel();
+  if (badWordCheck === false) {
+    num = $rootScope.tempIdNum;
+    pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
+    newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
+    pageArray.splice((num), 1, newTaggedWord);
+    text = angular.element(document.querySelector('#userStory'));
+    text.empty();
+    text.append(pageArray.join(' '));
+    $rootScope.cancel();
+    badWordCheck = false;
+  } // end if
 }; // end submitChange
 
 $scope.arialFont = function() {
