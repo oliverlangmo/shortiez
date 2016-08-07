@@ -333,12 +333,20 @@
 .cards{
   background-color: #f8f4f0;
 }
+.storyCover{
+  margin-right: : 40px;
+}
 #libraryMain{
   padding: 40px;
   margin: 40px;
   background-color: rgba(240, 241, 241, 0.9);
 }
-
+#libraryInstructions{
+  padding: 20px;
+}
+#addStoryBtn{
+  margin-left: 50px;
+}
 /*--------------------------------customize word         --------------------------------*/
 
 .wordBtn {
@@ -434,6 +442,10 @@
 }
 .editPageInfo{
   padding: 20px;
+}
+#charBio{
+  width: 200px;
+  height: 40px;
 }
 #adminStory{
   /*background-color: #f7f3ee;

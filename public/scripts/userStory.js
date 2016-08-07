@@ -3,6 +3,7 @@ angular.module('myApp').controller('userStoryController',
 function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal) {
 
 // userData.checkAuth();
+userData.getBadWords();
 
 $scope.toggle =function(){
   console.log("toggle clicked");
@@ -85,13 +86,34 @@ openTextPopup = function(num) {
 }; // end openTextPopup
 
 $scope.submitChange = function() {
-  var num = $rootScope.tempIdNum;
-  var pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
-  var newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
-  pageArray.splice((num), 1, newTaggedWord);
-  var text = angular.element(document.querySelector('#userStory'));
-  text.empty();
-  text.append(pageArray.join(' '));
+  var num = 0;
+  var pageArray = '';
+  var newTaggedWord = '';
+  var text = '';
+  for (var i = 0; i < $rootScope.badWordsArray[0].badWords.length; i++) {
+    if ($scope.newWord === $rootScope.badWordsArray[0].badWords[i]) {
+      window.alert("Timmy or Suzy, you have tried to submit a bad word."+
+        "\nou have been placed on Santa's naughty list."+
+        "\nYour birthday has been taken away." +
+        "\nDo not try submitting bad words again." +
+        "\nOr else.");
+        num = $rootScope.tempIdNum;
+        pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
+        newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BAD CHILD, BAD!!' + '</button> ';
+        pageArray.splice((num), 1, newTaggedWord);
+        text = angular.element(document.querySelector('#userStory'));
+        text.empty();
+        text.append(pageArray.join(' '));
+    } else {
+      num = $rootScope.tempIdNum;
+      pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
+      newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + $scope.newWord + '</button> ';
+      pageArray.splice((num), 1, newTaggedWord);
+      text = angular.element(document.querySelector('#userStory'));
+      text.empty();
+      text.append(pageArray.join(' '));
+    } // end else
+  } // end for loop
   $rootScope.cancel();
 }; // end submitChange
 
