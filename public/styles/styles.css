@@ -157,15 +157,15 @@
     width: 450px;
 }
 
-/*#page-content-wrapper {
+#page-content-wrapper {
     padding: 15px;
     width: 100%;
-}*/
+}
 
-/*#wrapper.toggled #page-content-wrapper {
+#wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
-}*/
+}
 
 /* Sidebar Styles */
 
@@ -240,14 +240,14 @@
         position: relative;
         margin-right: 0;
     }*/
-}
+
  /*#sidebar-wrapper{
     /*position: relative;*/
     width: 400px;
     /*overflow-y: auto;*/
   }*/
 
-  #storyPage {
+  .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
     position: relative:
@@ -275,7 +275,7 @@
   word-wrap: break-word;;
   display: inline-block;
 }*/
-.image>img{
+.image img{
     /*display: block;*/
     float: left;
     margin-right: : 25px;

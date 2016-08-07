@@ -29,26 +29,26 @@
         </li>
       </ul>
     </div>
-  </div>
 </div> <!-- end sidebar-wrapper -->
   <!-- body -->
     <div id="page-content-wrapper">
+    <div class="container-fluid">
       <div class="container">
         <div id="storyPage">
         <div class="row">
           <div class="col-xs-8">
             <div class="{{storyClass}}">
               <div class="{{sizeClass}}">
-                <div class="titlePage"
+                <div class="titlePage">
                 <h1>{{readerIndex.story_title}}</h1>
-              </div>
+                </div>
                 <div class="storyPage">
                   <div class="image">
                     <img ng-src="{{myStory.page_illustration}}" height='300px'/>
                   </div>
-                  <div class="image-aside">
-                <div id="userStory"></div>
-              </div>
+                  <!-- <div class="image-aside"> -->
+                  <div id="userStory"></div>
+              <!-- </div> -->
                 <br><span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
               </div>
             </div>
@@ -75,8 +75,8 @@
             </div>
           </footer>
         </div>
+        </div>
        </div> <!--end page wrapper -->
-
+     </div>
     </div>
   </div>
-</div>
