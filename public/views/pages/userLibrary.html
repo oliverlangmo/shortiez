@@ -1,9 +1,13 @@
 <div ng-controller="userStoryController" ng-init="chooseNamePopup()">
-  <div id="wrapper">
-
+      <div class="container-fluid">
+          <button type="button" class="navbar-brand" href="#menu-toggle" id="menu-toggle">Show Characters</button>
+      </div>
+    <div id="wrapper" class= "toggled">
     <!-- Sidebar -->
-    <button class="toggleCharSidebar" ng-click="toggleCharSidebar()">{{toggleBtn}}</button>
-    <div ng-hide="charSidebar" id="sidebar-wrapper">
+    <!-- <button class="toggleCharSidebar" ng-click="toggleCharSidebar()">{{toggleBtn}}</button> -->
+    <!-- <div id="sidebar-wrapper" ng-hide="charSidebar" > -->
+    <div class="container-fluid">
+      <div id="sidebar-wrapper">
       <ul class="sidebar-nav sideNav">
         <li class="sidebar-brand">
           <li>
@@ -25,12 +29,12 @@
         </li>
       </ul>
     </div>
-</div>
+  </div>
+</div> <!-- end sidebar-wrapper -->
   <!-- body -->
-
     <div id="page-content-wrapper">
       <div class="container">
-        <!-- <div id="storyPage"> -->
+        <div id="storyPage">
         <div class="row">
           <div class="col-xs-8">
             <div class="{{storyClass}}">
@@ -39,22 +43,19 @@
                 <h1>{{readerIndex.story_title}}</h1>
               </div>
                 <div class="storyPage">
-                  <!-- <div class="content clearfix"> -->
                   <div class="image">
                     <img ng-src="{{myStory.page_illustration}}" height='300px'/>
                   </div>
-                  <!-- <div class="image-aside"> -->
+                  <div class="image-aside">
                 <div id="userStory"></div>
-              <!-- </div> -->
+              </div>
                 <br><span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
-              <!-- </div> -->
-            </div>
-                <div class="navBtns">
-              </div>
               </div>
             </div>
-          <!-- </div> -->
           </div>
+        </div>
+      </div>
+      </div>
 
             <footer>
               <div class="navBtns">
@@ -74,7 +75,8 @@
             </div>
           </footer>
         </div>
-      </div>
+       </div> <!--end page wrapper -->
+
     </div>
   </div>
 </div>
