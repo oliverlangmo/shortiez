@@ -130,6 +130,9 @@
     position: relative;
     /*overflow-y: auto;*/
   }
+  .titlePage {
+    margin-left: 120px;
+  }
   .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
@@ -172,7 +175,7 @@
   margin-top: -25px;
 }
 .pageination{
-  margin-left: 400px;
+  margin: auto;
 }
 .previousButton{
   float: left;
@@ -194,8 +197,6 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  /*float: right;*/
-  /*opacity: 50%;*/
 }
 .previousButton {
   background-color: #5f3cb0;
@@ -207,31 +208,30 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  /*margin-left: 200px;*/
 }
 .nextButton:hover {
   background-color: #6600ff;
 }
 .previousButton:hover {
- background-color: #6600ff ;
+  background-color: #6600ff ;
 }
 .toggleButton{
- float: right;
- position: relative;
- margin-left: 150px;
- background-color: #118cc3 ;
- color: white;
+   float: right;
+   position: relative;
+   margin-left: 150px;
+   background-color: #118cc3 ;
+   color: white;
 }
 .arialClass{
-font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .arialButton{
-font-family: 'Arial', sans-serif;
-font-size: 1em;
-background-color: #118cc3 ;
-border: none;
-color: white;
-display: inline-block;
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
+  background-color: #118cc3 ;
+  border: none;
+  color: white;
+  display: inline-block;
 }
 .arialButton:hover{
  background-color: #5f3cb0 ; /* purple */
@@ -268,7 +268,7 @@ display: inline-block;
 .smallClass{
  font-size: 1.5em;
  letter-spacing: 2px;
- line-height: 225%;*/
+ line-height: 225%;
  width: 90%;
 }
 .smallButton{
