@@ -113,12 +113,12 @@
    background-color: url(../views/images/watercolorside3.jpg);
    background-size: 50px;
  }
- .charIcon, .storyTitle, .character{
+ .charIcon, .storyTitle, .characters{
    text-align: center;
+   font-family: 'Comic Sans MS';
  }
  .storyTitle{
    font-size: 30px;
-   font-family: 'blowbrush';
    color: black;
  }
  .title{
@@ -163,9 +163,9 @@ img{
   height: 75px;
 }
 .characters{
-  font-family: 'blowbrush';
   color: black;
   font-size: 30px;
+  margin-top: -25px;
 }
 .pageination{
   margin-left: 400px;
@@ -407,6 +407,11 @@ img{
 /*--------------------------------     modals        --------------------------------*/
 .btn-primary{
   background-color: #5f3cb0;
+  color: white;
+  text-decoration: none;
+}
+.btn-primary:hover:{
+    background-color: #3FBFBF;
 }
 .modalAll{
   background-image: url(../views/images/watercolorsidemodal.jpg);
@@ -415,4 +420,7 @@ img{
 }
 .titlePage{
   font-size: 50px;
+}
+.register{
+  color: white;
 }

@@ -9,8 +9,7 @@
           <li>
 
             <div class="storyTitle">
-              <img ng-src="{{readerIndex.story_cover}}" height='100px'/>
-              <p> {{readerIndex.story_title}} </p>
+              <!-- <img ng-src="{{readerIndex.story_cover}}" height='100px'/> -->
             </div>
           </a>
           <div class="characters"> Characters </div>
@@ -19,8 +18,10 @@
           <div class="charIcon">
             <div ng-repeat="character in readerIndex.story_characters">
               <img ng-src="{{character.character_photo}}" height='100px'/><br>
-              {{character.character_name}}
-              <p> Traits: {{character.character_traits}} </p>
+              <h4>{{character.character_name}}</h4>
+              <p> Traits: {{character.character_traits[0]}}
+              <br>{{character.character_traits[1]}}
+            <br>{{character.character_traits[2]}} </p>
             </div>
           </li>
         </li>
