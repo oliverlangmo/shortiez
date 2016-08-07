@@ -67,7 +67,7 @@ $scope.deleteUser = function(id) {
   } else{
   return false;
 }
-$scope.getUsers();
+location.reload();
 };
 }]);
 
