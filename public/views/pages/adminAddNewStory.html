@@ -1,42 +1,67 @@
-<div ng-controller="adminEditController" ng-init= "adminStoryLoad()">
+<div ng-controller="adminEditController" ng-init= "adminStoryLoad()" class="storyInputPage">
 
   <div ng-show="showCoverInfoBefore">
-    <h3> Story Cover Information </h3>
-    <label for="storyTitle"> Title </label>
-    <input type="text" name="storyTitle" ng-model="storyTitleBinder" placeholder="Title"><br>
-    <label for="storyDescription"> Description </label>
-    <input type="text" name="storyDescription" ng-model="storyDescrpitionBinder" placeholder="Description"><br>
-    <label for="storyCoverImg"> Cover URL</label>
-    <input type="text" name="storyCoverImg" ng-model="storyCoverBinder" placeholder="URL">
+    <div class="editStoryInfo">
+      <h3> Story Cover Information </h3>
+      <label for="storyTitle"> Title </label>
+      <input type="text" name="storyTitle" ng-model="storyTitleBinder" placeholder="Title"><br>
+      <label for="storyDescription"> Description </label>
+      <input type="text" name="storyDescription" ng-model="storyDescrpitionBinder" placeholder="Description"><br>
+      <label for="storyCoverImg"> Cover URL</label>
+      <input type="text" name="storyCoverImg" ng-model="storyCoverBinder" placeholder="URL">
 
-    <div id="storyPreview">
-      <h4> Title: {{storyTitleBinder}}</h4>
-      <h5> Description: {{storyDescrpitionBinder}} </h5>
-      <img ng-src="{{storyCoverBinder}}" height="50px"/>
+      <div id="storyPreview">
+        <h4> Title: {{storyTitleBinder}}</h4>
+        <h5> Description: {{storyDescrpitionBinder}} </h5>
+        <img ng-src="{{storyCoverBinder}}" height="50px"/>
+      </div>
+      <button ng-click="addStory()" class="btn btn-primary"> Add New Story </button>
     </div>
-    <button ng-click="addStory()"> Add New Story </button>
-  </div>
 
   <div ng-show="showCoverInfoAfter">
+
     <h3> Story Cover Information </h3>
     <div class="coverInfoDiv">
       Title: {{tempNewStoryArray.story_title}} <br>
       Description: {{tempNewStoryArray.story_description}} <br>
       Photo URL: {{tempNewStoryArray.story_cover}} <br>
+      <img ng-src="{{tempNewStoryArray.story_cover}}" alt="{{tempNewStoryArray.story_title}}'s cover" width='100px;'height = "100px;">
     </div><br>
-    <button ng-click="editStoryCover()"> Edit Cover Info </button>
+    <button ng-click="editStoryCover()" class="btn btn-primary"> Edit Story Info </button>
   </div>
+</div>
 
+  <div class="editCharInfo">
   <div ng-show="showAddStoryDiv">
     <h3> Add Characters </h3>
     <input type="text" name="charName" ng-model="characterNameBinder" placeholder="Character Name"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderOne" placeholder="Character Trait 1"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderTwo" placeholder="Character Trait 2"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderThree" placeholder="Character Trait 3"><br>
-    <input type="text" name="charBio" ng-model="characterBioBinder" placeholder="Character Bio"><br>
+    <textarea id="charBio" type="text" name="charBio" ng-model="characterBioBinder" placeholder="Character Bio"><br>
     <input type="text" name="charPhoto" ng-model="characterPhotoBinder" placeholder="Character Photo URL"><br>
-    <button type="submit" name="submitCharButton" ng-click= "addChar($index)"> Add Character </button><br>
+    <button type="submit" name="submitCharButton" ng-click= "addChar($index)" class="btn btn-primary">Add Character </button><br>
 
+    <h3> Current Characters </h3>
+      <div class='md-padding' layout="row" layout-wrap>
+        <md-card style="width: 300px;" ng-repeat="character in tempNewStoryArray.story_characters">
+          <md-card-content>
+
+          <img ng-src="{{character.character_photo}}" class="xs-card-image" alt="{{character.character_name}}'s picture" width='100px;'height = "100px;" margin='0 auto;'>
+          <h2> {{character.character_name}} </h2>
+          <p> {{character.character_bio}} </p>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button ng-click="deleteChar($index)" class="btn btn-danger"> Delete </md-button>
+            <md-button ng-click="editCharacter($index)" class="btn btn-primary"> Edit Character </md-button>
+          </div>
+
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="editPageInfo">
     <h3> Add Story Page </h3>
     <textarea name="textAreaEdit" class="readerFontSize" id="textAreaEdit" ng-model="pageTextBinder" placeholder="Place story page here" ng-show="displayBefore"></textarea><br>
     <div id="adminStoryClean"> {{cleanText}} </div><br>
@@ -50,43 +75,27 @@
     <input name="pageNumber" id="pageNumInput" ng-model="pageNumberBinder" placeholder="Number" ng-show="displayBefore">
     <label for="pageIllustration" ng-show="displayBefore"> Illustration </label>
     <input name="pageIllustration" type="text" ng-model="pageIllustrationBinder" placeholder="URL" ng-show="displayBefore"><br><br>
-    <button ng-click="captureStoryInput()" ng-show="displayBefore"> Submit </button><br>
-    <button ng-click="textReset()" ng-show="displayAfter"> Reset Page </button>
-    <button type="submit" name="submitCharButton" ng-click="saveStory()" ng-show="displayAfter"> Save Page </button>
+    <button ng-click="captureStoryInput()" ng-show="displayBefore" class="btn btn-primary"> Submit </button><br>
+    <button ng-click="textReset()" ng-show="displayAfter" class="btn btn-warning"> Reset Page </button>
+    <button type="submit" name="submitCharButton" ng-click="saveStory()" ng-show="displayAfter" class="btn btn-primary"> Save Page </button>
 
-    <h3> Current Characters </h3>
-      <div class='md-padding' layout="row" layout-wrap>
-        <md-card style="width: 300px;" ng-repeat="character in tempNewStoryArray.story_characters">
-          <md-card-content>
-
-          <img ng-src="{{character.character_photo}}" class="xs-card-image" alt="{{character.character_name}}'s picture" width='100px;'height = "100px;" margin='0 auto;'>
-          <h2> {{character.character_name}} </h2>
-          <p> {{character.character_bio}} </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button ng-click="deleteChar($index)"> Delete </md-button>
-            <md-button ng-click="editCharacter($index)"> Edit Character </md-button>
-          </div>
-
-          </md-card-content>
-        </md-card>
-      </div>
 
 
     <h3> Current Pages </h3>
         <div class='md-padding' layout="row" layout-wrap >
-          <md-card style="width: 200px;" ng-repeat="page in tempNewStoryArray.story_pages">
+          <md-card style="width: 240px;" ng-repeat="page in tempNewStoryArray.story_pages">
             <md-card-content>
 
             <h4> Page # {{page.page_number}} </h4>
             <img ng-src="{{page.page_illustration}}" class="xs-card-image" alt="{{page.page_number}}'s illustration" width='150px;' height= '150px' margin='0 auto;'>
             <p> {{page.page_text}} </p>
             <div class="md-actions" layout="row" layout-align="end center">
-              <md-button ng-click="deletePage($index)"> Delete </md-button>
-              <md-button ng-click="editPage($index)"> Edit Page </md-button>
+              <md-button ng-click="deletePage($index)" class="btn btn-danger"> Delete </md-button>
+              <md-button ng-click="editPage($index)" class="btn btn-primary"> Edit Page </md-button>
             </div>
 
             </md-card-content>
           </md-card>
         </div>
+    </div>
   </div>
-</div>
