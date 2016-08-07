@@ -1,7 +1,5 @@
 <div ng-controller="adminEditController" ng-init="getAllStories()" id="admin" class="gridListdemoBasicUsage">
-<div id = "libraryMain">
-  <h1> Welcome to your library, {{usersArray[i].username}}! </h1>
-  <h2> Click on a story cover to start reading. </h2>
+<div ng-include=" '/views/partials/welcome.html' "></div>
 
   <button type="button" class="btn btn-primary" name="addStoryButton" ng-click="openAdminEdit()" ng-show="adminBtns" > Add a new story </button>
   <div class='md-padding' layout="row" layout-wrap >

@@ -66,6 +66,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
 
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
+  $rootScope.loggedInUser = sessionStorage.getItem('loggedInUser');
   $rootScope.stories = []; // array that holds all stories from database
   $rootScope.tempNewStoryArray = []; // temporary array holding only newly added story
   $rootScope.tempIndex = 0; // temporarily holds object index ID, very important!
@@ -87,6 +88,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   // $rootScope.adminBtns = false;
   $rootScope.userBtns = true;
   $rootScope.adminBtns = true;
+
 
 
   var adminCheck = function() {
