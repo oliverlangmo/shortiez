@@ -1,6 +1,6 @@
 <div ng-controller="userStoryController" ng-init="chooseNamePopup()">
-  <div id="wrapper">
-
+  <!-- <div id="wrapper"> -->
+<div>
     <!-- Sidebar -->
 
     <div id="sidebar-wrapper">
@@ -27,6 +27,7 @@
         </li>
       </ul>
     </div>
+    </div>
 
   <!-- body -->
 
@@ -43,12 +44,15 @@
                 <div class="storyPage">
                   <!-- <div class="content clearfix"> -->
                   <div class="image">
-                    <img ng-src="{{myStory.page_illustration}}" height='300px'/>
+                    <img class="TextWrap" ng-src="{{myStory.page_illustration}}" height='300px'/>
                   </div>
                   <!-- <div class="image-aside"> -->
                 <div id="userStory"></div>
               <!-- </div> -->
-                <br><span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span>
+                <!-- <br><span class="pageination">page {{myStory.page_number}} of {{readerIndex.story_pages.length}}</span> -->
+                <br><span class="pageination">page {{myStory.page_number}}</span>
+                <button  class="btn previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
+                <button class="btn nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
               <!-- </div> -->
             </div>
                 <div class="navBtns">
@@ -57,11 +61,12 @@
             </div>
           <!-- </div> -->
           </div>
-
+</div>
+</div>
+</div>
             <footer>
               <div class="navBtns">
-                <button  class="btn previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
-                <button class="btn nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
+
                 <button class="btn toggleButton"type="button" name="button" ng-click="toggle()">Change Font</button>
                 <div id="fontBox" ng-show="commentText">
               <div class= "fontBtns">
@@ -77,6 +82,9 @@
           </div>
         </div>
       </footer>
-    </div>
-  </div>
+
+
+
+
+</div>
 </div>

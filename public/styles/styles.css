@@ -135,38 +135,28 @@
     font-size: 1.25em;
     position: relative:
      height: 50vw;
-     width: 70vw;
+     width: 80vw;
      border-width: thick;
      border-style: outset;
      border-color: #0088dd;
-     padding: 30px;
-     margin: 5px 5px 5px 5px;
+     padding: 30px 0px 30px 30px;
+     margin: 5px 5px 5px 120px;
      text-align: left;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
      background-color: #f7f3ee;
+     overflow: auto;
 }
-/*.content .image {
+.TextWrap {
   float: left;
-}*/
-/*.content .image-aside {
-  padding-left: 10px;
-  overflow: hidden;
-  clear: none;*/
+  margin: 20px 30px 0px 0px;
 }
-/*#userStory {
-  width:30vw;
-  word-wrap: break-word;;
-  display: inline-block;
-}*/
 .image>img{
-    /*display: block;*/
+  position: relative;
+    display: block;
     float: left;
-    margin-right: : 25px;
+    margin-right: : 0px 24px 12px 0px;
+    overflow: hidden;
 }
-/*.parent{
-    text-align: center;
-}*/
-
 
 /*--------------------------------     readerStory Nav        --------------------------------*/
  footer {
@@ -187,13 +177,12 @@
 .previousButton{
   float: left;
   margin-left: 15px;
-  margin-top: -200px;
+  margin-top: 50px;
 }
 .nextButton{
-  margin-top: 20px;
   float: right;
   margin-right: 15px;
-  margin-top: -200px;
+  margin-top: 50px;
 }
 .nextButton {
   background-color: #5f3cb0; /* purple */
@@ -205,14 +194,11 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  float: right;
-  opacity: 50%;
-}
-.nextButton:hover {
-  background-color: #6600ff;
+  /*float: right;*/
+  /*opacity: 50%;*/
 }
 .previousButton {
-  background-color: #5f3cb0; /* purple */
+  background-color: #5f3cb0;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -221,34 +207,34 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  margin-left: 250px;
-  margin-bottom: 100px:
-  bottom: 50%;
+  /*margin-left: 200px;*/
 }
-.previousButton:hover {
+.nextButton:hover {
   background-color: #6600ff;
 }
+.previousButton:hover {
+ background-color: #6600ff ;
+}
 .toggleButton{
-  float: right;
-  position: relative;
-  margin-left: 150px;
-  background-color: #118cc3;
-  color: white;
-
+ float: right;
+ position: relative;
+ margin-left: 150px;
+ background-color: #118cc3 ;
+ color: white;
 }
 .arialClass{
- font-family: 'Arial', sans-serif;
+font-family: 'Arial', sans-serif;
 }
 .arialButton{
- font-family: 'Arial', sans-serif;
- font-size: 1em;
- background-color: #118cc3;
- border: none;
- color: white;
- display: inline-block;
+font-family: 'Arial', sans-serif;
+font-size: 1em;
+background-color: #118cc3 ;
+border: none;
+color: white;
+display: inline-block;
 }
 .arialButton:hover{
-  background-color: #5f3cb0; /* purple */
+ background-color: #5f3cb0 ; /* purple */
 }
 .comicClass{
  font-family: 'Comic Sans MS';
@@ -263,7 +249,7 @@
 
 }
 .comicButton:hover{
-  background-color: #5f3cb0; /* purple */
+  /*background-color: #5f3cb0; /* purple*/
 }
 .openDyslexicClass{
  font-family: "OpenDyslexic";
