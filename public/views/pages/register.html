@@ -1,38 +1,44 @@
 <div ng-controller="loginController">
-  <h3>Register</h3>
+  <div class="backBox">
+
+
+  <h3 id="registerTitle">Sign Up!</h3>
   <div id="registerBox">
+    <br>
     <form action="/register" method="post">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username">
+    <div class="inputDiv">
+      <label class="registerLabel" for="username">Username:</label>
+      <input type="text" name="username" id="username" class="inputBox">
     </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password">
+    <div class="inputDiv">
+      <label class="registerLabel" for="password">Password:</label>
+      <input type="password" name="password" id="password" class="inputBox">
     </div>
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name">
+    <div class="inputDiv">
+      <label class="registerLabel" for="name">Name:</label>
+      <input type="text" name="name" id="name" class="inputBox">
     </div>
-    <div>
-      <label for="birthday">Birthday:</label>
-      <input type="date" name="birthday" id="birthday">
+    <div class="inputDiv">
+      <label class="registerLabel" for="birthday">Birthday:</label>
+      <input type="date" name="birthday" id="birthday" class="inputBox">
     </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="email">
+    <div class="inputDiv">
+      <label class="registerLabel" for="email">Email:</label>
+      <input type="text" name="email" id="email" class="inputBox">
     </div>
-    <div>
-      <label for="grade">Grade:</label>
-      
-      <input type="number" min = '0' name="grade" id="grade">
+    <div class="inputDiv">
+      <label class="registerLabel" for="grade">Grade:</label>
+
+      <input type="number" min = '0' name="grade" id="grade" class="inputBox">
     </div>
     <div class="stuff">
     </div>
     <div>
+      <br>
       <p>Already a user? Please login!</p>
       <a href="/#/login">Login</a>
-      <input ng-click="setPrivileges()" type="submit" value="Register">
+      <input class="btn btn-primary" ng-click="setPrivileges()" type="submit" value="Register">
     </div>
   </div> <!-- end registerBox -->
+  </div>
 </div>

@@ -14,14 +14,14 @@
       <label for="traitThree"> Trait 3: </label>
       <input type="text" name="traitThree" ng-model="traitThree" value="oldTraitThree" placeholder="Character Trait 3"><br>
       <label for="charBio"> Biography: </label>
-      <input type="text" name="charBio" ng-model="charBio" value="oldCharBio" placeholder="Character Bio"><br>
+      <input type="text" id="charBio" name="charBio" ng-model="charBio" value="oldCharBio" placeholder="Character Bio"><br>
       <label for="charPhoto"> Photo: </label>
       <input type="text" name="charPhoto" ng-model="charPhoto" value="oldCharPhoto" placeholder="Character Photo URL"><br>
     </div> <!-- end editCharactersDiv -->
   </div> <!-- end modal-body -->
 
   <div class="modal-footer">
-    <button ng-click= "updateCharacter()"> Save </button>
-    <button class="btn-warning" ng-click="cancel()"> Cancel </button>
+    <button class="btn btn-primary" ng-click= "updateCharacter()"> Save </button>
+    <button class="btn btn-warning" ng-click="cancel()"> Cancel </button>
   </div> <!-- end modal-footer -->
 </div>

@@ -293,6 +293,7 @@ $scope.editStoryCover = function(index) {
   $uibModal.open({
     templateUrl: 'views/pages/editCoverPopup.html',
     controller: 'adminCoverPopupController',
+    size:'lg',
     resolve: {
       index: function(){
       return index;
@@ -306,6 +307,7 @@ $scope.editCharacter = function(index) {
   $uibModal.open({
     templateUrl: 'views/pages/editCharactersPopup.html',
     controller: 'adminCharacterPopupController',
+    size:'lg',
     resolve: {
       index: function(){
       return index;

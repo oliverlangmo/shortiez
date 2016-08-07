@@ -1,51 +1,54 @@
-<div ng-controller="adminEditController" ng-init= "adminStoryLoad()">
-
+<div ng-controller="adminEditController" ng-init= "adminStoryLoad()" class="storyInputPage">
+<div class="editStoryInfo">
   <h3> Edit Story Cover Information </h3>
   <div>
     <h3> Title: {{storyIndex.story_title}} </h3>
     <h4> Description: {{storyIndex.story_description}} </h4>
     <h4> Cover Photo URL: {{storyIndex.story_cover}} </h4>
-    <button ng-click="editStoryCover(storyIndex._id)"> Edit Cover </button>
+    <img ng-src="{{storyIndex.story_cover}}" alt="{{storyIndex.story_title}}'s cover" width='100px;' height = "100px;">
+    </div><br>
+    <button ng-click="editStoryCover()" class="btn btn-primary"> Edit Story Info </button>
   </div>
 
+<div class="editCharInfo">
   <h3> Edit Characters </h3>
-  <button ng-click= "addNewChar()"> Add New Character </button><br>
+  <button ng-click= "addNewChar()" class="btn btn-primary"> Add New Character </button><br>
 
-    <div >
+    <div>
       <div class='md-padding' layout="row" layout-wrap>
         <md-card style="width: 300px;" ng-repeat="character in storyIndex.story_characters">
           <md-card-content>
-
           <img ng-src="{{character.character_photo}}" class="xs-card-image" alt="{{character.character_name}}'s picture" width='100px;'height = "100px;" margin='0 auto;'>
           <h2> {{character.character_name}} </h2>
           <p> {{character.character_bio}} </p>
           <div class="md-actions" layout="row" layout-align="end center">
-            <md-button ng-click="deleteChar($index)"> Delete </md-button>
-            <md-button ng-click="editCharacter($index)"> Edit Character </md-button>
+            <md-button ng-click="deleteChar($index)" class="btn btn-danger"> Delete </md-button>
+            <md-button ng-click="editCharacter($index)" class="btn btn-primary"> Edit Character </md-button>
           </div>
-
           </md-card-content>
         </md-card>
       </div>
     </div>
-
+</div>
+<div class="editPageInfo">
   <h3> Edit Pages </h3>
-  <button ng-click="addNewPage()"> Add New Page </button><br>
+  <button ng-click="addNewPage()" class="btn btn-primary"> Add New Page </button><br>
     <div >
       <div class='md-padding' layout="row" layout-wrap >
-        <md-card style="width: 200px;" ng-repeat="page in storyIndex.story_pages">
+        <md-card style="width: 240px;" ng-repeat="page in storyIndex.story_pages">
           <md-card-content>
 
             <h4> Page # {{page.page_number}} </h4>
             <img ng-src="{{page.page_illustration}}" class="xs-card-image" alt="{{page.page_number}}'s illustration" width='150px;' height= '150px' margin='0 auto;'>
             <p> {{page.page_text}} </p>
             <div class="md-actions" layout="row" layout-align="end center">
-              <md-button ng-click="deletePage($index)"> Delete </md-button>
-              <md-button ng-click="editPage($index)"> Edit Page </md-button>
+              <md-button ng-click="deletePage($index)" class="btn btn-danger"> Delete </md-button>
+              <md-button ng-click="editPage($index)" class="btn btn-primary"> Edit Page </md-button>
             </div>
-
           </md-card-content>
         </md-card>
       </div>
     </div>
+  </div>
+
 </div>

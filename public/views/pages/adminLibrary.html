@@ -1,9 +1,10 @@
 <div ng-controller="adminEditController" ng-init="getAllStories()" id="admin" class="gridListdemoBasicUsage">
-
-  <h1> Welcome to your library, {{user.username}}! </h1>
-  <h2> Click on a story cover to start. </h2>
-
-  <button type="button" class="adminAddNewStoryBtn" name="addStoryButton" ng-click="openAdminEdit()" ng-show="adminBtns"> Add a new story </button>
+<div id = "libraryMain">
+  <h1> Welcome to your library, {{usersArray[i].username}}! </h1>
+  <div id="libraryInstructions">
+  <h2> Click on a story cover to start reading. </h2>
+  </div>
+  <div id="addStoryBtn"><button type="button" class="btn btn-primary" name="addStoryButton" ng-click="openAdminEdit()" ng-show="adminBtns" > Add a new story </button></div>
   <div class='md-padding' layout="row" layout-wrap >
     <md-card style="width: 400px;" ng-repeat="story in stories">
       <md-card-content>
@@ -12,12 +13,13 @@
       <p> {{story.story_description}} </p>
       <div class="md-actions" layout="row" layout-align="end center">
         <md-button ng-click="selectReaderStory($index)" ng-show="userBtns">
-          <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;" margin='0 auto;'></md-button>
+        <div class="storyCover"> <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;"></md-button></div>
       </div>
-      <md-button ng-click="deleteStory($index)" ng-show="adminBtns"> Delete </md-button>
-      <md-button ng-click="editStory($index)" ng-show="adminBtns"> Edit </md-button>
+      <md-button ng-click="deleteStory($index)" ng-show="adminBtns" class="btn btn-danger"> Delete </md-button>
+      <md-button ng-click="editStory($index)" ng-show="adminBtns" class="btn btn-primary"> Edit </md-button>
 
       </md-card-content>
     </md-card>
+    </div>
   </div>
 </div>
