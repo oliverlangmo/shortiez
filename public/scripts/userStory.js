@@ -30,16 +30,6 @@ $scope.chooseNamePopup = function() {
   }); // end $modal.open
 }; // end openTextPopup
 
-$scope.selectReaderStory = function(index) {
-  $rootScope.characters = [];
-  $rootScope.readerIndex = $rootScope.stories[index];
-  for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
-    $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
-  } // end for loop
-  var path = "#userLibrary";
-  window.location.href = path;
-}; // end selectReaderStory
-
 $scope.nameReplace = function(newName, oldName) {
 // $scope.activeItem=item;
   // $scope.alertText = !$scope.alertText;

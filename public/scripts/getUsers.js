@@ -2,35 +2,53 @@ angular.module('myApp').controller("getUserInfo",
 ['$http', '$scope', '$rootScope','$location', 'userData','$uibModal',
 function($http, $scope, $rootScope, $location, userData, $uibModal){
 
-  // userData.adminCheck();
+// userData.adminCheck();
 
+$rootScope.badWordsArray = [];
 
-  $scope.getUsers = function() {
-    $http({
-      method: 'GET',
-      url: '/getUsers', }).then(function(response){
-        console.log(response);
-        $rootScope.usersArray = response.data;
-      }); // end http GET
-  }; // end getUsers
-console.log('outside of get users');
-$scope.editUser = function(index){
-  console.log('button clicked');
+$scope.badWordFilter = function() {
+  $uibModal.open({
+    templateUrl: 'views/pages/addBadWordPopup.html',
+    controller: 'badWordsModal'
+  }); // end $modal.open
+};
+
+$scope.addNewBadWord = function(){
+  console.log('in addNewBadWord');
+  var badWordObj = {
+    badWords: $scope.nameInput
+  }; // end object
+  $http({
+    method: 'POST',
+    url: '/addNewBadWord',
+    data: badWordObj
+  }); // end POST
+  $scope.badWordInput = '';
+}; // end addUser function
+
+$scope.getUsers = function() {
+  $http({
+    method: 'GET',
+    url: '/getUsers', }).then(function(response) {
+      $rootScope.usersArray = response.data;
+    }); // end http GET
+}; // end getUsers
+
+$scope.editUser = function(index) {
   $rootScope.usersIndex = $rootScope.usersArray[index]._id;
   $uibModal.open({
     templateUrl:'views/pages/updateUser.html',
     controller:'updateUserModal',
     size:'med',
-    resolve:{
-      userId: function(){
+    resolve: {
+      userId: function() {
         return index;
-      }
-    }
+      } // end userId
+    } // end resolve
+  }); // end open modal
+}; // end editUser
 
-  });
-  console.log('users', $rootScope.usersIndex);
-};
-$scope.updateUser = function(id){
+$scope.updateUser = function(id) {
   var updateInfo = {
     id: $rootScope.usersArray[id]._id,
     name: $scope.nameUpdate,
@@ -41,48 +59,56 @@ $scope.updateUser = function(id){
     admin: $scope.adminUpdate,
     auth: $scope.authUpdate
   };
-console.log(updateInfo);
-$http({
-  method: 'PUT',
-  url: '/userUpdate',
-  data: updateInfo
-});
-$rootScope.cancel();
-$scope.getUsers();
-};
+  $http({
+    method: 'PUT',
+    url: '/userUpdate',
+    data: updateInfo
+  }); // end $http
+  $rootScope.cancel();
+  $scope.getUsers();
+}; // end updateUser
 
 $scope.deleteUser = function(id) {
-  console.log('button clicked');
-  if(confirm('Are you sure you want to Delete this user?')){
+  if(confirm('Are you sure you want to Delete this user?')) {
   var userToDelete ={
     id: $rootScope.usersArray[id]._id
-  };
-  console.log(userToDelete);
+  }; // end userToDelete
   $http({
     method: 'DELETE',
     url: '/deleteUserInfo',
     data: userToDelete,
     headers: {'Content-Type': 'application/json;charset=utf-8'}
-  });
-  } else{
-  return false;
-}
-location.reload();
-};
-}]);
+  }); // end $http
+  } else {
+    return false;
+  } // end else
+  location.reload();
+  }; // end deleteUserInfo
 
-angular.module('myApp').controller('updateUserModal', function($scope, $uibModalInstance, $rootScope, userId){
-$rootScope.id = userId;
-$scope.nameUpdate = $rootScope.usersArray[userId].name;
-$scope.emailUpdate = $rootScope.usersArray[userId].email;
-$scope.username = $rootScope.usersArray[userId].username;
-$scope.gradeUpdate = $rootScope.usersArray[userId].grade;
-$scope.bdayUpdate = new Date($rootScope.usersArray[userId].birthday);
-$scope.adminUpdate = $rootScope.usersArray[userId].admin;
-$scope.authUpdate = $rootScope.usersArray[userId].auth;
+}]); // getUserInfo controller
 
-$rootScope.cancel = function(){
-  $uibModalInstance.close();
-};
 
-});
+angular.module('myApp').controller('updateUserModal', function($scope, $uibModalInstance, $rootScope, userId) {
+
+  $rootScope.id = userId;
+  $scope.nameUpdate = $rootScope.usersArray[userId].name;
+  $scope.emailUpdate = $rootScope.usersArray[userId].email;
+  $scope.username = $rootScope.usersArray[userId].username;
+  $scope.gradeUpdate = $rootScope.usersArray[userId].grade;
+  $scope.bdayUpdate = new Date($rootScope.usersArray[userId].birthday);
+  $scope.adminUpdate = $rootScope.usersArray[userId].admin;
+  $scope.authUpdate = $rootScope.usersArray[userId].auth;
+
+  $rootScope.cancel = function() {
+    $uibModalInstance.close();
+  }; // end cancel
+
+}); // end updateUSerModal controller
+
+angular.module('myApp').controller('badWordsModal', function($scope, $uibModalInstance, $rootScope) {
+
+  $rootScope.cancel = function() {
+    $uibModalInstance.close();
+  }; // end cancel
+
+}); // end updateUSerModal controller

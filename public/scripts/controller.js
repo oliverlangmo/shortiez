@@ -17,9 +17,6 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/userLibrary', {
           templateUrl: '/views/pages/userLibrary.html',
       })
-      .when('/viewLibrary', {
-          templateUrl: '/views/pages/viewLibrary.html',
-      })
       .when('/adminEdit', {
           templateUrl: '/views/pages/adminEdit.html',
       })
@@ -69,11 +66,13 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
 
   $rootScope.userAdminCheck = sessionStorage.getItem('userPermissionAdmin');
   $rootScope.userAuthCheck = sessionStorage.getItem('userAuthPermission');
-  $rootScope.stories = [];
+  $rootScope.stories = []; // array that holds all stories from database
+  $rootScope.tempNewStoryArray = []; // temporary array holding only newly added story
   $rootScope.tempIndex = 0; // temporarily holds object index ID, very important!
   $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
   $rootScope.usersArray = [];
+  $rootScope.badWordsArray = [];
   $rootScope.wordByElementId = ''; // needed for modal textPopup
   $rootScope.tempIdNum = 0; // needed for modal textPopup
   $rootScope.pageIndex = 0; // needed for modal textPopup
@@ -83,21 +82,24 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.tempPageId = ''; // holds object array number/spot
   $rootScope.storyArrayIndex = 0;
   $rootScope.tempStoryName = '';
-  $rootScope.tempNewStoryArray = []; // temporary array holding only newly added story
   $rootScope.isNewOrEdit = 0; // determines whether or not called function is as New (0) or Edit (1)
+  // $rootScope.userBtns = false;
+  // $rootScope.adminBtns = false;
+  $rootScope.userBtns = true;
+  $rootScope.adminBtns = true;
 
 
   var adminCheck = function() {
-    var check = $rootScope.userAdminCheck;
-    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
+    var admin = $rootScope.userAdminCheck;
+    if (admin === false || admin === 'false' || admin === undefined || admin === null || admin === '') {
       $location.path('/#/adminLibrary');
     } // end if
   }; // end adminCheck
 
   var checkAuth = function() {
-    var check = $rootScope.userAuthCheck;
-    if (check === false || check === 'false' || check === undefined || check === null || check === '') {
-      $location.path('/#/viewLibrary');
+    var user = $rootScope.userAuthCheck;
+    if (user === false || user === 'false' || user === undefined || user === null || user === '') {
+      $location.path('/#/adminLibrary');
     } // end if
   }; // end checkAuth
 
@@ -123,12 +125,22 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       }); // end http GET
   }; // end getStories
 
+  var setBtnsView = function() {
+    if ($rootScope.userAdminCheck === 'false') {
+      $rootScope.userBtns = true;
+    } else {
+      $rootScope.userBtns = true;
+      $rootScope.adminBtns = true;
+    } // end else
+  }; // end setBtnsView
+
   return {
     adminCheck: adminCheck,
     checkAuth: checkAuth,
     randomId: randomId,
     randomNum: randomNum,
-    getAllStories: getAllStories
+    getAllStories: getAllStories,
+    setBtnsView: setBtnsView
   }; // end return
 
 }]);

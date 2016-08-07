@@ -2,9 +2,8 @@ myApp.controller('adminEditController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
-// userData.adminCheck();
-
-userData.getAllStories();
+// userData.checkAuth();
+// userData.setBtnsView();
 
 $scope.tempTextArray = []; // array that holds all words as checked boxes.
 $scope.checkedArray = []; // array that only holds words that have been checked.
@@ -15,6 +14,16 @@ $scope.showCoverInfoAfter = false;
 $scope.displayBefore = true;
 $scope.displayAfter = false;
 $scope.cleanText = '';
+
+$scope.selectReaderStory = function(index) {
+  $rootScope.characters = [];
+  $rootScope.readerIndex = $rootScope.stories[index];
+  for (var i = 0; i < $rootScope.readerIndex.story_characters.length; i++) {
+    $rootScope.characters.push($rootScope.readerIndex.story_characters[i].character_name);
+  } // end for loop
+  var path = "#userLibrary";
+  window.location.href = path;
+}; // end selectReaderStory
 
 $scope.openAdminEdit = function() {
   $rootScope.isNewOrEdit = 0;
@@ -31,7 +40,6 @@ $scope.editStory = function(index) {
   $rootScope.storyArrayIndex = index;
   window.location.href = path;
 }; // end editStory
-
 
 $scope.addStory = function() {
   $rootScope.tempStoryName = $scope.storyTitleBinder;
@@ -63,7 +71,6 @@ $scope.addNewChar = function() {
     controller: 'adminEditPopupController'
   }); // end $modal.open
 }; // end addNewChar
-
 
 $scope.addChar = function() {
   var characterObject = {
@@ -188,6 +195,9 @@ $scope.saveStory = function() {
   }).then(function(response) {
     userData.getAllStories();
   }); // end $http
+  if ($scope.isNewOrEdit === 1) {
+    $rootScope.cancel();
+  }
   $scope.textReset();
 }; // end saveStory
 
@@ -251,31 +261,31 @@ $scope.deleteChar = function(index) {
     story_characters: $scope.storyArray.story_characters,
     id: $rootScope.tempIndex
   }; // end newStory_characters
-//   $http({
-//     method: 'POST',
-//     url: '/updateCharacter',
-//     data: newStory_characters
-//   }).then(function(response){
-//   userData.getAllStories();
-// }); // end then
+  $http({
+    method: 'POST',
+    url: '/updateCharacter',
+    data: newStory_characters
+  }).then(function(response){
+  userData.getAllStories();
+}); // end then
   $rootScope.cancel();
 }; // end charDelete
 
 $scope.deletePage = function(index) {
   console.log($rootScope.tempIndex);
-  // var confirmDeletePage = confirm('Please confirm to delete ' + $rootScope.stories[index].story_title + ' story');
-  // if (confirmDeleteStory) {
+  var confirmDeletePage = confirm('Please confirm to delete ' + $rootScope.stories[index].story_title + ' story');
+  if (confirmDeleteStory) {
     var pageIdDelete = {
       id: $rootScope.tempIndex
     }; // end playerId
-    // $http({
-    //   method: 'POST',
-    //   url: '/pageRemove',
-    //   data: pageIdDelete
-    // }); // end $http
-  // } else {
-  //   console.log('delete aborted');
-  // } // end else
+    $http({
+      method: 'POST',
+      url: '/pageRemove',
+      data: pageIdDelete
+    }); // end $http
+  } else {
+    console.log('delete aborted');
+  } // end else
 }; // end deletePage
 
 $scope.editStoryCover = function(index) {
@@ -484,10 +494,10 @@ angular.module('myApp').controller('adminPagePopupController',
 function ($scope, $uibModalInstance, $rootScope, userData, index) {
 
   if ($scope.isNewOrEdit === 0) {
-    $scope.tempStoryInfo = $rootScope.tempNewStoryArray.story_pages[index];  // new
+    $scope.tempStoryInfo = $rootScope.tempNewStoryArray.story_pages[index]; // new
     $scope.pageArray = $rootScope.tempNewStoryArray;
   } else {
-    $scope.tempStoryInfo = $rootScope.storyIndex.story_pages[index];  // edit
+    $scope.tempStoryInfo = $rootScope.storyIndex.story_pages[index]; // edit
     $scope.pageArray = $rootScope.storyIndex;
   } // end else
 

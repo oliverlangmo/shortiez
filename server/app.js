@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('../strategies/user-shorties.js');
-var addStory=require('../models/addStory.js');  // requiring the addStory model
+var addStory = require('../models/addStory.js');  // requiring the addStory model
 
 // routes redirects
 var login = require('./routes/login');

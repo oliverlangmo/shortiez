@@ -40,7 +40,6 @@ router.post('/addCharacter', function(req, res) {
 }); // end character post
 
 router.post('/addPage', function(req, res) {
-  console.log(req.body);
   var storyPages = {
     page_number: req.body.page_number,
     page_text_plain: req.body.page_text_plain,

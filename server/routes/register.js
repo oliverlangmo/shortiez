@@ -21,7 +21,7 @@ router.post('/register', function(req, res, next) {
     if(err) {
       res.redirect('/#/registerFail');
     } else {
-      res.redirect('/#/genericMain');
+      res.redirect('/#/adminLibrary');
       console.log('New user registered');
     } // end else
   }); // end Users.create

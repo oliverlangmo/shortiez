@@ -7,11 +7,13 @@ function($scope, $http, $uibModal, $rootScope, $location, userData){
     var getUserInfo = {
       username: $scope.userNameInfo
     }; // end getUserInfo
+    console.log('in setPrivileges', getUserInfo);
     $http({
       method: 'POST',
       url: '/getUserCheck',
       data: getUserInfo
     }).then(function(response){
+      console.log('response', response.data.auth);
       if (typeof(Storage) !== "undefined") {
         sessionStorage.setItem('userPermissionAdmin', response.data.admin);
         sessionStorage.setItem('userAuthPermission', response.data.auth);
@@ -36,6 +38,8 @@ function($scope, $http, $uibModal, $rootScope, $location, userData){
     });
     $scope.cancel();
     $location.path('/#/login');
+    $rootScope.userBtns = false;
+    $rootScope.adminBtns = false;
   }; // end logout
 
 }]); // end controller 'genericMainController'
