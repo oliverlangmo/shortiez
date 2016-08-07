@@ -2,7 +2,10 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
+var AddBadWord = require('../../models/badWords');
 var User = require('../../models/users');
+
+
 
 router.get('/checkUser', function(req, res){
   User.find().then(function(data){
@@ -11,7 +14,6 @@ router.get('/checkUser', function(req, res){
 }); //end checkUser
 
 router.post('/getUserCheck', function(req, res){
-  console.log('getUserCheck hit');
   var findUser = req.body.username;
   User.findOne({username: findUser}, function(err, data) {
     if(err){
@@ -31,7 +33,6 @@ router.get('/getUsers', function(req, res){
 }); //end getTempUser
 
 router.post('/addTempUser', function(req, res) {
-console.log(filter.clean("Don't be an ash0le"));
   var newTempUser = new TempUser({
     name: req.body.name
   }); // end newTempUser object
@@ -75,13 +76,13 @@ router.post('/updateTempUser', function(req, res){
     } // end else
   }); // TempUser.findOne
 }); // end updateTempUser
+
 router.put('/userUpdate', function(req,res){
-  console.log(req.body);
-  console.log('in update route');
   var query = {_id: req.body.id};
   User.findOneAndUpdate(query,{name:req.body.name, username: req.body.username, email: req.body.email, grade: req.body.grade, admin: req.body.admin, birthday: req.body.birthday, auth: req.body.auth}, function(err){
+  });
 });
-});
+
 router.delete('/deleteUserInfo', function(req, res){
   console.log('delete route with', req.body);
   var query = {_id: req.body.id};

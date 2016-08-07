@@ -2,8 +2,8 @@ myApp.controller('adminEditController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
-userData.checkAuth();
-userData.setBtnsView();
+// userData.checkAuth();
+// userData.setBtnsView();
 
 $scope.tempTextArray = []; // array that holds all words as checked boxes.
 $scope.checkedArray = []; // array that only holds words that have been checked.

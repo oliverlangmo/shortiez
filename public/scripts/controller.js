@@ -72,6 +72,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.userIndex = '';
   $rootScope.saveStoryArray = [];
   $rootScope.usersArray = [];
+  $rootScope.badWordsArray = [];
   $rootScope.wordByElementId = ''; // needed for modal textPopup
   $rootScope.tempIdNum = 0; // needed for modal textPopup
   $rootScope.pageIndex = 0; // needed for modal textPopup
@@ -82,8 +83,10 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.storyArrayIndex = 0;
   $rootScope.tempStoryName = '';
   $rootScope.isNewOrEdit = 0; // determines whether or not called function is as New (0) or Edit (1)
-  $rootScope.userBtns = false;
-  $rootScope.adminBtns = false;
+  // $rootScope.userBtns = false;
+  // $rootScope.adminBtns = false;
+  $rootScope.userBtns = true;
+  $rootScope.adminBtns = true;
 
 
   var adminCheck = function() {
