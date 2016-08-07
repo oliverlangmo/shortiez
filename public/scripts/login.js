@@ -13,11 +13,17 @@ function($scope, $http, $uibModal, $rootScope, $location, userData){
       url: '/getUserCheck',
       data: getUserInfo
     }).then(function(response){
+
+      console.log('username', response.data.username);
+      console.log('response', response.data.auth);
+
       if (typeof(Storage) !== "undefined") {
         sessionStorage.setItem('userPermissionAdmin', response.data.admin);
         sessionStorage.setItem('userAuthPermission', response.data.auth);
+        sessionStorage.setItem('loggedInUser', response.data.username);
       } // end if
     }); // end $http
+
   }; // end setPrivileges
 
   $scope.openLogout = function(){
