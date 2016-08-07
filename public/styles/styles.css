@@ -347,6 +347,11 @@
 .cards{
   background-color: #f8f4f0;
 }
+#libraryMain{
+  padding: 40px;
+  margin: 40px;
+  background-color: rgba(240, 241, 241, 0.9);
+}
 
 /*--------------------------------customize word         --------------------------------*/
 
@@ -427,7 +432,33 @@
   padding-bottom: 100px;
   margin: auto;
 }
+/*--------------------------------- Admin Story Input Pages  -------------------------------------*/
+.storyInputPage{
+  padding: 40px;
+  margin: 40px;
+  background-color: rgba(240, 241, 241, 0.9);
 
+
+}
+.editStoryInfo{
+  padding: 20px;
+}
+.editCharInfo{
+  padding: 20px;
+}
+.editPageInfo{
+  padding: 20px;
+}
+#adminStory{
+  /*background-color: #f7f3ee;
+  border-width: thick;
+  border-style: outset;
+  border-color: #0088dd;
+  padding: 30px;
+  margin: 5px 5px 5px 5px;
+  text-align: left;*/
+}
+/*---------------------------------   End Admin Story Input Pages   -------------------------------------*/
 /*--------------------------------     modals        --------------------------------*/
 .btn-primary{
   background-color: #5f3cb0;
