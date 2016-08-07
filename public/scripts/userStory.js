@@ -2,8 +2,11 @@ angular.module('myApp').controller('userStoryController',
 ['$scope', '$http', '$rootScope', '$location', 'userData', '$mdSidenav', '$uibModal',
 function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal) {
 
+
 // userData.checkAuth();
 userData.getBadWords();
+
+
 
 $scope.toggle =function(){
   console.log("toggle clicked");
