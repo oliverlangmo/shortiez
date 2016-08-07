@@ -12,8 +12,8 @@
         <th>Email</th>
         <th>Admin?</th>
         <th>Auth?</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Actions</th>
+
       </tr>
     </thead>
     <tbody>
@@ -25,8 +25,8 @@
          <td>{{user.email}}</td>
          <td>{{user.admin}}</td>
          <td>{{user.auth}}</td>
-         <td><button class='btn btn-primary' ng-click="editUser($index)">Update</button></td>
-         <td><button class='btn btn-danger' ng-click="deleteUser($index)">Delete</button></td>
+         <td><button class='btn btn-primary' ng-click="editUser($index)">Update</button>||<button class='btn btn-danger' ng-click="deleteUser($index)">Delete</button></td>
+
       </tr>
     </tbody>
   </table>
