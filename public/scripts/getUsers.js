@@ -1,22 +1,21 @@
 angular.module('myApp').controller("getUserInfo",
-['$http', '$scope', '$rootScope','$location', 'userData','$uibModal',
+['$http', '$scope', '$rootScope','$location', 'userData', '$uibModal',
 function($http, $scope, $rootScope, $location, userData, $uibModal){
 
 // userData.adminCheck();
+userData.getBadWords();
 
-$rootScope.badWordsArray = [];
-
-$scope.badWordFilter = function() {
+$scope.badWordPopup = function() {
   $uibModal.open({
     templateUrl: 'views/pages/addBadWordPopup.html',
     controller: 'badWordsModal'
   }); // end $modal.open
-};
+}; // end badWordPopup
 
 $scope.addNewBadWord = function(){
-  console.log('in addNewBadWord');
+  console.log('in addNewBadWord', $rootScope.newBadWord);
   var badWordObj = {
-    badWords: $scope.nameInput
+    badWordsList: $rootScope.newBadWord
   }; // end object
   $http({
     method: 'POST',
@@ -24,7 +23,7 @@ $scope.addNewBadWord = function(){
     data: badWordObj
   }); // end POST
   $scope.badWordInput = '';
-}; // end addUser function
+}; // end addNewBadWord function
 
 $scope.getUsers = function() {
   $http({

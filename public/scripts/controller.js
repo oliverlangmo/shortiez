@@ -107,7 +107,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var idLength = 24;
-    for(var i=0; i < idLength; i++)
+    for(var i = 0; i < idLength; i++)
       text.push(possible.charAt(Math.floor(Math.random() * possible.length)));
     return text.join('');
   }; // end randomId
@@ -125,6 +125,15 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       }); // end http GET
   }; // end getStories
 
+  var getBadWords = function() {
+    $http({
+      method: 'GET',
+      url: '/getBadWords', }).then(function(response) {
+        $rootScope.badWordsArray = response.data;
+        console.log($rootScope.badWordsArray[0].badWords.length);
+    }); // end http GET
+  }; // end getUsers
+
   var setBtnsView = function() {
     if ($rootScope.userAdminCheck === 'false') {
       $rootScope.userBtns = true;
@@ -140,6 +149,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     randomId: randomId,
     randomNum: randomNum,
     getAllStories: getAllStories,
+    getBadWords: getBadWords,
     setBtnsView: setBtnsView
   }; // end return
 
