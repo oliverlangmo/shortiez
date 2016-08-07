@@ -13,7 +13,6 @@ function($scope, $http, $uibModal, $rootScope, $location, userData){
       url: '/getUserCheck',
       data: getUserInfo
     }).then(function(response){
-      console.log('response', response.data.auth);
       if (typeof(Storage) !== "undefined") {
         sessionStorage.setItem('userPermissionAdmin', response.data.admin);
         sessionStorage.setItem('userAuthPermission', response.data.auth);
