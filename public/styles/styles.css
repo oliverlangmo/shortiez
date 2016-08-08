@@ -80,7 +80,7 @@
   background-color: #3FBFBF;
 }
 #manageB{
-  background-color: #5f3cb0;
+  background-color: #BF3FBF;
   padding-left: 5px;
   padding-right: 10px;
 }
@@ -331,7 +331,8 @@
 /*---------------------      end readerStory        --------------------------------*/
 /*------------------------------    library    --------------------------------------*/
 .cards{
-  background-color: #f8f4f0;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
 }
 .storyCover{
   margin-right: : 40px;
@@ -339,7 +340,8 @@
 #libraryMain{
   padding: 40px;
   margin: 40px;
-  background-color: rgba(240, 241, 241, 0.9);
+  background-color: rgba(250, 250, 250, 0.9);
+  border-radius: 25px;
 }
 #libraryInstructions{
   padding: 20px;
@@ -497,7 +499,6 @@
   background-image: url(../views/images/watercolorsidemodal.jpg);
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
-
 }
 .inputDiv{
   display: table-row;
@@ -505,5 +506,9 @@
 .inputBox, .registerLabel{
   display: table-cell;
   margin-left: 35px;
-
+}
+.logoutModal{
+  background-image: url(../views/images/watercolorsidemodal.jpg);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
 }
