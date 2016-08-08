@@ -7,6 +7,10 @@ userData.getBadWords();
 
 userData.getAllStories();
 
+$scope.toggle = function() {
+       $scope.commentText = !$scope.commentText;
+   };
+
 $scope.myStory = [];
 $scope.newName = '';
 $scope.showTrue = []; // shows/hides on chooseNamePopup
