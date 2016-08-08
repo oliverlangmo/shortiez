@@ -17,6 +17,7 @@
       </div>
       <button ng-click="addStory()" class="btn btn-primary"> Add New Story </button>
     </div>
+  </div>
 
   <div ng-show="showCoverInfoAfter">
 
@@ -29,7 +30,7 @@
     </div><br>
     <button ng-click="editStoryCover()" class="btn btn-primary"> Edit Story Info </button>
   </div>
-</div>
+
 
   <div class="editCharInfo">
   <div ng-show="showAddStoryDiv">
@@ -38,7 +39,7 @@
     <input type="text" name="charTraits" ng-model="characterTraitBinderOne" placeholder="Character Trait 1"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderTwo" placeholder="Character Trait 2"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderThree" placeholder="Character Trait 3"><br>
-    <textarea id="charBio" type="text" name="charBio" ng-model="characterBioBinder" placeholder="Character Bio"><br>
+    <input id="charBio" type="text" name="charBio" ng-model="characterBioBinder" placeholder="Character Bio"><br>
     <input type="text" name="charPhoto" ng-model="characterPhotoBinder" placeholder="Character Photo URL"><br>
     <button type="submit" name="submitCharButton" ng-click= "addChar($index)" class="btn btn-primary">Add Character </button><br>
 

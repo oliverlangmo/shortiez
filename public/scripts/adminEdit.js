@@ -197,7 +197,7 @@ $scope.saveStory = function() {
   }); // end $http
   if ($scope.isNewOrEdit === 1) {
     $rootScope.cancel();
-  }
+  } // end if
   $scope.textReset();
 }; // end saveStory
 
