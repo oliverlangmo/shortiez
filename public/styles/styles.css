@@ -507,3 +507,8 @@
   margin-left: 35px;
 
 }
+
+.notAuthUser {
+  font-weight: bold;
+  color:red;
+}

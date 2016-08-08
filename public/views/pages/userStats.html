@@ -17,8 +17,8 @@
       </tr>
     </thead>
     <tbody>
-     <tr ng-repeat="user in usersArray">
-         <td>{{user.username}}</td>
+     <tr ng-repeat="user in usersArray" ng-class="{notAuthUser: !user.auth}">
+         <td >{{user.username}}</td>
          <td>{{user.name}}</td>
          <td>{{user.birthday | date}}</td>
          <td>{{user.grade}}</td>
