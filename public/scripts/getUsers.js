@@ -3,6 +3,8 @@ angular.module('myApp').controller("getUserInfo",
 function($http, $scope, $rootScope, $location, userData, $uibModal){
 
 userData.getBadWords();
+userData.setBtnsView();
+
 
 $scope.badWordPopup = function() {
   $uibModal.open({
