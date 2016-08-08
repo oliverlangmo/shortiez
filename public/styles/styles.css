@@ -347,7 +347,6 @@
   padding: 40px;
   margin: 40px;
   background-color: rgba(250, 250, 250, 0.9);
-  border-radius: 25px;
 }
 #libraryInstructions{
   padding: 20px;
@@ -517,4 +516,9 @@
   background-image: url(../views/images/watercolorsidemodal.jpg);
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+}
+
+.notAuthUser {
+  font-weight: bold;
+  color:red;
 }

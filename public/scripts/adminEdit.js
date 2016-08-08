@@ -177,7 +177,7 @@ $scope.saveStory = function() {
     $scope.newTextArray.push(parsedWord);
   } // end for loop 1
   var story_pages = {
-    page_number: $scope.pageNumberBinder,
+    page_number: Number($scope.pageNumberBinder),
     page_text_plain: $scope.cleanText,
     page_text_btn: $scope.newTextArray,
     page_illustration: $scope.pageIllustrationBinder,
@@ -197,7 +197,7 @@ $scope.saveStory = function() {
   }); // end $http
   if ($scope.isNewOrEdit === 1) {
     $rootScope.cancel();
-  }
+  } // end if
   $scope.textReset();
 }; // end saveStory
 

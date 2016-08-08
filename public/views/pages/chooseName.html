@@ -6,12 +6,15 @@
   <div class="modal-body">
     <div id="nameChangeBox">
       <div id="charactersListDiv" ng-repeat="(namesIndex, names) in characters">
-        Old name: {{names}}
-        <input type="text" name="name" ng-model="name">
-        <button id="changeBtn"ng-click="nameReplace(name, names) "> Change </button>
-        <div id="alertBox" ng-show="alertText">Name Changed!
+        <div ng-hide="showTrue[$index]">
+          Original name: {{names}}
+          <input type="text" name="name" ng-model="name">
+          <button id="changeBtn" ng-click="nameReplace(name, names, namesIndex)"> Change </button>
         </div>
-        <!-- <button ng-click="editName()"> Edit </button> -->
+        <div ng-show="showTrue[$index]">
+          New name: {{newNames[$index]}}
+          <button class="textPopupEditBtn" ng-click="editName($index)"> Edit </button>
+        </div>
       </div> <!-- end ng-repeat -->
     </div> <!-- end nameChangeBox -->
   </div> <!-- end modal-body -->
