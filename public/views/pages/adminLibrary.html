@@ -17,7 +17,7 @@
       <h2> {{story.story_title}} </h2>
       <p> {{story.story_description}} </p>
       <div class="md-actions" layout="row" layout-align="end center">
-        <md-button ng-click="selectReaderStory($index)" ng-show="userBtns">
+        <md-button ng-click="selectReaderStory($index)" ng-show="userBtns" aria-label="tempPlaceholder">
         <div class="storyCover"> <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;"></md-button></div>
       </div>
       <md-button ng-click="deleteStory($index)" ng-show="adminBtns" class="btn btn-danger"> Delete </md-button>
