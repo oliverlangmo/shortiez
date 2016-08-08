@@ -74,6 +74,9 @@
   background-color: #BF3FBF;
   padding-left: 5px;
 }
+#userTable{
+  background-color: white;
+}
 #userB:hover{
   background-color: #3FBFBF;
 }
@@ -143,14 +146,14 @@
   .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
-    position: relative:
+    position: relative;
      height: 50vw;
      width: 78vw;
      border-width: thick;
      border-style: outset;
      border-color: #0088dd;
      padding: 30px 0px 30px 30px;
-     margin: 5px 5px 5px 50px;
+     margin: 5px 5px 5px 120px;
      text-align: left;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
      background-color: #f7f3ee;
