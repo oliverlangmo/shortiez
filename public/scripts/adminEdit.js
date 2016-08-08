@@ -372,6 +372,7 @@ $scope.updateCharacter = function(){
       $scope.storyArray.story_characters.splice(i, 1, newCharObject);
     } // end if
   } // end for loop
+  console.log($scope.storyArray.story_characters);
   var newStory_characters = {
     story_characters: $scope.storyArray.story_characters,
     id: $rootScope.tempIndex
@@ -379,7 +380,7 @@ $scope.updateCharacter = function(){
   $http({
     method: 'POST',
     url: '/updateCharacter',
-    data: newCharObject
+    data: newStory_characters
   }).then(function(response){
   userData.getAllStories();
 }); // end then
