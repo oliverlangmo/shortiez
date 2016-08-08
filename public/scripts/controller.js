@@ -141,9 +141,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   var setBtnsView = function() {
     if ($rootScope.userAdminCheck === 'false' || $rootScope.userAdminCheck === false) {
       $rootScope.userBtns = true;
-      console.log('checked false?');
     } else {
-      console.log('checked true?');
       $rootScope.userBtns = true;
       $rootScope.adminBtns = true;
     } // end else
