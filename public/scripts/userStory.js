@@ -40,7 +40,8 @@ $scope.chooseNamePopup = function() {
   $scope.myStoryLoad();
   $uibModal.open({
     templateUrl: 'views/pages/chooseName.html',
-    controller: 'textPopupController'
+    controller: 'textPopupController',
+    size: 'lg'
   }); // end $modal.open
 }; // end openTextPopup
 
@@ -50,6 +51,7 @@ function CharName(newCharName, arrayNum) {
 } // end charName
 
 $scope.nameReplace = function(newName, oldName, index) {
+  console.log($scope.readerIndex.story_characters[index].character_photo);
 // $scope.activeItem=item;
   // $scope.alertText = !$scope.alertText;
   // document.getElementById("changeBtn").
