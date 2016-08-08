@@ -21,7 +21,7 @@
         <div class="storyCover"> <img ng-src="{{story.story_cover}}" class="md-card-image" alt="{{story.story_title}}'s picture" width='200px;'height = "200px;"></md-button></div>
       </div>
       <md-button ng-click="deleteStory($index)" ng-show="adminBtns" class="btn btn-danger"> Delete </md-button>
-      <md-button ng-click="editStory($index)" ng-show="adminBtns" class="btn btn-primary"> Edit </md-button>
+      <md-button ng-click="editStory($index)" ng-show="adminBtns" class="btn btn-primary" id="adminEditBtn"> Edit </md-button>
 
       </md-card-content>
     </md-card>
