@@ -90,19 +90,21 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   // $rootScope.adminBtns = true; // comment out to turn on authorizations
 
 
-
-  var adminCheck = function() {
-    var admin = $rootScope.userAdminCheck;
-    if (admin === false || admin === 'false' || admin === undefined || admin === null || admin === '') {
-      $location.path('/#/adminLibrary');
-    } // end if
-  }; // end adminCheck
+  // var adminCheck = function() {
+  //   var admin = $rootScope.userAdminCheck;
+  //   if (admin === false || admin === 'false' || admin === undefined || admin === null || admin === '') {
+  //     var path = "#login";
+  //     window.location.href = path;
+  //   } // end if
+  // }; // end adminCheck
 
   var checkAuth = function() {
     var user = $rootScope.userAuthCheck;
     if (user === false || user === 'false' || user === undefined || user === null || user === '') {
-      $location.path('/#/adminLibrary');
-    } // end if
+      var path = "#login";
+      window.location.href = path;
+      console.log('please see me!', $rootScope.userAuthCheck);
+    }  // end if
   }; // end checkAuth
 
   var randomId = function() {
@@ -137,7 +139,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   }; // end getUsers
 
   var setBtnsView = function() {
-    if ($rootScope.userAdminCheck === 'false') {
+    if ($rootScope.userAdminCheck === 'false' || $rootScope.userAdminCheck === false) {
       $rootScope.userBtns = true;
     } else {
       $rootScope.userBtns = true;
@@ -146,7 +148,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   }; // end setBtnsView
 
   return {
-    adminCheck: adminCheck,
     checkAuth: checkAuth,
     randomId: randomId,
     randomNum: randomNum,
@@ -156,3 +157,5 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   }; // end return
 
 }]);
+
+// || $rootScope.userAdminCheck === 'undefined' || $rootScope.userAdminCheck === undefined

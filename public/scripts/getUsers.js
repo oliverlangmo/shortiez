@@ -2,7 +2,6 @@ angular.module('myApp').controller("getUserInfo",
 ['$http', '$scope', '$rootScope','$location', 'userData', '$uibModal',
 function($http, $scope, $rootScope, $location, userData, $uibModal){
 
-userData.adminCheck();
 userData.getBadWords();
 
 $scope.badWordPopup = function() {
@@ -64,7 +63,7 @@ $scope.updateUser = function(id) {
     data: updateInfo
   }); // end $http
   $rootScope.cancel();
-  $scope.getUsers();
+  location.reload();
 }; // end updateUser
 
 $scope.deleteUser = function(id) {

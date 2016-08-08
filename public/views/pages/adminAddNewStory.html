@@ -32,8 +32,8 @@
   </div>
 
 
+<div ng-show="showAddStoryDiv">
   <div class="editCharInfo">
-  <div ng-show="showAddStoryDiv">
     <h3> Add Characters </h3>
     <input type="text" name="charName" ng-model="characterNameBinder" placeholder="Character Name"><br>
     <input type="text" name="charTraits" ng-model="characterTraitBinderOne" placeholder="Character Trait 1"><br>
@@ -59,8 +59,7 @@
           </md-card-content>
         </md-card>
       </div>
-    </div>
-  </div>
+  </div> <!-- end class editCharInfo -->
 
   <div class="editPageInfo">
     <h3> Add Story Page </h3>
@@ -79,7 +78,7 @@
     <button ng-click="captureStoryInput()" ng-show="displayBefore" class="btn btn-primary"> Submit </button><br>
     <button ng-click="textReset()" ng-show="displayAfter" class="btn btn-warning"> Reset Page </button>
     <button type="submit" name="submitCharButton" ng-click="saveStory()" ng-show="displayAfter" class="btn btn-primary"> Save Page </button>
-
+  </div>
 
 
     <h3> Current Pages </h3>
@@ -98,5 +97,5 @@
             </md-card-content>
           </md-card>
         </div>
-    </div>
+    </div> <!-- end ng-show showAddStoryDiv -->
   </div>

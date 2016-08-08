@@ -74,6 +74,9 @@
   background-color: #BF3FBF;
   padding-left: 5px;
 }
+#userTable{
+  background-color: white;
+}
 #userB:hover{
   background-color: #3FBFBF;
 }
@@ -150,25 +153,30 @@
    height:200px;
    width: auto;
  }
+ #page-content-wrapper {
+   position: sticky;
+   margin: 70px 0px 0px 175px;
+   padding: 0px 0px 0px 175px;
+ }
  #sidebar-wrapper{
     position: relative;
-    margin: 50px;
+    margin: 5px;
     /*overflow-y: auto;*/
   }
   .titlePage {
-    margin-left: 120px;
+    margin-left: 75px;
   }
   .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
-    position: relative:
+    position: relative;
      height: 50vw;
-     width: 78vw;
+     width: 71vw;
      border-width: thick;
      border-style: outset;
      border-color: #0088dd;
-     padding: 30px 0px 30px 30px;
-     margin: 5px 5px 5px 50px;
+     padding: 30px 30px 30px 30px;
+     margin: 5px 5px auto 0px;
      text-align: left;
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
      background-color: #f7f3ee;
@@ -193,11 +201,7 @@
   margin-top: -25px;
 }
 .text-center {
-  text-align: left;
-}
-.pageination{
-  text-align: left;
-  margin: auto 0px;
+  text-align: center;
 }
 .previousButton{
   float: left;
@@ -340,7 +344,9 @@
 .largeButton:hover{
   background-color: #5f3cb0; /* purple */
 }
-
+#fontBox {
+  width: 500px;
+}
  #fontBtns {
    /*float: right;*/
    margin-left: 60px;
@@ -348,15 +354,6 @@
    align-items: right;
  }
 
- #fontBox {
-   /*float: right;*/
-   /*border: solid;
-   border-color: #118cc3;
-   background-color:rgba(245,229,210,0.5);*/
-   /*width: 450px;
-   margin-left: 400px;*/
-   /*align-items: right;*/
- }
 /*---------------------     end readerStory Nav     --------------------------------*/
 /*---------------------      end readerStory        --------------------------------*/
 /*------------------------------    library    --------------------------------------*/
@@ -549,4 +546,8 @@
 .notAuthUser {
   font-weight: bold;
   color:red;
+}
+
+#adminEditBtn {
+  float: right;
 }
