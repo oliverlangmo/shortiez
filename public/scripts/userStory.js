@@ -8,8 +8,8 @@ userData.getBadWords();
 userData.getAllStories();
 
 $scope.toggle = function() {
-       $scope.commentText = !$scope.commentText;
-   };
+  $scope.commentText = !$scope.commentText;
+};
 
 $scope.myStory = [];
 $scope.newName = '';
@@ -17,11 +17,11 @@ $scope.showTrue = []; // shows/hides on chooseNamePopup
 $scope.newNames = []; // new names for textPopup
 
 $scope.setNewNames = function() {
-  for (var a = 0; a < $rootScope.readerIndex.story_characters.length; a++) { // for loop 2
+  for (var a = 0; a < $rootScope.readerIndex.story_characters.length; a++) {
     var nameHolder = '';
     var charName = new CharName(nameHolder, a);
     $scope.newNames.push(charName);
-  } // end for loop 2
+  } // end for loop
 }; // end setNewNames
 
 $scope.setNewNames();
@@ -40,7 +40,8 @@ $scope.chooseNamePopup = function() {
   $scope.myStoryLoad();
   $uibModal.open({
     templateUrl: 'views/pages/chooseName.html',
-    controller: 'textPopupController'
+    controller: 'textPopupController',
+    size: 'lg'
   }); // end $modal.open
 }; // end openTextPopup
 
@@ -50,6 +51,7 @@ function CharName(newCharName, arrayNum) {
 } // end charName
 
 $scope.nameReplace = function(newName, oldName, index) {
+  console.log($scope.readerIndex.story_characters[index].character_photo);
 // $scope.activeItem=item;
   // $scope.alertText = !$scope.alertText;
   // document.getElementById("changeBtn").
@@ -63,6 +65,7 @@ $scope.nameReplace = function(newName, oldName, index) {
       $rootScope.readerIndex.story_pages[i].page_text_btn[x] = $rootScope.readerIndex.story_pages[i].page_text_btn[x].replace(regExp, newName);
     } // end for loop 2
   } // end for loop 1
+  $scope.readerIndex.story_characters[index].character_name = newName;
   $scope.newNames.splice(index, 1, newName);
   $scope.showTrue[index] = true;
   $scope.myStoryLoad();
@@ -70,7 +73,7 @@ $scope.nameReplace = function(newName, oldName, index) {
 
 $scope.editName = function(index) {
   $scope.showTrue[index] = false;
-};
+}; // end editName
 
 $scope.nextPage = function() {
   $rootScope.pageIndex++;
