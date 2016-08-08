@@ -84,10 +84,10 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.storyArrayIndex = 0;
   $rootScope.tempStoryName = '';
   $rootScope.isNewOrEdit = 0; // determines whether or not called function is as New (0) or Edit (1)
-  // $rootScope.userBtns = false;
-  // $rootScope.adminBtns = false;
-  $rootScope.userBtns = true;
-  $rootScope.adminBtns = true;
+  $rootScope.userBtns = false; // comment out to turn off authorizations
+  $rootScope.adminBtns = false; // comment out to turn off authorizations
+  // $rootScope.userBtns = true; // comment out to turn on authorizations
+  // $rootScope.adminBtns = true; // comment out to turn on authorizations
 
 
 

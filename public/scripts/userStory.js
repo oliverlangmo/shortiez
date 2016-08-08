@@ -2,7 +2,7 @@ angular.module('myApp').controller('userStoryController',
 ['$scope', '$http', '$rootScope', '$location', 'userData', '$mdSidenav', '$uibModal',
 function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal) {
 
-// userData.checkAuth();
+userData.checkAuth();
 userData.getBadWords();
 
 userData.getAllStories();
@@ -108,11 +108,8 @@ $scope.submitChange = function() {
   var badWordCheck = false;
   for (var i = 0; i < $rootScope.badWordsArray[0].badWords.length; i++) {
     if ($scope.newWord === $rootScope.badWordsArray[0].badWords[i]) {
-      window.alert("Timmy, you have tried to submit a bad word." +
-        "\nYou have been placed on Santa's naughty list." +
-        "\nYour birthday has been taken away." +
-        "\nDo not try submitting bad words again." +
-        "\nOr else.");
+      window.alert("Oops, you entered a naughty word." +
+        "\nPlease enter a nice, new word.");
       num = $rootScope.tempIdNum;
       pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
       newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BLEEP!' + '</button> ';

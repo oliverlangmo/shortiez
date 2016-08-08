@@ -28,7 +28,7 @@ router.post('/addCharacter', function(req, res) {
     character_photo: req.body.character_photo,
     // charId: req.body.charId
   };
-  addStory.findOneAndUpdate({_id: charId}, {$push: {story_characters: characterToAdd}}, function(err) {
+  addStory.findOneAndUpdate({_id: charId}, {$push: {'story_characters': characterToAdd}}, function(err) {
     if(err) {
       console.log(err);
       res.sendStatus(500);
@@ -59,40 +59,41 @@ router.post('/addPage', function(req, res) {
 
 router.post('/updateCharacter', function(req, res) {
   var charId = req.body.id;
+  console.log(req.body);
   var charactersToReplace = {
-    character_name: req.body.character_name,
-    character_traits: req.body.character_traits,
-    character_bio: req.body.character_bio,
-    character_photo: req.body.character_photo,
+    story_characters: req.body.story_characters
   };
-  addStory.findOneAndUpdate({_id: charId}, {'story_characters': charactersToReplace}, function(err){
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-    console.log('character updated');
-    res.sendStatus(200);
-    } // end else
-  }); // end findOneAndUpdate
+  // for (var i = 0; i < req.body.story_characters.length; i++) {
+  // }
+  // console.log(req.body);
+  // addStory.findOneAndUpdate({_id: charId}, {$set: {'story_characters': charactersToReplace}}, function(err){
+  //   if (err) {
+  //     console.log(err);
+  //     res.sendStatus(500);
+  //   } else {
+  //   console.log('character updated');
+  //   res.sendStatus(200).then();
+  //   } // end else
+  // }); // end findOneAndUpdate
 }); // end updateCharacter
 
 router.post('/updatePage', function(req, res) {
-  var charId = req.body.id;
+  var pageId = req.body.id;
   var pagesToReplace = {
     page_number: req.body.page_number,
     page_text_plain: req.body.page_text_plain,
     page_text_btn: req.body.page_text_btn,
     page_illustration: req.body.page_illustration,
   }; // end pageToReplace
-  addStory.findOneAndUpdate({_id: charId}, {'story_pages': pagesToReplace}, function(err){
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-    console.log('page updated');
-    res.sendStatus(200);
-    } // end else
-  }); // end findOneAndUpdate
+  // addStory.findOneAndUpdate({_id: pageId}, {$set: {'story_pages': pagesToReplace}}, function(err){
+  //   if (err) {
+  //     console.log(err);
+  //     res.sendStatus(500);
+  //   } else {
+  //   console.log('page updated');
+  //   res.sendStatus(200);
+  //   } // end else
+  // }); // end findOneAndUpdate
 }); // end updatePage
 
 router.post('/updateCover', function(req, res) {
