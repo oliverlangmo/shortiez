@@ -1,5 +1,4 @@
-
-<div class="loginCont" ng-controller="loginController">
+<div class="loginCont" ng-controller="loginController" ng-init='setPrivileges()'>
   <img class="title" src="../views/images/shortiezlogo.png" alt="Shortiez Logo" />
   <h4>Collection of Customizable Short Stories</h4><br>
 <div id="loginBox">
@@ -16,7 +15,7 @@
     </div>
     <div>
       <br>
-    <input class="btn btn-primary"ng-click="setPrivileges()" type="submit" name="name" value="Log In"></a>
+    <input class="btn btn-primary" ng-click="setPrivileges()" type="submit" name="name" value="Log In"></a>
       <p>Are you new? Click Sign Up!</p>
       <button class="btn btn-primary"><a class="register" href="/#/register">Sign Up!</a></button>
       </div>
