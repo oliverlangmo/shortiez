@@ -111,6 +111,24 @@
    vertical-align: left;;
  }
 
+.changeBtn{
+  display: table-cell;
+}
+#charactersListDiv{
+  display: inline;
+  list-style: none;
+
+}
+#imgName{
+  /*display: table-row;*/
+  /*display: table-cell;*/
+
+}
+#inputName{
+  /*display: table-cell;*/
+}
+#nameChangeBox{
+}
  .sideNav {
    float: left;
    color: black;
@@ -358,7 +376,11 @@
   padding: 20px;
 }
 #addStoryBtn{
-  margin-left: 50px;
+  /*margin-left: 50px;*/
+  float: right;
+  height: 100px;;
+  width: 200px;
+  margin-right: 100px;
 }
 /*--------------------------------customize word         --------------------------------*/
 
