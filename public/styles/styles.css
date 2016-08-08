@@ -128,6 +128,7 @@
  }
  #sidebar-wrapper{
     position: relative;
+    margin: 50px;
     /*overflow-y: auto;*/
   }
   .titlePage {
@@ -162,20 +163,17 @@
 }
 
 /*--------------------------------     readerStory Nav        --------------------------------*/
- footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 75px;
-}
 .characters{
   color: black;
   font-size: 30px;
   margin-top: -25px;
 }
+.text-center {
+  text-align: left;
+}
 .pageination{
-  margin: auto;
+  text-align: left;
+  margin: auto 0px;
 }
 .previousButton{
   float: left;
@@ -216,9 +214,9 @@
   background-color: #6600ff ;
 }
 .toggleButton{
-   float: right;
+   /*float: right;*/
    position: relative;
-   margin-left: 150px;
+   /*margin-left: 150px;*/
    background-color: #118cc3 ;
    color: white;
 }
@@ -226,6 +224,7 @@
   font-family: 'Arial', sans-serif;
 }
 .arialButton{
+  float: right;
   font-family: 'Arial', sans-serif;
   font-size: 1em;
   background-color: #118cc3 ;
@@ -240,6 +239,7 @@
  font-family: 'Comic Sans MS';
 }
 .comicButton{
+  float: right;
  font-family: 'Comic Sans MS';
  font-size: 1em;
  background-color: #118cc3;
@@ -255,6 +255,7 @@
  font-family: "OpenDyslexic";
 }
 .openDyslexicButton{
+  float: right;
   font-family: "OpenDyslexic";
   font-size: 1em;
   background-color: #118cc3;
@@ -272,6 +273,7 @@
  width: 90%;
 }
 .smallButton{
+  float: right;
    font-size: 1.0em;
    background-color: #118cc3;
    border: none;
@@ -287,6 +289,7 @@
    line-height: 225%
  }
 .mediumButton{
+  float: right;
    font-size: 1em;
    background-color: #118cc3;
    border: none;
@@ -302,30 +305,33 @@
    line-height: 225%
  }
 .largeButton{
+  float: right;
    font-size: 1em;
    background-color: #118cc3;
    border: none;
    color: white;
    display: inline-block;
-   position: relative;
+   /*position: relative;*/
  }
 .largeButton:hover{
   background-color: #5f3cb0; /* purple */
 }
 
- #fontBtns{
+ #fontBtns {
+   /*float: right;*/
    margin-left: 60px;
    /*padding-left: 80px;*/
-   align-items: center;
+   align-items: right;
  }
 
- #fontBox{
-   border: solid;
+ #fontBox {
+   /*float: right;*/
+   /*border: solid;
    border-color: #118cc3;
-   background-color:rgba(245,229,210,0.5);
-   width: 450px;
-   margin-left: 400px;
-   align-items: center;
+   background-color:rgba(245,229,210,0.5);*/
+   /*width: 450px;
+   margin-left: 400px;*/
+   /*align-items: right;*/
  }
 /*---------------------     end readerStory Nav     --------------------------------*/
 /*---------------------      end readerStory        --------------------------------*/
