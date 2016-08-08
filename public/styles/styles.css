@@ -74,6 +74,9 @@
   background-color: #BF3FBF;
   padding-left: 5px;
 }
+#userTable{
+  background-color: white;
+}
 #userB:hover{
   background-color: #3FBFBF;
 }
