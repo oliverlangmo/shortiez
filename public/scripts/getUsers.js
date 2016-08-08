@@ -2,9 +2,8 @@ angular.module('myApp').controller("getUserInfo",
 ['$http', '$scope', '$rootScope','$location', 'userData', '$uibModal',
 function($http, $scope, $rootScope, $location, userData, $uibModal){
 
-
-// userData.adminCheck();
-// userData.getBadWords();
+userData.adminCheck();
+userData.getBadWords();
 
 $scope.badWordPopup = function() {
   $uibModal.open({
