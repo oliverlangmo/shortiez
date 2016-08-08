@@ -11,7 +11,7 @@
   <button type="button" class="btn btn-primary" name="addStoryButton" ng-click="openAdminEdit()" ng-show="adminBtns" > Add a new story </button>
 
   <div class='md-padding' layout="row" layout-wrap >
-    <md-card style="width: 400px;" ng-repeat="story in stories">
+    <md-card class="cards"style="width: 400px;" ng-repeat="story in stories">
       <md-card-content>
 
       <h2> {{story.story_title}} </h2>
