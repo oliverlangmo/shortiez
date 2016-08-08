@@ -4,12 +4,11 @@ function ($scope, $http, $rootScope, $location, userData, $mdSidenav, $uibModal)
 
 userData.checkAuth();
 userData.getBadWords();
-
 userData.getAllStories();
 
 $scope.toggle = function() {
   $scope.commentText = !$scope.commentText;
-};
+}; // end toggle
 
 $scope.myStory = [];
 $scope.newName = '';

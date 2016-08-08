@@ -74,6 +74,9 @@
   background-color: #BF3FBF;
   padding-left: 5px;
 }
+#userTable{
+  background-color: white;
+}
 #userB:hover{
   background-color: #3FBFBF;
 }
@@ -148,7 +151,7 @@
   .storyPage {
     border-radius: 6px;
     font-size: 1.25em;
-    position: relative:
+    position: relative;
      height: 50vw;
      width: 71vw;
      border-width: thick;
@@ -521,4 +524,8 @@
 .notAuthUser {
   font-weight: bold;
   color:red;
+}
+
+#adminEditBtn {
+  float: right;
 }
