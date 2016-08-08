@@ -56,9 +56,11 @@
                             <img class="TextWrap" ng-src="{{myStory.page_illustration}}" height='300px'/>
                           </div>
                             <div id="userStory"></div>
-                            <br><span class="text-center" class="pageination">page {{myStory.page_number}}</span>
-                            <button  class="btn previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
-                            <button  class="btn nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
+                              <div class="text-center">
+                                  <button  class="btn btn-primary" class="btn previousButton" type="button" name="Prevbutton" ng-click= "prevPage()">‹ back</button>
+                                  <span class="btn btn-primary">page {{myStory.page_number}}</span>
+                                  <button  class="btn btn-primary" class="btn nextButton"type="button" name="Nextbutton" ng-click= "nextPage()">next ›</button>
+                              </div>
                       </div>
                     </div>
                   </div>
