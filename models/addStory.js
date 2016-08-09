@@ -5,7 +5,7 @@ var addStorySchema = new Schema({
   story_title: String,
   story_description: String,
   story_cover: String,
-  story_characters: [{}],
+  story_characters: [],
   story_pages: [{}]
 });
 

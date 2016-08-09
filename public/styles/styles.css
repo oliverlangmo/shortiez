@@ -374,9 +374,9 @@
 }
 #addStoryBtn{
   /*margin-left: 50px;*/
-  float: right;
+  /*float: right;*/
   height: 100px;;
-  width: 200px;
+  width: 300px;
   margin-right: 100px;
 }
 /*--------------------------------customize word         --------------------------------*/
@@ -550,4 +550,21 @@
 
 #adminEditBtn {
   float: right;
+}
+
+@keyframes blinker {
+  75% { opacity: 0.0; }
+}
+
+#badWordTextPopupOne {
+  animation: blinker 0.80s linear infinite;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+  color: red;
+}
+
+#badWordTextPopupTwo {
+  font-weight: bold;
+  text-align: center;
 }

@@ -59,41 +59,34 @@ router.post('/addPage', function(req, res) {
 
 router.post('/updateCharacter', function(req, res) {
   var charId = req.body.id;
-  console.log(req.body);
-  var charactersToReplace = {
+  var storyCharacters = {
     story_characters: req.body.story_characters
-  };
-  // for (var i = 0; i < req.body.story_characters.length; i++) {
-  // }
-  // console.log(req.body);
-  // addStory.findOneAndUpdate({_id: charId}, {$set: {'story_characters': charactersToReplace}}, function(err){
-  //   if (err) {
-  //     console.log(err);
-  //     res.sendStatus(500);
-  //   } else {
-  //   console.log('character updated');
-  //   res.sendStatus(200).then();
-  //   } // end else
-  // }); // end findOneAndUpdate
+  }; // endstoryCharacters
+  addStory.findOneAndUpdate({_id: charId}, {$set: {'story_characters': storyCharacters.story_characters}}, function(err){
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+    console.log('character updated');
+    res.sendStatus(200);
+    } // end else
+  }); // end findOneAndUpdate
 }); // end updateCharacter
 
 router.post('/updatePage', function(req, res) {
   var pageId = req.body.id;
-  var pagesToReplace = {
-    page_number: req.body.page_number,
-    page_text_plain: req.body.page_text_plain,
-    page_text_btn: req.body.page_text_btn,
-    page_illustration: req.body.page_illustration,
-  }; // end pageToReplace
-  // addStory.findOneAndUpdate({_id: pageId}, {$set: {'story_pages': pagesToReplace}}, function(err){
-  //   if (err) {
-  //     console.log(err);
-  //     res.sendStatus(500);
-  //   } else {
-  //   console.log('page updated');
-  //   res.sendStatus(200);
-  //   } // end else
-  // }); // end findOneAndUpdate
+  var storyPages = {
+    story_pages: req.body.story_pages
+  }; // end storyPages
+  addStory.findOneAndUpdate({_id: pageId}, {$set: {'story_pages': storyPages.story_pages}}, function(err){
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+    console.log('page updated');
+    res.sendStatus(200);
+    } // end else
+  }); // end findOneAndUpdate
 }); // end updatePage
 
 router.post('/updateCover', function(req, res) {

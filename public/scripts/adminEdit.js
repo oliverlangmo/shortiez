@@ -247,28 +247,32 @@ $scope.deleteChar = function(index) {
   // } else {
   //   console.log('delete aborted');
   // } // end else
+
   if ($scope.isNewOrEdit === 0) {
     $scope.storyArray = $rootScope.tempNewStoryArray;
   } else {
     $scope.storyArray = $rootScope.storyIndex;
   } // end else
   for (var i = 0; i < $scope.storyArray.story_characters.length; i++) {
+    console.log('temp',$scope.storyArray.story_characters[$rootScope.tempPageId]);
+    console.log('i', $scope.storyArray.story_characters[i]);
     if ($scope.storyArray.story_characters[$rootScope.tempPageId] === $scope.storyArray.story_characters[i]) {
-      $scope.storyArray.story_characters.splice(i, 0);
+      console.log('inside if');
+      $scope.storyArray.story_characters.splice(i, 1);
     } // end if
   } // end for loop
   var newStory_characters = {
     story_characters: $scope.storyArray.story_characters,
     id: $rootScope.tempIndex
   }; // end newStory_characters
+  console.log($scope.storyArray.story_characters);
   $http({
     method: 'POST',
     url: '/updateCharacter',
     data: newStory_characters
   }).then(function(response){
   userData.getAllStories();
-}); // end then
-  $rootScope.cancel();
+  }); // end then
 }; // end charDelete
 
 $scope.deletePage = function(index) {
@@ -372,7 +376,6 @@ $scope.updateCharacter = function(){
       $scope.storyArray.story_characters.splice(i, 1, newCharObject);
     } // end if
   } // end for loop
-  console.log($scope.storyArray.story_characters);
   var newStory_characters = {
     story_characters: $scope.storyArray.story_characters,
     id: $rootScope.tempIndex
@@ -417,10 +420,11 @@ $scope.updatePage = function() {
     story_pages: $scope.pageArray.story_pages,
     id: $rootScope.tempIndex
   }; // end newStory_characters
+  console.log($scope.pageArray.story_pages);
   $http({
     method: 'POST',
     url: '/updatePage',
-    data: story_pages
+    data: newStory_pages
   }).then(function(response) {
     userData.getAllStories();
   }); // end $http

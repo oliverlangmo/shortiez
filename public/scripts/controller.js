@@ -29,6 +29,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       .when('/chooseName', {
           templateUrl: '/views/pages/chooseName.html'
       })
+      .when('/badWordPopup', {
+          templateUrl: '/views/pages/badWordPopup.html'
+      })
       .when('/adminAddNewStory', {
           templateUrl: '/views/pages/adminAddNewStory.html'
       })
@@ -134,7 +137,6 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       method: 'GET',
       url: '/getBadWords', }).then(function(response) {
         $rootScope.badWordsArray = response.data;
-        console.log($rootScope.badWordsArray[0].badWords.length);
     }); // end http GET
   }; // end getUsers
 

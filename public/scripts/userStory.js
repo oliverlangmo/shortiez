@@ -114,8 +114,8 @@ $scope.submitChange = function() {
   var badWordCheck = false;
   for (var i = 0; i < $rootScope.badWordsArray[0].badWords.length; i++) {
     if ($scope.newWord === $rootScope.badWordsArray[0].badWords[i]) {
-      window.alert("Oops, you entered a naughty word." +
-        "\nPlease enter a nice, new word.");
+      // window.alert("Oops, you entered a naughty word." +
+      //   "\nPlease enter a nice, new word.");
       num = $rootScope.tempIdNum;
       pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
       newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BLEEP!' + '</button> ';
@@ -124,6 +124,11 @@ $scope.submitChange = function() {
       text.empty();
       text.append(pageArray.join(' '));
       badWordCheck = true;
+      $uibModal.open({
+        templateUrl: 'views/pages/badWordPopup.html',
+        controller: 'textPopupController',
+        size: 'sm'
+      }); // end $modal.open
       $rootScope.cancel();
     } // end if
   } // end for loop
