@@ -231,8 +231,6 @@ $scope.deleteChar = function(index) {
     } else {
       $scope.storyArray = $rootScope.storyIndex;
     } // end else
-    console.log($rootScope.tempPageId);
-    console.log(index);
     for (var i = 0; i < $scope.storyArray.story_characters.length; i++) {
       if ($scope.storyArray.story_characters[index] === $scope.storyArray.story_characters[i]) {
         $scope.storyArray.story_characters.splice(i, 1);
@@ -242,7 +240,6 @@ $scope.deleteChar = function(index) {
       story_characters: $scope.storyArray.story_characters,
       id: $rootScope.tempIndex
     }; // end newStory_characters
-    console.log($scope.storyArray.story_characters);
     $http({
       method: 'POST',
       url: '/updateCharacter',
@@ -256,17 +253,34 @@ $scope.deleteChar = function(index) {
 }; // end charDelete
 
 $scope.deletePage = function(index) {
-  console.log($rootScope.tempIndex);
-  var confirmDeletePage = confirm('Please confirm to delete ' + $rootScope.stories[index].story_title + ' story');
-  if (confirmDeleteStory) {
-    var pageIdDelete = {
+  if ($scope.isNewOrEdit === 0) {
+    $scope.pageArray = $rootScope.tempNewStoryArray;
+  } else {
+    $scope.pageArray = $rootScope.storyIndex;
+  } // end else
+  var confirmDeletePage = confirm('Please confirm to delete page #' + $scope.pageArray.story_pages[index].page_number);
+  if (confirmDeletePage) {
+    if ($scope.isNewOrEdit === 0) {
+      $scope.storyArray = $rootScope.tempNewStoryArray;
+    } else {
+      $scope.storyArray = $rootScope.storyIndex;
+    } // end else
+    for (var i = 0; i < $scope.storyArray.story_pages.length; i++) {
+      if ($scope.storyArray.story_pages[index] === $scope.storyArray.story_pages[i]) {
+        $scope.storyArray.story_pages.splice(i, 1);
+      } // end if
+    } // end for loop
+    var newStory_pages = {
+      story_pages: $scope.storyArray.story_pages,
       id: $rootScope.tempIndex
-    }; // end playerId
+    }; // end newStory_characters
     $http({
       method: 'POST',
-      url: '/pageRemove',
-      data: pageIdDelete
-    }); // end $http
+      url: '/updatePage',
+      data: newStory_pages
+    }).then(function(response){
+    userData.getAllStories();
+    }); // end then
   } else {
     console.log('delete aborted');
   } // end else
