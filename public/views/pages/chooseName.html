@@ -8,15 +8,18 @@
       <li id="charactersListDiv" ng-repeat="(namesIndex, names) in characters">
         <div ng-hide="showTrue[$index]">
           <img id="imgName"ng-src="{{readerIndex.story_characters[$index].character_photo}}" height='100px'/>
-          Original name: {{names}}
-          <br>
+          <p id="originalName">Original Name: {{names}}</p>
+          <!-- <br> -->
+          <p id="newName">
+            New Name:
+          </p>
           <input id="inputName"type="text" name="name" ng-model="name">
-          <button id="changeBtn" ng-click="nameReplace(name, names, namesIndex)"> Change </button>
+          <button id="changeBtn" class="btn btn-primary" ng-click="nameReplace(name, names, namesIndex)"> Change </button>
         </div>
         <div ng-show="showTrue[$index]">
           <img ng-src="{{readerIndex.story_characters[$index].character_photo}}" height='100px'/>
-          New name: {{newNames[$index]}}
-          <button class="textPopupEditBtn" ng-click="editName($index)"> Edit </button>
+          <p id="changedName">New name: {{newNames[$index]}}</p>
+          <button class="textPopupEditBtn btn btn-primary" ng-click="editName($index)"> Edit </button>
         </div>
       </li> <!-- end ng-repeat -->
     </ul> <!-- end nameChangeBox -->

@@ -115,22 +115,29 @@
  }
 
 .changeBtn{
-  display: table-cell;
+  /*display: table-cell;*/
 }
 #charactersListDiv{
-  display: inline;
-  list-style: none;
-
+  display: inline-block;
+  margin-left: 20px;
 }
 #imgName{
   /*display: table-row;*/
   /*display: table-cell;*/
-
 }
 #inputName{
   /*display: table-cell;*/
 }
 #nameChangeBox{
+}
+#originalName{
+  font-size: 28px;
+}
+#newName{
+  font-size: 28px;
+}
+#changedName{
+  font-size: 28px;
 }
  .sideNav {
    float: left;
