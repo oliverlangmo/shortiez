@@ -57,10 +57,6 @@ myApp.config(['$routeProvider', function($routeProvider){
       redirectTo: '/login'
     }); // end $routeProvider
 
-  myApp.run(function(editableOptions) {  // <-- for xeditibles
-    editableOptions.theme = 'bs3';
-  }); // end editableOptions
-
 }]); // end myApp
 
 //-----------------------------------------  userData factory-----------------------------------------
@@ -89,8 +85,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   $rootScope.isNewOrEdit = 0; // determines whether or not called function is as New (0) or Edit (1)
   $rootScope.userBtns = false; // comment out to turn off authorizations
   $rootScope.adminBtns = false; // comment out to turn off authorizations
-  // $rootScope.userBtns = true; // comment out to turn on authorizations
-  // $rootScope.adminBtns = true; // comment out to turn on authorizations
+
 
 
   // var adminCheck = function() {
@@ -101,6 +96,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   //   } // end if
   // }; // end adminCheck
 
+  // determines user's permisson and makes sure other variables are accounted for
   var checkAuth = function() {
     var user = $rootScope.userAuthCheck;
     if (user === false || user === 'false' || user === undefined || user === null || user === '') {
@@ -110,6 +106,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     }  // end if
   }; // end checkAuth
 
+  // function to create probalistically unique IDs. Not used in program, but is an option for later use
   var randomId = function() {
     var text = [];
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -119,10 +116,12 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     return text.join('');
   }; // end randomId
 
+  // function to create probalistically random numbers. Not used in program, but is an option for later use
   var randomNum = function (max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }; // end randomNum
 
+  // primary function that returns all stories from DB to be stored locally. Needs review
   var getAllStories = function() {
     $http({
       method: 'GET',
@@ -132,6 +131,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
       }); // end http GET
   }; // end getStories
 
+  // Returns all bad words to be stored locally then is used to compare new words (madlibs).
   var getBadWords = function() {
     $http({
       method: 'GET',
@@ -140,6 +140,7 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
     }); // end http GET
   }; // end getUsers
 
+  // based on user permissions, makes certain buttons visible to user
   var setBtnsView = function() {
     if ($rootScope.userAdminCheck === 'false' || $rootScope.userAdminCheck === false) {
       $rootScope.userBtns = true;
@@ -159,5 +160,3 @@ myApp.factory('userData', ['$http', '$rootScope', '$location', function($http, $
   }; // end return
 
 }]);
-
-// || $rootScope.userAdminCheck === 'undefined' || $rootScope.userAdminCheck === undefined

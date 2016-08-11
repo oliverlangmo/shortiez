@@ -2,23 +2,8 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
-var BadWords = require('../../models/badWords');
 var User = require('../../models/users');
-
-router.post('/addNewBadWord', function(req, res) {
-  var newBadWords = new BadWords({
-    badWordsList: req.body.badWordsList
-  }); // end addNewBadWord object
-  newBadWords.save(function(err) {
-    if(err){
-      console.log(err);
-      res.sendStatus(500);
-    }else {
-      console.log('Bad word has been added to database');
-      res.sendStatus(200);
-    } // end else
-  }); // end addNewBadWord.save
-});//end addNewBadWord
+var BadWords = require('../../models/badWords');
 
 router.get('/getBadWords', function(req, res) {
   BadWords.find().then(function(data){

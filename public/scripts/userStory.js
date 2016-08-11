@@ -15,16 +15,17 @@ $scope.newName = '';
 $scope.showTrue = []; // shows/hides on chooseNamePopup
 $scope.newNames = []; // new names for textPopup
 
-$scope.setNewNames = function() {
-  for (var a = 0; a < $rootScope.readerIndex.story_characters.length; a++) {
-    var nameHolder = '';
-    var charName = new CharName(nameHolder, a);
-    $scope.newNames.push(charName);
-  } // end for loop
-}; // end setNewNames
+// $scope.setNewNames = function() {
+//   for (var a = 0; a < $rootScope.readerIndex.story_characters.length; a++) {
+//     var nameHolder = '';
+//     var charName = new CharName(nameHolder, a);
+//     $scope.newNames.push(charName);
+//   } // end for loop
+// }; // end setNewNames
+//
+// $scope.setNewNames();
 
-$scope.setNewNames();
-
+// loads and sets pages for a given story
 $scope.myStoryLoad = function() {
   $scope.currentStory = $rootScope.readerIndex.story_pages;
   $scope.currentStory.sort(function(a, b){return a.page_number - b.page_number;});
@@ -35,6 +36,7 @@ $scope.myStoryLoad = function() {
   window.scrollTo(0,0);
 }; // end myStoryLoad
 
+// opens popup for chooseName and redirects
 $scope.chooseNamePopup = function() {
   $scope.myStoryLoad();
   $uibModal.open({
@@ -44,20 +46,15 @@ $scope.chooseNamePopup = function() {
   }); // end $modal.open
 }; // end openTextPopup
 
-function CharName(newCharName, arrayNum) {
-  this.newCharName = newCharName;
-  this.arrayNum = arrayNum;
-} // end charName
+// function CharName(newCharName, arrayNum) {
+//   this.newCharName = newCharName;
+//   this.arrayNum = arrayNum;
+// } // end charName
 
+
+// takes in new name for character in a given story, sets it to new, then replaces the old name
+// with the new name through out any given story
 $scope.nameReplace = function(newName, oldName, index) {
-  console.log($scope.readerIndex.story_characters[index].character_photo);
-// $scope.activeItem=item;
-  // $scope.alertText = !$scope.alertText;
-  // document.getElementById("changeBtn").
-  // addEventListener("click", function(){
-  //   this.style.backgroundColor = "red";
-    // angular.element($event.target).scope().style.backgroundColor = "red";
-  // });
   var regExp = new RegExp(oldName, 'gi');
   for (var i = 0; i < $rootScope.readerIndex.story_pages.length; i++) { // for loop 1
     for (var x = 0; x < $rootScope.readerIndex.story_pages[i].page_text_btn.length; x++) { // for loop 2
@@ -70,10 +67,12 @@ $scope.nameReplace = function(newName, oldName, index) {
   $scope.myStoryLoad();
 }; // end nameReplace
 
+// re-shows change name option
 $scope.editName = function(index) {
   $scope.showTrue[index] = false;
 }; // end editName
 
+// page turn next
 $scope.nextPage = function() {
   $rootScope.pageIndex++;
   if ($rootScope.pageIndex === $scope.currentStory.length ) {
@@ -86,6 +85,7 @@ $scope.nextPage = function() {
   event.preventDefault();
 }; // end nextPage
 
+// page turn previous
 $scope.prevPage = function() {
   $rootScope.pageIndex--;
   if ($rootScope.pageIndex === - 1) {
@@ -98,6 +98,7 @@ $scope.prevPage = function() {
   event.preventDefault();
 }; // end prevPage
 
+// opens change word option (madlib) then cleans the word for display in the modal
 openTextPopup = function(num) {
   $rootScope.tempIdNum = num;
   var uncleanWord = document.getElementById('wordMadlib' + num).innerHTML;
@@ -110,12 +111,11 @@ openTextPopup = function(num) {
   }); // end $modal.open
 }; // end openTextPopup
 
+// changes to the new word (madlib) then if bad word is detected, replaces with "BLEEP!" otherwise, changes as directed
 $scope.submitChange = function() {
   var badWordCheck = false;
   for (var i = 0; i < $rootScope.badWordsArray[0].badWords.length; i++) {
     if ($scope.newWord === $rootScope.badWordsArray[0].badWords[i]) {
-      // window.alert("Oops, you entered a naughty word." +
-      //   "\nPlease enter a nice, new word.");
       num = $rootScope.tempIdNum;
       pageArray = $rootScope.readerIndex.story_pages[$rootScope.pageIndex].page_text_btn;
       newTaggedWord = '<button class="wordBtn pulse" id="wordMadlib'+ num +'" onclick="openTextPopup('+ num +')">' + 'BLEEP!' + '</button> ';
@@ -145,6 +145,7 @@ $scope.submitChange = function() {
   } // end if
 }; // end submitChange
 
+// various fonts to change text
 $scope.arialFont = function() {
   $scope.storyClass = "arialClass";
 };

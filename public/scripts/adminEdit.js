@@ -2,6 +2,7 @@ myApp.controller('adminEditController',
 ['$scope', '$http', '$uibModal', '$rootScope', '$location', '$sce', 'userData',
 function($scope, $http, $uibModal, $rootScope, $location, $sce, userData){
 
+// both of the following function calls set button views and permissions upon login
 userData.checkAuth();
 userData.setBtnsView();
 
@@ -15,6 +16,7 @@ $scope.displayBefore = true;
 $scope.displayAfter = false;
 $scope.cleanText = '';
 
+// loads all characters for a given story to be changed in the "chooseName" function
 $scope.selectReaderStory = function(index) {
   $rootScope.characters = [];
   $rootScope.readerIndex = $rootScope.stories[index];
@@ -25,6 +27,8 @@ $scope.selectReaderStory = function(index) {
   window.location.href = path;
 }; // end selectReaderStory
 
+// opens the add new story view and sets whether or not a story
+// is new or old(edit) for how arrays are to be used
 $scope.openAdminEdit = function() {
   $rootScope.isNewOrEdit = 0;
   var path = "#adminAddNewStory";
@@ -32,6 +36,8 @@ $scope.openAdminEdit = function() {
   window.location.href = path;
 }; // end openTextPopup
 
+// redirects to adminEdit then loads a given story to be edited and determines
+// whether or not a story is new or old(edit) for how arrays are to be used
 $scope.editStory = function(index) {
   $rootScope.isNewOrEdit = 1;
   var path = "#adminEdit";
@@ -41,6 +47,7 @@ $scope.editStory = function(index) {
   window.location.href = path;
 }; // end editStory
 
+// creates a new story
 $scope.addStory = function() {
   $rootScope.tempStoryName = $scope.storyTitleBinder;
   var storyToAdd = {
@@ -65,6 +72,7 @@ $scope.addStory = function() {
   $scope.showCoverInfoAfter = true;
 }; // end addStory
 
+// opens addNewCharPopup
 $scope.addNewChar = function() {
   $uibModal.open({
     templateUrl: 'views/pages/addNewCharPopup.html',
@@ -72,6 +80,7 @@ $scope.addNewChar = function() {
   }); // end $modal.open
 }; // end addNewChar
 
+// adds a new character then either pushes it to new array or existing depending on permissions
 $scope.addChar = function() {
   var characterObject = {
     character_name: $scope.characterNameBinder,
@@ -100,6 +109,7 @@ $scope.addChar = function() {
   $scope.characterPhotoBinder = '';
 }; // end addChar
 
+// opens addNewPage pop
 $scope.addNewPage = function() {
   $uibModal.open({
     templateUrl: 'views/pages/addNewPagePopup.html',
@@ -108,6 +118,9 @@ $scope.addNewPage = function() {
   }); // end $modal.open
 }; // end addNewChar
 
+// this is 1 of 3 important madlibs functions. First, this function captures the admin input of a story
+// then saves a clean copy of it while setting a temporary one to be worked on. Then it breaks input down
+// the input into individual words with a checkbox on each word.
 $scope.captureStoryInput = function() {
   if ($scope.pageTextBinder === '' || $scope.pageTextBinder === undefined || $scope.pageTextBinder === null){
     window.alert('Text field can not be left empty.\nPlease enter a story.');
@@ -133,6 +146,10 @@ $scope.captureStoryInput = function() {
   $scope.displayAfter = true;
 }; // end captureStoryInput
 
+// 2 of 3 of madlibs: Another important feature of the madlibs funcitonality. First, due to angularJs contraints, this function
+// must be in naked javascript as the button that calls this function is in string form being passed from the "captureStoryInput."
+// Second, the setWordTrue function then records whether or not a word hs been checked and saves that info on the checkedArray.
+// to be used later in 3 of 3.
 setWordTrue = function(num) {
   $scope.checkedWord = $scope.tempTextArray[num];
   if(document.getElementById('wordNum' + num).checked) {
@@ -146,22 +163,9 @@ setWordTrue = function(num) {
   } // end else/if
 }; // end setWordTrue
 
-$scope.textReset = function() {
-  var textDiv = angular.element(document.querySelector('#adminStory'));
-  textDiv.empty();
-  $scope.tempTextArray = [];
-  $scope.checkedArray = [];
-  $scope.newTextArray = [];
-  $scope.stringLength = '';
-  $scope.cleanText = '';
-  $scope.nameChangeBinder = '';
-  $scope.pageNumberBinder ='';
-  $scope.pageTextBinder ='';
-  $scope.pageIllustrationBinder = '';
-  $scope.displayBefore = true;
-  $scope.displayAfter = false;
-}; // end textReset
-
+// 3 of 3 of the madlibs: The last major function for the madlibs. In "saveStory," an array of checked boxes is gone through if found
+// true, is replaced with a button that will then be clickable. If found false, the button is stripped back down to a normal
+// word and new array of clickable and normal words is saved to either new or existing story.
 $scope.saveStory = function() {
   var arrayLength = $scope.tempTextArray.length;
   for (var i = 0; i < arrayLength; i++) { // for loop 1
@@ -201,6 +205,24 @@ $scope.saveStory = function() {
   $scope.textReset();
 }; // end saveStory
 
+// resets admin fields.
+$scope.textReset = function() {
+  var textDiv = angular.element(document.querySelector('#adminStory'));
+  textDiv.empty();
+  $scope.tempTextArray = [];
+  $scope.checkedArray = [];
+  $scope.newTextArray = [];
+  $scope.stringLength = '';
+  $scope.cleanText = '';
+  $scope.nameChangeBinder = '';
+  $scope.pageNumberBinder ='';
+  $scope.pageTextBinder ='';
+  $scope.pageIllustrationBinder = '';
+  $scope.displayBefore = true;
+  $scope.displayAfter = false;
+}; // end textReset
+
+// confirms and deletes a story
 $scope.deleteStory = function(index) {
   var confirmDeleteStory = confirm('Please confirm to delete ' + $rootScope.stories[index].story_title + ' story');
   if (confirmDeleteStory) {
@@ -218,6 +240,7 @@ $scope.deleteStory = function(index) {
   } // end else
 }; // end deleteStory
 
+// determines if new or existing, confirms delete then removes a character from DB
 $scope.deleteChar = function(index) {
   if ($scope.isNewOrEdit === 0) {
     $scope.charArray = $rootScope.tempNewStoryArray;
@@ -252,6 +275,7 @@ $scope.deleteChar = function(index) {
   } // end else
 }; // end charDelete
 
+// determines if new or existing, confirms delete then removes a page from DB
 $scope.deletePage = function(index) {
   if ($scope.isNewOrEdit === 0) {
     $scope.pageArray = $rootScope.tempNewStoryArray;
@@ -328,6 +352,7 @@ $scope.editPage = function(index) {
   }); // end $modal.open
 }; // end editPage
 
+// After ID is passed from the editCoverPopup, allows for editing of story cover
 $scope.editCover = function() {
   var newCoverObject = {
     story_title: $scope.tempTitle,
@@ -358,6 +383,7 @@ $scope.editCover = function() {
   $rootScope.cancel();
 }; // end editCover
 
+// After ID is passed from the editCharactersPopup, allows for editing of characters from a given story
 $scope.updateCharacter = function(){
   var newCharObject = {
     character_name: $scope.charName,
@@ -384,6 +410,7 @@ $scope.updateCharacter = function(){
   $rootScope.cancel();
 }; // end updateCharacter
 
+// After ID is passed from the editPagePopup, allows for editing of pages from a given story
 $scope.updatePage = function() {
   var arrayLength = $scope.tempTextArray.length;
   for (var i = 0; i < arrayLength; i++) { // for loop 1
@@ -446,6 +473,8 @@ function ($scope, $uibModalInstance, $rootScope, userData, index) {
 
   var arrayNum = $rootScope.storyArrayIndex;
 
+  // info passed from popups is then used below to determine if a story is new or existing for
+  // purposes of editing arrays
   if ($scope.isNewOrEdit === 0) {
     $scope.tempTitle = $rootScope.tempNewStoryArray.story_title;
     $scope.tempDescription = $rootScope.tempNewStoryArray.story_description;
@@ -468,6 +497,8 @@ function ($scope, $uibModalInstance, $rootScope, userData, index) {
 angular.module('myApp').controller('adminCharacterPopupController',
 function ($scope, $uibModalInstance, $rootScope, $http, userData, index) {
 
+  // info passed from popups is then used below to determine if a story is new or existing for
+  // purposes of editing arrays
   if ($scope.isNewOrEdit === 0) {
     $scope.tempStoryInfo = $rootScope.tempNewStoryArray.story_characters[index];  // new
     $scope.storyArray = $rootScope.tempNewStoryArray;
@@ -494,6 +525,8 @@ function ($scope, $uibModalInstance, $rootScope, $http, userData, index) {
 angular.module('myApp').controller('adminPagePopupController',
 function ($scope, $uibModalInstance, $rootScope, userData, index) {
 
+  // info passed from popups is then used below to determine if a story is new or existing for
+  // purposes of editing arrays
   if ($scope.isNewOrEdit === 0) {
     $scope.tempStoryInfo = $rootScope.tempNewStoryArray.story_pages[index]; // new
     $scope.pageArray = $rootScope.tempNewStoryArray;
