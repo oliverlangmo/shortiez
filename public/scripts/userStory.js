@@ -67,6 +67,7 @@ $scope.nameReplace = function(newName, oldName, index) {
   $scope.myStoryLoad();
 }; // end nameReplace
 
+
 // re-shows change name option
 $scope.editName = function(index) {
   $scope.showTrue[index] = false;
